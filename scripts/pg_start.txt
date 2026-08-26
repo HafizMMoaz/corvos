@@ -1,0 +1,16 @@
+=== start postgresql-x64-18 ===
+The postgresql-x64-18 service is starting........
+The postgresql-x64-18 service was started successfully.
+
+exit=0
+--- sc query ---
+
+SERVICE_NAME: postgresql-x64-18 
+        TYPE               : 10  WIN32_OWN_PROCESS  
+        STATE              : 4  RUNNING 
+                                (STOPPABLE, PAUSABLE, ACCEPTS_SHUTDOWN)
+        WIN32_EXIT_CODE    : 0  (0x0)
+        SERVICE_EXIT_CODE  : 0  (0x0)
+        CHECKPOINT         : 0x0
+        WAIT_HINT          : 0x0
+elevated exit=0

@@ -1,0 +1,53 @@
+﻿---
+title: Web Search
+description: How Corvos web search works and how to add Tavily or Linkup via a Custom MCP connector
+---
+
+# Web Search
+
+Corvos performs public web search through the built-in **Google Search** specialist. When the assistant needs real-time or public information (news, prices, weather, exchange rates, current events, or "who ranks for X"), it delegates the query to the Google Search subagent, which returns ranked results the assistant can cite and hand off for crawling.
+
+There is nothing to configure - Google web search is available in every workspace out of the box.
+
+<Callout type="info" title="Google-only web search">
+Corvos previously bundled a multi-engine web-search tool backed by SearXNG, Tavily, Linkup, and Baidu. Those have been consolidated: public web search now runs exclusively through the Google Search specialist. The **Tavily**, **Linkup**, **Baidu Search**, and **SearXNG** connectors are deprecated and can no longer be connected.
+</Callout>
+
+## How It Works
+
+When the assistant decides a request needs the open web:
+
+1. The main agent delegates the query to the `google_search` specialist.
+2. The specialist runs a Google search and returns ranked result items (title, URL, snippet).
+3. The assistant summarizes the findings and can follow up by crawling a specific result page.
+
+Google web search is workspace-scoped and is not available in the free / anonymous (no-login) chat, which answers purely from the model's own knowledge.
+
+## Still want Tavily or Linkup?
+
+If you relied on Tavily or Linkup, you can add them back yourself through the generic **Custom MCP connector** (the **MCPs** card in the Connectors dashboard). Both providers expose a hosted MCP server that authenticates with an API key sent as a request header:
+
+| Provider | MCP server URL | Auth header |
+|----------|----------------|-------------|
+| Tavily | `https://mcp.tavily.com/mcp/` | `Authorization: Bearer <your Tavily API key>` |
+| Linkup | `https://mcp.linkup.so/mcp` | `Authorization: Bearer <your Linkup API key>` |
+
+Steps:
+
+1. Open the Connectors dashboard and choose **MCPs** (Custom MCP connector).
+2. Enter the provider's MCP server URL from the table above.
+3. Add an `Authorization` header with the value `Bearer <your API key>`.
+4. Save. The provider's search tools become available to the assistant through the connected-apps specialist.
+
+<Callout type="info" title="No Corvos API keys needed">
+Tavily/Linkup keys live only in your Custom MCP connector configuration. Corvos no longer ships first-party Tavily, Linkup, Baidu, or SearXNG integrations.
+</Callout>
+
+## Deprecated connectors
+
+The following connectors are deprecated. Existing rows remain readable/manageable, but new connections are refused (HTTP 410), and their catalog cards show a **Deprecated** badge:
+
+- **Tavily** - add via Custom MCP connector (see above).
+- **Linkup** - add via Custom MCP connector (see above).
+- **Baidu Search** - no longer bundled; use the built-in Google Search or a Custom MCP connector for a provider of your choice.
+- **SearXNG** - the bundled SearXNG container and its `SEARXNG_*` environment variables have been removed from all Docker Compose files.

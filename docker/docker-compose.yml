@@ -1,0 +1,308 @@
+﻿# =============================================================================
+# Corvos - Production Docker Compose
+# Docs: https://docs.corvos.com/docs/docker-installation
+# =============================================================================
+# Usage:
+#   1. Copy .env.example to .env and edit the required values
+#   2. docker compose up -d
+# =============================================================================
+
+name: corvos
+
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgresql.conf:/etc/postgresql/postgresql.conf:ro
+    environment:
+      POSTGRES_USER: ${DB_USER:-corvos}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-corvos}
+      POSTGRES_DB: ${DB_NAME:-corvos}
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-corvos} -d ${DB_NAME:-corvos}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Short-lived schema runner. Executes `alembic upgrade head` and verifies
+  # that the `zero_publication` Postgres logical-replication publication
+  # matches the canonical shape, then exits 0. Downstream services gate on this
+  # with `condition: service_completed_successfully` so a failed migration halts
+  # the whole stack instead of booting zero-cache against a drifted publication.
+  migrations:
+    image: ghcr.io/hafizmmoaz/corvos-backend:${CORVOS_VERSION:-latest}${CORVOS_VARIANT:+-${CORVOS_VARIANT}}
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql+asyncpg://${DB_USER:-corvos}:${DB_PASSWORD:-corvos}@${DB_HOST:-db}:${DB_PORT:-5432}/${DB_NAME:-corvos}}
+      PYTHONPATH: /app
+      SERVICE_ROLE: migrate
+      MIGRATION_TIMEOUT: ${MIGRATION_TIMEOUT:-900}
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+
+  redis:
+    image: redis:8-alpine
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # otel-collector:
+  #   image: otel/opentelemetry-collector-contrib:0.152.1
+  #   profiles:
+  #     - observability
+  #   command: ["--config=/etc/otelcol/config.yaml"]
+  #   volumes:
+  #     - ./otel-collector/config.yaml:/etc/otelcol/config.yaml:ro
+  #   environment:
+  #     GRAFANA_CLOUD_OTLP_ENDPOINT: ${GRAFANA_CLOUD_OTLP_ENDPOINT:-}
+  #     GRAFANA_CLOUD_INSTANCE_ID: ${GRAFANA_CLOUD_INSTANCE_ID:-}
+  #     GRAFANA_CLOUD_API_KEY: ${GRAFANA_CLOUD_API_KEY:-}
+  #   ports:
+  #     - "${OTEL_GRPC_PORT:-4317}:4317"
+  #     - "${OTEL_HTTP_PORT:-4318}:4318"
+  #     - "${OTEL_HEALTH_PORT:-13133}:13133"
+  #   mem_limit: 2g
+  #   restart: unless-stopped
+  #   healthcheck:
+  #     test: ["CMD", "/otelcol-contrib", "--version"]
+  #     interval: 30s
+  #     timeout: 5s
+  #     retries: 3
+
+  # Single public entry point for the Docker stack. Comment this service out
+  # only if you front Corvos with your own reverse proxy.
+  proxy:
+    image: caddy:2-alpine
+    # For DNS-01/wildcard certificates, replace image with:
+    # build: ./proxy
+    restart: unless-stopped
+    ports:
+      - "${LISTEN_HTTP_PORT:-3929}:80"
+      - "${LISTEN_HTTPS_PORT:-443}:443"
+    volumes:
+      - ./proxy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    environment:
+      CORVOS_SITE_ADDRESS: ${CORVOS_SITE_ADDRESS:-:80}
+      CERT_EMAIL: ${CERT_EMAIL:-}
+      CERT_ACME_CA: ${CERT_ACME_CA:-https://acme-v02.api.letsencrypt.org/directory}
+      CERT_ACME_DNS: ${CERT_ACME_DNS:-}
+      TRUSTED_PROXIES: ${TRUSTED_PROXIES:-0.0.0.0/0}
+      CORVOS_MAX_BODY_SIZE: ${CORVOS_MAX_BODY_SIZE:-5GB}
+    depends_on:
+      frontend:
+        condition: service_started
+      backend:
+        condition: service_healthy
+      zero-cache:
+        condition: service_healthy
+
+  backend:
+    image: ghcr.io/hafizmmoaz/corvos-backend:${CORVOS_VERSION:-latest}${CORVOS_VARIANT:+-${CORVOS_VARIANT}}
+    expose:
+      - "8000"
+    volumes:
+      - shared_temp:/shared_tmp
+      - object_store:/app/.local_object_store
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql+asyncpg://${DB_USER:-corvos}:${DB_PASSWORD:-corvos}@${DB_HOST:-db}:${DB_PORT:-5432}/${DB_NAME:-corvos}}
+      CELERY_BROKER_URL: ${REDIS_URL:-redis://redis:6379/0}
+      CELERY_RESULT_BACKEND: ${REDIS_URL:-redis://redis:6379/0}
+      REDIS_APP_URL: ${REDIS_URL:-redis://redis:6379/0}
+      CELERY_TASK_DEFAULT_QUEUE: corvos
+      PYTHONPATH: /app
+      UVICORN_LOOP: asyncio
+      UNSTRUCTURED_HAS_PATCHED_LOOP: "1"
+      FILE_STORAGE_LOCAL_PATH: /app/.local_object_store
+      NEXT_FRONTEND_URL: ${NEXT_FRONTEND_URL:-${CORVOS_PUBLIC_URL:-http://localhost:${LISTEN_HTTP_PORT:-3929}}}
+      BACKEND_URL: ${BACKEND_URL:-${CORVOS_PUBLIC_URL:-http://localhost:${LISTEN_HTTP_PORT:-3929}}}
+      WHATSAPP_BRIDGE_URL: ${WHATSAPP_BRIDGE_URL:-http://whatsapp-bridge:9929}
+      # Daytona Sandbox – uncomment and set credentials to enable cloud code execution
+      # DAYTONA_SANDBOX_ENABLED: "TRUE"
+      # DAYTONA_API_KEY: ${DAYTONA_API_KEY:-}
+      # DAYTONA_API_URL: ${DAYTONA_API_URL:-https://app.daytona.io/api}
+      # DAYTONA_TARGET: ${DAYTONA_TARGET:-us}
+      SERVICE_ROLE: api
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      migrations:
+        condition: service_completed_successfully
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/ready"]
+      interval: 15s
+      timeout: 5s
+      retries: 30
+      start_period: 200s
+
+  # whatsapp-bridge:
+  #   build: ../backend/scripts/whatsapp-bridge
+  #   profiles:
+  #     - whatsapp
+  #   expose:
+  #     - "9929"
+  #   volumes:
+  #     - whatsapp_sessions:/data/sessions
+  #   environment:
+  #     PORT: 9929
+  #     WHATSAPP_MODE: ${WHATSAPP_MODE:-self-chat}
+  #     WHATSAPP_SESSION_DIR: /data/sessions
+  #   mem_limit: 512m
+  #   restart: unless-stopped
+  #   healthcheck:
+  #     test: ["CMD", "wget", "-qO-", "http://localhost:9929/health"]
+  #     interval: 30s
+  #     timeout: 5s
+  #     retries: 5
+
+  celery_worker:
+    image: ghcr.io/hafizmmoaz/corvos-backend:${CORVOS_VERSION:-latest}${CORVOS_VARIANT:+-${CORVOS_VARIANT}}
+    volumes:
+      - shared_temp:/shared_tmp
+      - object_store:/app/.local_object_store
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql+asyncpg://${DB_USER:-corvos}:${DB_PASSWORD:-corvos}@${DB_HOST:-db}:${DB_PORT:-5432}/${DB_NAME:-corvos}}
+      CELERY_BROKER_URL: ${REDIS_URL:-redis://redis:6379/0}
+      CELERY_RESULT_BACKEND: ${REDIS_URL:-redis://redis:6379/0}
+      REDIS_APP_URL: ${REDIS_URL:-redis://redis:6379/0}
+      CELERY_TASK_DEFAULT_QUEUE: corvos
+      PYTHONPATH: /app
+      FILE_STORAGE_LOCAL_PATH: /app/.local_object_store
+      SERVICE_ROLE: worker
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      migrations:
+        condition: service_completed_successfully
+      backend:
+        condition: service_healthy
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    restart: unless-stopped
+
+  celery_beat:
+    image: ghcr.io/hafizmmoaz/corvos-backend:${CORVOS_VERSION:-latest}${CORVOS_VARIANT:+-${CORVOS_VARIANT}}
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql+asyncpg://${DB_USER:-corvos}:${DB_PASSWORD:-corvos}@${DB_HOST:-db}:${DB_PORT:-5432}/${DB_NAME:-corvos}}
+      CELERY_BROKER_URL: ${REDIS_URL:-redis://redis:6379/0}
+      CELERY_RESULT_BACKEND: ${REDIS_URL:-redis://redis:6379/0}
+      CELERY_TASK_DEFAULT_QUEUE: corvos
+      PYTHONPATH: /app
+      SERVICE_ROLE: beat
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      migrations:
+        condition: service_completed_successfully
+      celery_worker:
+        condition: service_started
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    restart: unless-stopped
+
+  zero-cache:
+    image: rocicorp/zero:1.6.0
+    expose:
+      - "4848"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      ZERO_UPSTREAM_DB: ${ZERO_UPSTREAM_DB:-postgresql://${DB_USER:-corvos}:${DB_PASSWORD:-corvos}@${DB_HOST:-db}:${DB_PORT:-5432}/${DB_NAME:-corvos}?sslmode=${DB_SSLMODE:-disable}}
+      ZERO_CVR_DB: ${ZERO_CVR_DB:-postgresql://${DB_USER:-corvos}:${DB_PASSWORD:-corvos}@${DB_HOST:-db}:${DB_PORT:-5432}/${DB_NAME:-corvos}?sslmode=${DB_SSLMODE:-disable}}
+      ZERO_CHANGE_DB: ${ZERO_CHANGE_DB:-postgresql://${DB_USER:-corvos}:${DB_PASSWORD:-corvos}@${DB_HOST:-db}:${DB_PORT:-5432}/${DB_NAME:-corvos}?sslmode=${DB_SSLMODE:-disable}}
+      ZERO_REPLICA_FILE: /data/zero.db
+      ZERO_ADMIN_PASSWORD: ${ZERO_ADMIN_PASSWORD:-corvos-zero-admin}
+      ZERO_APP_PUBLICATIONS: ${ZERO_APP_PUBLICATIONS:-zero_publication}
+      ZERO_AUTO_RESET: ${ZERO_AUTO_RESET:-true}
+      ZERO_NUM_SYNC_WORKERS: ${ZERO_NUM_SYNC_WORKERS:-4}
+      ZERO_UPSTREAM_MAX_CONNS: ${ZERO_UPSTREAM_MAX_CONNS:-20}
+      ZERO_CVR_MAX_CONNS: ${ZERO_CVR_MAX_CONNS:-30}
+      ZERO_QUERY_URL: ${ZERO_QUERY_URL:-http://frontend:3000/api/zero/query}
+      ZERO_MUTATE_URL: ${ZERO_MUTATE_URL:-http://frontend:3000/api/zero/mutate}
+      ZERO_QUERY_FORWARD_COOKIES: ${ZERO_QUERY_FORWARD_COOKIES:-true}
+      ZERO_QUERY_API_KEY: ${ZERO_QUERY_API_KEY:-}
+      ZERO_AUTH_REVALIDATE_INTERVAL_SECONDS: ${ZERO_AUTH_REVALIDATE_INTERVAL_SECONDS:-60}
+      ZERO_AUTH_RETRANSFORM_INTERVAL_SECONDS: ${ZERO_AUTH_RETRANSFORM_INTERVAL_SECONDS:-60}
+    volumes:
+      - zero_cache_data:/data
+    restart: unless-stopped
+    stop_grace_period: 300s
+    depends_on:
+      db:
+        condition: service_healthy
+      migrations:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4848/keepalive"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 600s
+
+  frontend:
+    image: ghcr.io/hafizmmoaz/corvos-web:${CORVOS_VERSION:-latest}
+    expose:
+      - "3000"
+    environment:
+      AUTH_TYPE: ${AUTH_TYPE:-LOCAL}
+      ETL_SERVICE: ${ETL_SERVICE:-DOCLING}
+      DEPLOYMENT_MODE: ${DEPLOYMENT_MODE:-self-hosted}
+      CORVOS_BACKEND_INTERNAL_URL: http://backend:8000
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    depends_on:
+      backend:
+        condition: service_healthy
+      zero-cache:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    name: corvos-postgres
+  redis_data:
+    name: corvos-redis
+  shared_temp:
+    name: corvos-shared-temp
+  object_store:
+    name: corvos-object-store
+  zero_cache_data:
+    name: corvos-zero-cache
+  caddy_data:
+    name: corvos-caddy-data
+  caddy_config:
+    name: corvos-caddy-config
+  whatsapp_sessions:
+    name: corvos-whatsapp-sessions

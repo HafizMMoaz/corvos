@@ -1,0 +1,15 @@
+﻿{
+  "site": {
+    "cloud_id": "fake-jira-cloud-001",
+    "name": "Corvos E2E Atlassian",
+    "url": "https://corvos-e2e.atlassian.net"
+  },
+  "issues": [
+    {
+      "id": "fake-jira-issue-canary-001",
+      "key": "E2E-101",
+      "summary": "E2E Canary Jira Issue",
+      "description": "This Jira issue proves live MCP tool calls work end-to-end. CORVOS_E2E_CANARY_TOKEN_JIRA_001"
+    }
+  ]
+}

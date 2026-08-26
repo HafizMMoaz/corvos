@@ -1,0 +1,10 @@
+﻿{
+	"id": "corvos-obsidian",
+	"name": "Corvos",
+	"version": "0.0.1",
+	"minAppVersion": "1.5.4",
+	"description": "Turn your vault into a searchable second brain with Corvos.",
+	"author": "Corvos",
+	"authorUrl": "https://www.corvos.com",
+	"isDesktopOnly": false
+}

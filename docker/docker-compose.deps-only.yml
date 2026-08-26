@@ -1,0 +1,150 @@
+﻿# =============================================================================
+# Corvos - Dependencies only (no backend / frontend / Celery images)
+# =============================================================================
+# Postgres, Redis, pgAdmin, Zero - run API + Next + Celery on the host.
+# Celery is not Dockerized here: use `uv run` from backend/ (no extra
+# backend image build just for workers).
+#
+# From repo root (Corvos/):
+#   docker compose -f docker/docker-compose.deps-only.yml up -d
+#
+# Compose variable substitution uses `docker/.env` (copy from .env.example).
+# Bind mounts use ./postgresql.conf in this directory.
+#
+# Local Celery (from backend/, after Redis is up):
+#   uv run celery -A celery_worker.celery_app worker --loglevel=info --concurrency=1 --pool=solo --queues=corvos,corvos.connectors
+#   uv run celery -A celery_worker.celery_app beat --loglevel=info
+#
+# Host setup:
+#   - Backend .env: DATABASE_URL=postgresql+asyncpg://postgres:postgres@localhost:5432/corvos
+#   - Backend .env: CELERY_BROKER_URL / REDIS_APP_URL → redis://localhost:6379/0
+#   - Web .env: NEXT_PUBLIC_ZERO_CACHE_URL=http://localhost:${ZERO_CACHE_PORT:-4848}
+#
+# IMPORTANT - schema migrations:
+#   This compose file does NOT build the backend image and therefore cannot
+#   run a `migrations` service. You MUST run alembic on the host before
+#   bringing zero-cache up, or zero-cache will crash-loop with
+#   `Unknown or invalid publications. Specified: [zero_publication]`.
+#
+#   First-time / after-pull:
+#     cd backend && uv run alembic upgrade head
+#
+#   The other compose files (docker-compose.yml, docker-compose.dev.yml)
+#   handle this automatically via a dedicated `migrations` service.
+# =============================================================================
+
+name: corvos-deps
+
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgresql.conf:/etc/postgresql/postgresql.conf:ro
+    environment:
+      - POSTGRES_USER=${DB_USER:-postgres}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-postgres}
+      - POSTGRES_DB=${DB_NAME:-corvos}
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres} -d ${DB_NAME:-corvos}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL:-admin@corvos.com}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD:-corvos}
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - db
+
+  redis:
+    image: redis:8-alpine
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # NOTE: zero-cache requires the `zero_publication` Postgres publication to
+  # exist before it starts. In this deps-only stack there is no backend
+  # container to run migrations, so you must run `uv run alembic upgrade head`
+  # from `backend/` on the host BEFORE `docker compose up -d`.
+  zero-cache:
+    image: rocicorp/zero:1.6.0
+    ports:
+      - "${ZERO_CACHE_PORT:-4848}:4848"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - ZERO_UPSTREAM_DB=postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-postgres}@db:5432/${DB_NAME:-corvos}?sslmode=${DB_SSLMODE:-disable}
+      - ZERO_CVR_DB=postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-postgres}@db:5432/${DB_NAME:-corvos}?sslmode=${DB_SSLMODE:-disable}
+      - ZERO_CHANGE_DB=postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-postgres}@db:5432/${DB_NAME:-corvos}?sslmode=${DB_SSLMODE:-disable}
+      - ZERO_REPLICA_FILE=/data/zero.db
+      - ZERO_ADMIN_PASSWORD=${ZERO_ADMIN_PASSWORD:-corvos-zero-admin}
+      - ZERO_APP_PUBLICATIONS=${ZERO_APP_PUBLICATIONS:-zero_publication}
+      - ZERO_AUTO_RESET=${ZERO_AUTO_RESET:-true}
+      - ZERO_NUM_SYNC_WORKERS=${ZERO_NUM_SYNC_WORKERS:-4}
+      - ZERO_UPSTREAM_MAX_CONNS=${ZERO_UPSTREAM_MAX_CONNS:-20}
+      - ZERO_CVR_MAX_CONNS=${ZERO_CVR_MAX_CONNS:-30}
+      - ZERO_QUERY_URL=${ZERO_QUERY_URL:-http://host.docker.internal:3000/api/zero/query}
+      - ZERO_MUTATE_URL=${ZERO_MUTATE_URL:-http://host.docker.internal:3000/api/zero/mutate}
+      - ZERO_QUERY_FORWARD_COOKIES=${ZERO_QUERY_FORWARD_COOKIES:-true}
+      - ZERO_QUERY_API_KEY=${ZERO_QUERY_API_KEY:-}
+      - ZERO_AUTH_REVALIDATE_INTERVAL_SECONDS=${ZERO_AUTH_REVALIDATE_INTERVAL_SECONDS:-60}
+      - ZERO_AUTH_RETRANSFORM_INTERVAL_SECONDS=${ZERO_AUTH_RETRANSFORM_INTERVAL_SECONDS:-60}
+    volumes:
+      - zero_cache_data:/data
+    restart: unless-stopped
+    stop_grace_period: 300s
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4848/keepalive"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 600s
+
+  # OPTIONAL - Azurite emulates Azure Blob Storage for testing the Azure
+  # original-file backend. The default filesystem backend needs none of this.
+  # To exercise it, set in backend/.env:
+  #   FILE_STORAGE_BACKEND=azure
+  #   AZURE_STORAGE_CONTAINER=corvos-documents
+  #   AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://localhost:${AZURITE_BLOB_PORT:-10000}/devstoreaccount1;
+  # The backend creates blobs on upload; create the container once first
+  # (Azure CLI / Storage Explorer), then upload a document.
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite:3.33.0
+    command: azurite-blob --blobHost 0.0.0.0 --blobPort 10000
+    ports:
+      - "${AZURITE_BLOB_PORT:-10000}:10000"
+    volumes:
+      - azurite_data:/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    name: corvos-deps-postgres
+  pgadmin_data:
+    name: corvos-deps-pgadmin
+  redis_data:
+    name: corvos-deps-redis
+  zero_cache_data:
+    name: corvos-deps-zero-cache
+  azurite_data:
+    name: corvos-deps-azurite
