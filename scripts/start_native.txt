@@ -1,0 +1,7 @@
+=== start-native (all) 2026-08-07T17:04:48.2342559+05:00 ===
+started api pid=6300 : C:\Users\Hafiz\AppData\Local\hermes\bin\uv.exe run python main.py
+started worker pid=2084 : C:\Users\Hafiz\AppData\Local\hermes\bin\uv.exe run celery -A app.celery_app worker --loglevel=info --pool=threads --concurrency=4 --prefetch-multiplier=1 -Ofair --queues=corvos,corvos.connectors,corvos.gateway
+started beat pid=21832 : C:\Users\Hafiz\AppData\Local\hermes\bin\uv.exe run celery -A app.celery_app beat --loglevel=info
+started zero pid=20756 : C:\WINDOWS\system32\cmd.exe /c pnpm exec zero-cache
+started web pid=20120 : C:\WINDOWS\system32\cmd.exe /c pnpm dev
+logs: d:\Corvos\scripts\logs

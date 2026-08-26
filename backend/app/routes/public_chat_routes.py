@@ -1,0 +1,350 @@
+"""
+Routes for public chat access via immutable snapshots.
+
+All public endpoints use share_token for access - no authentication required
+for read operations. Clone requires authentication.
+"""
+
+import os
+
+from fastapi import APIRouter, Depends, HTTPException
+from fastapi.responses import StreamingResponse
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.auth.context import AuthContext
+from app.db import get_async_session
+from app.observability import analytics as ph_analytics
+from app.schemas.new_chat import (
+    CloneResponse,
+    PublicChatResponse,
+)
+from app.services.public_chat_service import (
+    clone_from_snapshot,
+    get_public_chat,
+    get_snapshot_podcast,
+    get_snapshot_report,
+    get_snapshot_video_presentation,
+)
+from app.users import require_session_context
+
+router = APIRouter(prefix="/public", tags=["public"])
+
+
+@router.get("/{share_token}", response_model=PublicChatResponse)
+async def read_public_chat(
+    share_token: str,
+    session: AsyncSession = Depends(get_async_session),
+):
+    """
+    Get a public chat snapshot by share token.
+
+    No authentication required.
+    Returns immutable snapshot data (sanitized, citations stripped).
+    """
+    return await get_public_chat(session, share_token)
+
+
+@router.post("/{share_token}/clone", response_model=CloneResponse)
+async def clone_public_chat(
+    share_token: str,
+    session: AsyncSession = Depends(get_async_session),
+    auth: AuthContext = Depends(require_session_context),
+):
+    user = auth.user
+    """
+    Clone a public chat snapshot to the user's account.
+
+    Creates thread and copies messages.
+    Requires authentication.
+    """
+    result = await clone_from_snapshot(session, share_token, user)
+
+    # Share-link conversion - only observable server-side.
+    ph_analytics.capture_for(
+        auth,
+        "public_chat_cloned",
+        {
+            "workspace_id": result.workspace_id,
+            "chat_id": result.thread_id,
+        },
+        groups={"workspace": str(result.workspace_id)},
+    )
+
+    return result
+
+
+@router.get("/{share_token}/podcasts/{podcast_id}")
+async def get_public_podcast(
+    share_token: str,
+    podcast_id: int,
+    session: AsyncSession = Depends(get_async_session),
+):
+    """
+    Get podcast details from a public chat snapshot.
+
+    No authentication required - the share_token provides access.
+    Returns podcast info including transcript.
+    """
+    podcast_info = await get_snapshot_podcast(session, share_token, podcast_id)
+
+    if not podcast_info:
+        raise HTTPException(status_code=404, detail="Podcast not found")
+
+    return {
+        "id": podcast_info.get("original_id"),
+        "title": podcast_info.get("title"),
+        "status": "ready",
+        "podcast_transcript": podcast_info.get("transcript"),
+    }
+
+
+@router.get("/{share_token}/podcasts/{podcast_id}/stream")
+async def stream_public_podcast(
+    share_token: str,
+    podcast_id: int,
+    session: AsyncSession = Depends(get_async_session),
+):
+    """
+    Stream a podcast from a public chat snapshot.
+
+    No authentication required - the share_token provides access.
+    Looks up podcast by original_id in the snapshot's podcasts array.
+    """
+    podcast_info = await get_snapshot_podcast(session, share_token, podcast_id)
+
+    if not podcast_info:
+        raise HTTPException(status_code=404, detail="Podcast not found")
+
+    storage_key = podcast_info.get("storage_key")
+    if storage_key:
+        from app.file_storage.factory import get_storage_backend
+
+        backend = get_storage_backend()
+        # Verify first so a missing object is a 404, not a mid-stream crash.
+        if not await backend.exists(storage_key):
+            raise HTTPException(
+                status_code=404, detail="Podcast audio is no longer available"
+            )
+        return StreamingResponse(
+            backend.open_stream(storage_key),
+            media_type="audio/mpeg",
+            headers={"Accept-Ranges": "bytes"},
+        )
+
+    # Legacy fallback for snapshots taken before the storage migration.
+    file_path = podcast_info.get("file_path")
+
+    if not file_path or not os.path.isfile(file_path):
+        raise HTTPException(status_code=404, detail="Podcast audio file not found")
+
+    def iterfile():
+        with open(file_path, mode="rb") as file_like:
+            yield from file_like
+
+    return StreamingResponse(
+        iterfile(),
+        media_type="audio/mpeg",
+        headers={
+            "Accept-Ranges": "bytes",
+            "Content-Disposition": f"inline; filename={os.path.basename(file_path)}",
+        },
+    )
+
+
+@router.get("/{share_token}/video-presentations/{video_presentation_id}")
+async def get_public_video_presentation(
+    share_token: str,
+    video_presentation_id: int,
+    session: AsyncSession = Depends(get_async_session),
+):
+    """
+    Get video presentation details from a public chat snapshot.
+
+    No authentication required - the share_token provides access.
+    Returns slide data (with public audio URLs) and scene codes.
+    """
+    vp_info = await get_snapshot_video_presentation(
+        session, share_token, video_presentation_id
+    )
+
+    if not vp_info:
+        raise HTTPException(status_code=404, detail="Video presentation not found")
+
+    slides = vp_info.get("slides") or []
+    public_slides = _replace_audio_paths_with_public_urls(
+        share_token, video_presentation_id, slides
+    )
+
+    return {
+        "id": vp_info.get("original_id"),
+        "title": vp_info.get("title"),
+        "status": "ready",
+        "slides": public_slides,
+        "scene_codes": vp_info.get("scene_codes"),
+        "slide_count": len(slides) if slides else None,
+    }
+
+
+@router.get(
+    "/{share_token}/video-presentations/{video_presentation_id}/slides/{slide_number}/audio"
+)
+async def stream_public_slide_audio(
+    share_token: str,
+    video_presentation_id: int,
+    slide_number: int,
+    session: AsyncSession = Depends(get_async_session),
+):
+    """
+    Stream a slide's audio from a public chat snapshot.
+
+    No authentication required - the share_token provides access.
+    """
+    from pathlib import Path
+
+    vp_info = await get_snapshot_video_presentation(
+        session, share_token, video_presentation_id
+    )
+
+    if not vp_info:
+        raise HTTPException(status_code=404, detail="Video presentation not found")
+
+    slides = vp_info.get("slides") or []
+    slide_data = None
+    for s in slides:
+        if s.get("slide_number") == slide_number:
+            slide_data = s
+            break
+
+    if not slide_data:
+        raise HTTPException(status_code=404, detail=f"Slide {slide_number} not found")
+
+    file_path = slide_data.get("audio_file")
+    if not file_path or not os.path.isfile(file_path):
+        raise HTTPException(status_code=404, detail="Slide audio file not found")
+
+    ext = Path(file_path).suffix.lower()
+    media_type = "audio/wav" if ext == ".wav" else "audio/mpeg"
+
+    def iterfile():
+        with open(file_path, mode="rb") as file_like:
+            yield from file_like
+
+    return StreamingResponse(
+        iterfile(),
+        media_type=media_type,
+        headers={
+            "Accept-Ranges": "bytes",
+            "Content-Disposition": f"inline; filename={Path(file_path).name}",
+        },
+    )
+
+
+def _replace_audio_paths_with_public_urls(
+    share_token: str,
+    video_presentation_id: int,
+    slides: list[dict],
+) -> list[dict]:
+    """Replace server-local audio_file paths with public streaming API URLs."""
+    result = []
+    for slide in slides:
+        slide_copy = dict(slide)
+        slide_number = slide_copy.get("slide_number")
+        audio_file = slide_copy.pop("audio_file", None)
+
+        if audio_file and slide_number is not None:
+            slide_copy["audio_url"] = (
+                f"/api/v1/public/{share_token}"
+                f"/video-presentations/{video_presentation_id}"
+                f"/slides/{slide_number}/audio"
+            )
+        else:
+            slide_copy["audio_url"] = None
+
+        result.append(slide_copy)
+    return result
+
+
+@router.get("/{share_token}/reports/{report_id}/preview")
+async def preview_public_report_pdf(
+    share_token: str,
+    report_id: int,
+    session: AsyncSession = Depends(get_async_session),
+):
+    """
+    Return a compiled PDF preview for a Typst-based report in a public snapshot.
+
+    No authentication required - the share_token provides access.
+    """
+    import asyncio
+    import io
+    import re
+
+    import typst as typst_compiler
+
+    report_info = await get_snapshot_report(session, share_token, report_id)
+
+    if not report_info:
+        raise HTTPException(status_code=404, detail="Report not found")
+
+    content = report_info.get("content")
+    content_type = report_info.get("content_type", "markdown")
+
+    if not content:
+        raise HTTPException(status_code=400, detail="Report has no content to preview")
+
+    if content_type != "typst":
+        raise HTTPException(
+            status_code=400,
+            detail="Preview is only available for Typst-based reports",
+        )
+
+    def _compile() -> bytes:
+        return typst_compiler.compile(content.encode("utf-8"))
+
+    pdf_bytes = await asyncio.to_thread(_compile)
+
+    safe_title = re.sub(r"[^\w\s-]", "", report_info.get("title") or "Resume").strip()
+    filename = f"{safe_title}.pdf"
+
+    return StreamingResponse(
+        io.BytesIO(pdf_bytes),
+        media_type="application/pdf",
+        headers={
+            "Content-Disposition": f'inline; filename="{filename}"',
+        },
+    )
+
+
+@router.get("/{share_token}/reports/{report_id}/content")
+async def get_public_report_content(
+    share_token: str,
+    report_id: int,
+    session: AsyncSession = Depends(get_async_session),
+):
+    """
+    Get report content from a public chat snapshot.
+
+    No authentication required - the share_token provides access.
+    Returns report content including title, markdown body, metadata, and versions.
+    """
+    from app.services.public_chat_service import get_snapshot_report_versions
+
+    report_info = await get_snapshot_report(session, share_token, report_id)
+
+    if not report_info:
+        raise HTTPException(status_code=404, detail="Report not found")
+
+    # Get version siblings from the same snapshot
+    versions = await get_snapshot_report_versions(
+        session, share_token, report_info.get("report_group_id")
+    )
+
+    return {
+        "id": report_info.get("original_id"),
+        "title": report_info.get("title"),
+        "content": report_info.get("content"),
+        "content_type": report_info.get("content_type", "markdown"),
+        "report_metadata": report_info.get("report_metadata"),
+        "report_group_id": report_info.get("report_group_id"),
+        "versions": versions,
+    }

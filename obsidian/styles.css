@@ -1,0 +1,48 @@
+/*
+ * Corvos Obsidian plugin styles. Status-bar widget only - the settings
+ * tab uses Obsidian's stock Setting rows, no custom CSS needed.
+ */
+
+.corvos-status {
+	gap: 6px;
+}
+
+.corvos-status--clickable {
+	cursor: pointer;
+}
+
+.corvos-status__icon {
+	display: inline-flex;
+	width: 14px;
+	height: 14px;
+}
+
+.corvos-status__icon svg {
+	width: 14px;
+	height: 14px;
+}
+
+.corvos-status--err .corvos-status__icon {
+	color: var(--color-red);
+}
+
+.corvos-connection-indicator {
+	display: inline-flex;
+	width: 14px;
+	height: 14px;
+}
+
+.corvos-connection-heading {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.corvos-connection-indicator svg {
+	width: 14px;
+	height: 14px;
+}
+
+.corvos-connection-indicator--err {
+	color: var(--color-red);
+}

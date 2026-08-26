@@ -1,0 +1,93 @@
+﻿appId: com.corvos.desktop
+productName: Corvos
+publish:
+  provider: github
+  owner: HafizMMoaz
+  repo: Corvos
+directories:
+  output: release
+files:
+  - dist/**/*
+  - "!node_modules"
+  - node_modules/node-gyp-build/**/*
+  - node_modules/bindings/**/*
+  - node_modules/file-uri-to-path/**/*
+  - node_modules/node-mac-permissions/**/*
+  - "!node_modules/node-mac-permissions/src"
+  - "!node_modules/node-mac-permissions/binding.gyp"
+  - "!src"
+  - "!scripts"
+  - "!release"
+extraResources:
+  - from: assets/
+    to: assets/
+    filter: ["*.ico", "*.png", "*.icns"]
+  - from: ../web/.next/standalone/web/
+    to: standalone/
+    filter:
+      - "**/*"
+      - "!**/node_modules"
+  - from: ../web/.next/standalone/web/node_modules/
+    to: standalone/node_modules/
+    filter: ["**/*"]
+  - from: ../web/.next/static/
+    to: standalone/.next/static/
+    filter: ["**/*"]
+  - from: ../web/public/
+    to: standalone/public/
+    filter: ["**/*"]
+asarUnpack:
+  - "**/*.node"
+  - "node_modules/node-gyp-build/**/*"
+  - "node_modules/bindings/**/*"
+  - "node_modules/file-uri-to-path/**/*"
+  - "node_modules/node-mac-permissions/**/*"
+mac:
+  icon: assets/icon.icns
+  category: public.app-category.productivity
+  artifactName: "${productName}-${version}-${arch}.${ext}"
+  hardenedRuntime: true
+  gatekeeperAssess: false
+  entitlements: build/entitlements.mac.plist
+  entitlementsInherit: build/entitlements.mac.plist
+  notarize: true
+  extendInfo:
+    NSAccessibilityUsageDescription: "Corvos uses accessibility features to bring the app to the foreground and interact with the active application when you use desktop assists."
+    NSScreenCaptureUsageDescription: "Corvos uses screen capture so you can attach a selected region to chat (Screenshot Assist) or capture the full screen from the composer."
+    NSAppleEventsUsageDescription: "Corvos uses Apple Events to interact with the active application."
+    # `corvos://` scheme - install-time registration for LaunchServices.
+    CFBundleURLTypes:
+      - CFBundleURLName: com.corvos.desktop
+        CFBundleURLSchemes:
+          - corvos
+  target:
+    - target: dmg
+      arch: [x64, arm64]
+    - target: zip
+      arch: [x64, arm64]
+win:
+  icon: assets/icon.ico
+  target:
+    - target: nsis
+      arch: [x64]
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+linux:
+  icon: assets/icons/
+  category: Utility
+  artifactName: "${productName}-${version}-${arch}.${ext}"
+  mimeTypes:
+    - x-scheme-handler/corvos
+  desktop:
+    entry:
+      Name: Corvos
+      Comment: AI-powered research assistant
+      Categories: Utility;Office;
+  target:
+    - deb
+    - rpm
+    - AppImage

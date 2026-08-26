@@ -1,0 +1,17 @@
+﻿{
+  "organization": {
+    "name": "Corvos E2E Linear Org",
+    "url_key": "corvos-e2e"
+  },
+  "issues": [
+    {
+      "id": "fake-linear-issue-canary-001",
+      "identifier": "E2E-101",
+      "title": "E2E Canary Linear Issue",
+      "description": "This Linear issue proves the live MCP tool fetched issue details. CORVOS_E2E_CANARY_TOKEN_LINEAR_001",
+      "state": "Todo",
+      "assignee": "E2E Owner",
+      "team": "Corvos E2E"
+    }
+  ]
+}
