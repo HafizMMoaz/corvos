@@ -13,7 +13,6 @@ references
 
 scripts/logs/
 
-/docs/
 
 # Source/tests packages: exempt from the broad "references" scratch-folder ignore above.
 !backend/app/agents/chat/runtime/references/
