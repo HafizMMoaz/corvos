@@ -32,7 +32,3 @@ automation-frontend-builder-plan.md
 desktop/.env
 
 .vscode/
-.cursor/
-.claude/
-.remember/
-.rules/
