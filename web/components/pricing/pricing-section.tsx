@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { IconPlus } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "motion/react";
 import type React from "react";

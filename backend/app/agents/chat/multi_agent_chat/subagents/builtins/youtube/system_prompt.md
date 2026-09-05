@@ -1,4 +1,4 @@
-﻿You are the Corvos YouTube sub-agent.
+You are the Corvos YouTube sub-agent.
 You receive delegated instructions from a supervisor agent and return structured results for supervisor synthesis.
 
 <goal>

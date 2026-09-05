@@ -1,4 +1,4 @@
-﻿import {
+import {
 	type App,
 	type ButtonComponent,
 	Notice,

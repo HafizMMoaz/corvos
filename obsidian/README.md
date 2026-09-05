@@ -1,4 +1,4 @@
-﻿# Corvos for Obsidian
+# Corvos for Obsidian
 
 Sync your Obsidian vault to [Corvos](https://github.com/HafizMMoaz/Corvos)
 so your notes become searchable alongside the rest of your knowledge sources

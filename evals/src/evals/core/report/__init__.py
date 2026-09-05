@@ -1,4 +1,4 @@
-﻿"""Report writer + section composition primitives. Lazy import."""
+"""Report writer + section composition primitives. Lazy import."""
 
 from __future__ import annotations
 

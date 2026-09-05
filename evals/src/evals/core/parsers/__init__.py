@@ -1,4 +1,4 @@
-﻿"""Direct parser invocations for the parser_compare benchmark.
+"""Direct parser invocations for the parser_compare benchmark.
 
 The Corvos backend exposes a single ``ETL_SERVICE`` env var that
 picks one parser globally; per-ingestion overrides are not on the

@@ -1,4 +1,4 @@
-﻿"""MIRAGE - secondary single-arm Corvos MCQ measurement.
+"""MIRAGE - secondary single-arm Corvos MCQ measurement.
 
 Source: https://github.com/Teddy-XiongGZ/MIRAGE, paper
 https://aclanthology.org/2024.findings-acl.372/. 7,663 questions

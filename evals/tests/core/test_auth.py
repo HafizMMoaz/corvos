@@ -1,4 +1,4 @@
-﻿"""Auth credential resolution + 401 refresh hook."""
+"""Auth credential resolution + 401 refresh hook."""
 
 from __future__ import annotations
 

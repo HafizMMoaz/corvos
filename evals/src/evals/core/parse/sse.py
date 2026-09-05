@@ -1,4 +1,4 @@
-﻿"""Minimal SSE consumer compatible with Corvos's wire format.
+"""Minimal SSE consumer compatible with Corvos's wire format.
 
 Corvos uses ``app/services/streaming/envelope/sse.py`` to frame events:
 

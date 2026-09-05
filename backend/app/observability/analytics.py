@@ -1,4 +1,4 @@
-﻿"""Server-side PostHog product analytics for Corvos.
+"""Server-side PostHog product analytics for Corvos.
 
 Opt-in, mirroring the OpenTelemetry bootstrap contract: when
 ``POSTHOG_API_KEY`` is unset every function here is a silent no-op, so it is

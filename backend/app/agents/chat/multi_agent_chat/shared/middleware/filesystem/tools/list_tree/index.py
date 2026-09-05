@@ -1,4 +1,4 @@
-﻿"""``list_tree`` factory: bounded recursive listing across cloud / desktop backends."""
+"""``list_tree`` factory: bounded recursive listing across cloud / desktop backends."""
 
 from __future__ import annotations
 

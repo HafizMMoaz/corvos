@@ -1,4 +1,4 @@
-﻿"""``stream_resume_chat`` - public entry point for a HITL resume turn.
+"""``stream_resume_chat`` - public entry point for a HITL resume turn.
 
 Slim composition layer over the per-concern modules in this folder and the
 building blocks under ``flows/shared/``. Mirrors ``stream_new_chat`` but:

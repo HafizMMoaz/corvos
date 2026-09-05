@@ -1,4 +1,4 @@
-﻿"""Real-graph contract: all-reject decisions route correctly across parallel subagents.
+"""Real-graph contract: all-reject decisions route correctly across parallel subagents.
 
 Heterogeneous routing is covered by ``test_parallel_heterogeneous_decisions``.
 This module pins the narrower edge case where **every** card on **every**

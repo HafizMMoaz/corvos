@@ -1,4 +1,4 @@
-﻿"""End-of-turn persistence for the cloud-mode Corvos filesystem.
+"""End-of-turn persistence for the cloud-mode Corvos filesystem.
 
 Runs ``aafter_agent`` once per turn (cloud only), committing staged folder
 creates, moves, writes/edits, and ``rm``/``rmdir`` to Postgres in one ordered

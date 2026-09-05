@@ -1,4 +1,4 @@
-﻿import { defineConfig, defineDocs, frontmatterSchema } from "fumadocs-mdx/config";
+import { defineConfig, defineDocs, frontmatterSchema } from "fumadocs-mdx/config";
 import lastModified from "fumadocs-mdx/plugins/last-modified";
 import { z } from "zod";
 

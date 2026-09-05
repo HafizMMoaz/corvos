@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Pure helpers for turning agent-facing virtual paths into human-friendly
  * chip labels.
  *

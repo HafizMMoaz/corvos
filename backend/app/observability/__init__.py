@@ -1,4 +1,4 @@
-﻿"""Corvos observability surface.
+"""Corvos observability surface.
 
 The single user-visible API right now is :mod:`otel`, which exposes a
 small wrapper around the optional ``opentelemetry`` instrumentation. The

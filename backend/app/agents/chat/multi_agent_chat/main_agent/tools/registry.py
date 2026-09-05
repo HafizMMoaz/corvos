@@ -1,4 +1,4 @@
-﻿"""SRP main-agent tool registry.
+"""SRP main-agent tool registry.
 
 The main agent exposes only a small, fixed set of Corvos tools to its LLM;
 connector integrations, MCP, and deliverables are delegated to ``task``

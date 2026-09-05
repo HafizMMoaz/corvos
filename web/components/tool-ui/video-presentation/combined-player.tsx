@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Audio } from "@remotion/media";
 import { Player } from "@remotion/player";

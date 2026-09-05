@@ -1,4 +1,4 @@
-﻿"""CSRF protection for ambient cookie-authenticated requests."""
+"""CSRF protection for ambient cookie-authenticated requests."""
 
 from __future__ import annotations
 

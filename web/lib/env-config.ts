@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Environment configuration for the frontend.
  *
  * Docker deployments use same-origin relative browser URLs behind Caddy.

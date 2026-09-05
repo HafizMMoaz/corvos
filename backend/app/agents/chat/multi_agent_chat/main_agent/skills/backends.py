@@ -1,4 +1,4 @@
-﻿"""Skills backends for Corvos.
+"""Skills backends for Corvos.
 
 Implements two minimal :class:`deepagents.backends.protocol.BackendProtocol`
 subclasses tailored for use with :class:`deepagents.middleware.skills.SkillsMiddleware`.

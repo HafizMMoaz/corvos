@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import NumberFlow from "@number-flow/react";
 import confetti from "canvas-confetti";

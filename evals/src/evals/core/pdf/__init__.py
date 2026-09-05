@@ -1,4 +1,4 @@
-﻿"""Domain-agnostic PDF rendering helper. Lazy import."""
+"""Domain-agnostic PDF rendering helper. Lazy import."""
 
 from __future__ import annotations
 

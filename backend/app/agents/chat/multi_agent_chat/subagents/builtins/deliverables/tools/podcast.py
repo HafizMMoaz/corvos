@@ -1,4 +1,4 @@
-﻿"""Factory for a podcast-generation tool.
+"""Factory for a podcast-generation tool.
 
 Creates the podcast and proposes its brief (language, voices, length) inline,
 then returns immediately with the row awaiting review. Everything after -

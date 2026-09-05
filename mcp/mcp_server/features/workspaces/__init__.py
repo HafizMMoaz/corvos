@@ -1,4 +1,4 @@
-﻿"""Search-space selector: discover workspaces and choose the active one.
+"""Search-space selector: discover workspaces and choose the active one.
 
 A workspace (the product calls it a "search space") scopes every other tool.
 These two tools let a client list what's available and pick one by name, so the

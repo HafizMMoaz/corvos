@@ -1,4 +1,4 @@
-﻿"""Strict Atlassian (Jira + Confluence) MCP OAuth/tool fakes for Playwright E2E.
+"""Strict Atlassian (Jira + Confluence) MCP OAuth/tool fakes for Playwright E2E.
 
 Jira and Confluence share one hosted Atlassian Rovo MCP server
 (``https://mcp.atlassian.com/v1/mcp``) and one OAuth surface. Because the MCP

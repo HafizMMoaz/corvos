@@ -1,4 +1,4 @@
-﻿"""
+"""
 OpenTelemetry instrumentation helpers for the Corvos agent stack.
 
 Goals

@@ -1,4 +1,4 @@
-﻿"""Real-graph contract: one parallel branch completes while a sibling pauses with HITL.
+"""Real-graph contract: one parallel branch completes while a sibling pauses with HITL.
 
 The two existing parallel-routing tests
 (``test_parallel_resume_command_keying`` and

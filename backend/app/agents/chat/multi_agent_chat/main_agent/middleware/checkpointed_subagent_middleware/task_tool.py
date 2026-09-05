@@ -1,4 +1,4 @@
-﻿"""Build the ``task`` tool that invokes subagents with HITL bridging.
+"""Build the ``task`` tool that invokes subagents with HITL bridging.
 
 The tool's body is the only place where the parent and the subagent meet at
 runtime: it reads the parent's stashed resume value, decides whether to send

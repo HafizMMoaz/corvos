@@ -1,4 +1,4 @@
-﻿"""Query Corvos for the status of every MMLongBench PDF in scope.
+"""Query Corvos for the status of every MMLongBench PDF in scope.
 
 Uses the existing Corvos documents client to query
 ``/documents/status?document_ids=...`` for both the known-existing 5

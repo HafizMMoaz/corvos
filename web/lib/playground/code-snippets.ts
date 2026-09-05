@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Code-example generators for the playground API reference. One snippet per
  * popular language, all derived from the same endpoint URL + example payload
  * so they can't drift from each other.

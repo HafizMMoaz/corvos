@@ -1,4 +1,4 @@
-﻿"""Google Drive indexer using the shared IndexingPipelineService.
+"""Google Drive indexer using the shared IndexingPipelineService.
 
 File-level pre-filter (_should_skip_file) handles md5/modifiedTime
 checks and rename-only detection.  download_and_extract_content()

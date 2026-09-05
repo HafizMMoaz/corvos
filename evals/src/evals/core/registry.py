@@ -1,4 +1,4 @@
-﻿"""Suite + Benchmark protocols and the global registry.
+"""Suite + Benchmark protocols and the global registry.
 
 The extensibility seam: ``core.cli`` walks ``evals.suites`` on
 import, which auto-imports every benchmark subpackage, which calls

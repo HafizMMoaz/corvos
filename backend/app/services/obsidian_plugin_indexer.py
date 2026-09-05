@@ -1,4 +1,4 @@
-﻿"""
+"""
 Obsidian plugin indexer service.
 
 Bridges the Corvos Obsidian plugin's HTTP payloads

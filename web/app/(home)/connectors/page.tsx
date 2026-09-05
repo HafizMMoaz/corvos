@@ -1,4 +1,4 @@
-﻿import { ArrowRight, Plug, Server } from "lucide-react";
+import { ArrowRight, Plug, Server } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllConnectors } from "@/lib/connectors-marketing";

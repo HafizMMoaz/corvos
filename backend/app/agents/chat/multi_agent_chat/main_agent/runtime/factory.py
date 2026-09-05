@@ -1,4 +1,4 @@
-﻿"""Async factory: tools, system prompt, MCP buckets for subagents, then sync graph compile."""
+"""Async factory: tools, system prompt, MCP buckets for subagents, then sync graph compile."""
 
 from __future__ import annotations
 

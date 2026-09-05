@@ -1,4 +1,4 @@
-﻿"""``google_search`` route: ``CorvosSubagentSpec`` builder for deepagents."""
+"""``google_search`` route: ``CorvosSubagentSpec`` builder for deepagents."""
 
 from __future__ import annotations
 

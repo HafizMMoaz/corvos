@@ -1,4 +1,4 @@
-﻿"""Manual functional e2e for the Google Maps scraper (app/proprietary/platforms/google_maps).
+"""Manual functional e2e for the Google Maps scraper (app/proprietary/platforms/google_maps).
 
 Run from the backend directory:
     cd backend

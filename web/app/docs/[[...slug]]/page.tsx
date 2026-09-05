@@ -1,4 +1,4 @@
-﻿import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
+import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
 import { cache } from "react";
 import { source } from "@/lib/source";

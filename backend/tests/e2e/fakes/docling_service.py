@@ -1,4 +1,4 @@
-﻿"""Stub DoclingService.process_document for E2E.
+"""Stub DoclingService.process_document for E2E.
 
 The real ``DoclingService.process_document`` calls
 ``DocumentConverter.convert(file_path)`` which lazily downloads the

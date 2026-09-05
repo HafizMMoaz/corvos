@@ -1,4 +1,4 @@
-﻿"""Shared fixtures for Google unification integration tests."""
+"""Shared fixtures for Google unification integration tests."""
 
 from __future__ import annotations
 

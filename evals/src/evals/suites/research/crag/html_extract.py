@@ -1,4 +1,4 @@
-﻿"""HTML → markdown for CRAG pages, with boilerplate removal.
+"""HTML → markdown for CRAG pages, with boilerplate removal.
 
 Each CRAG page is a *full* HTML document (nav, ads, recommended-for-
 you, footer, ...). Without removing that boilerplate, retrieval over

@@ -1,4 +1,4 @@
-﻿"""Google Maps scraper tools: places and reviews."""
+"""Google Maps scraper tools: places and reviews."""
 
 from __future__ import annotations
 

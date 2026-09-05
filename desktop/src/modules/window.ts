@@ -1,4 +1,4 @@
-﻿import { app, BrowserWindow, shell, session } from 'electron';
+import { app, BrowserWindow, shell, session } from 'electron';
 import path from 'path';
 import { trackEvent } from './analytics';
 import { showErrorDialog } from './errors';

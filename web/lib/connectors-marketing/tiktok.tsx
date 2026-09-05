@@ -1,4 +1,4 @@
-﻿import { IconBrandTiktok } from "@tabler/icons-react";
+import { IconBrandTiktok } from "@tabler/icons-react";
 import type { ConnectorPageContent } from "./types";
 
 export const tiktok: ConnectorPageContent = {

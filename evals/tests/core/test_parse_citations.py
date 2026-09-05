@@ -1,4 +1,4 @@
-﻿"""Parity tests for the citation regex.
+"""Parity tests for the citation regex.
 
 Each row mirrors a case from the canonical TS reference at
 ``web/lib/citations/citation-parser.ts``. If a future PR

@@ -1,4 +1,4 @@
-﻿"""
+"""
 Composio Connector OAuth Routes.
 
 Handles OAuth flow for Composio-based integrations (Google Drive, Gmail, Calendar, etc.).

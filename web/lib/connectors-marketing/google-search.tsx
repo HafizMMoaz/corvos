@@ -1,4 +1,4 @@
-﻿import { IconBrandGoogle } from "@tabler/icons-react";
+import { IconBrandGoogle } from "@tabler/icons-react";
 import type { ConnectorPageContent } from "./types";
 
 export const googleSearch: ConnectorPageContent = {

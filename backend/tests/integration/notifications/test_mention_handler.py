@@ -1,4 +1,4 @@
-﻿"""Behavior guard for the @mention notification handler."""
+"""Behavior guard for the @mention notification handler."""
 
 from __future__ import annotations
 

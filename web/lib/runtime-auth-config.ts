@@ -1,4 +1,4 @@
-﻿export const RUNTIME_AUTH_TYPE_COOKIE_NAME = "corvos_auth_type";
+export const RUNTIME_AUTH_TYPE_COOKIE_NAME = "corvos_auth_type";
 
 export type RuntimeAuthUiMode = "GOOGLE" | "LOCAL";
 

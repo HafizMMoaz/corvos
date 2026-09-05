@@ -1,4 +1,4 @@
-﻿"""Corvos filesystem middleware (multi-agent flavour)."""
+"""Corvos filesystem middleware (multi-agent flavour)."""
 
 from __future__ import annotations
 

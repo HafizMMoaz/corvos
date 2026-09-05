@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Crop, Eye, EyeOff, Rocket, RotateCcw, Zap } from "lucide-react";
 import Image from "next/image";

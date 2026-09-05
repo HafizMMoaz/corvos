@@ -1,4 +1,4 @@
-﻿import icon from "data-base64:~assets/icon.png";
+import icon from "data-base64:~assets/icon.png";
 import { ReloadIcon } from "@radix-ui/react-icons";
 
 const Loading = () => {

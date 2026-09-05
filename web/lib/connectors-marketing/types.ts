@@ -1,4 +1,4 @@
-﻿import type { ComponentType } from "react";
+import type { ComponentType } from "react";
 
 /** One extractable data point, rendered in the "What you can extract" grid. */
 export interface ExtractField {

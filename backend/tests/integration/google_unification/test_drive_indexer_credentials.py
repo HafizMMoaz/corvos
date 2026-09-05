@@ -1,4 +1,4 @@
-﻿"""Integration tests: Drive indexer client + credential resolution.
+"""Integration tests: Drive indexer client + credential resolution.
 
 Locks in the post-cea8618 architectural contract:
 

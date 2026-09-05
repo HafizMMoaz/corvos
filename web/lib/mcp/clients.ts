@@ -1,4 +1,4 @@
-﻿/**
+/**
  * MCP client setup catalog: one entry per popular agent, each with a hosted
  * (remote) snippet and a self-host (stdio) snippet, plus the exact config file
  * and steps. Shared by the marketing /mcp-server page and the API playground so

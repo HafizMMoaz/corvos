@@ -1,4 +1,4 @@
-﻿"""Pure-function metric primitives. Lazy imports."""
+"""Pure-function metric primitives. Lazy imports."""
 
 from __future__ import annotations
 

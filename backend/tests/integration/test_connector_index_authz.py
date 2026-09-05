@@ -1,4 +1,4 @@
-﻿"""Cross-workspace authorization on the connector index endpoint.
+"""Cross-workspace authorization on the connector index endpoint.
 
 ``POST /search-source-connectors/{connector_id}/index?workspace_id=<X>`` must
 authorize against the **connector's own** ``workspace_id`` (matching the

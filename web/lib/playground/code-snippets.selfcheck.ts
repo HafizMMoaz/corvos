@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Runnable self-check for the API-reference snippet generator. No test
  * framework - run with: ``npx tsx lib/playground/code-snippets.selfcheck.ts``
  * Exits non-zero on the first failed assertion.

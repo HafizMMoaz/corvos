@@ -1,4 +1,4 @@
-﻿"""Argparse CLI for ``python -m evals``.
+"""Argparse CLI for ``python -m evals``.
 
 Subcommands:
 

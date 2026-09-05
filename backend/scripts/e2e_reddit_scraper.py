@@ -1,4 +1,4 @@
-﻿"""Manual functional e2e for the Reddit scraper (app/proprietary/platforms/reddit).
+"""Manual functional e2e for the Reddit scraper (app/proprietary/platforms/reddit).
 
 Run from the backend directory:
     cd backend

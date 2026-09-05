@@ -1,4 +1,4 @@
-﻿"""``GET /api/threads/{thread_id}/actions``: list agent action-log entries.
+"""``GET /api/threads/{thread_id}/actions``: list agent action-log entries.
 
 Pairs with ``POST /api/threads/{thread_id}/revert/{action_id}`` (see
 ``agent_revert_route.py``). The action log is the read-side surface for

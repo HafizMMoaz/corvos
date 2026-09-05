@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { ArrowUp, ChevronRightIcon, Plus } from "lucide-react";
 import { useRouter } from "next/navigation";

@@ -1,4 +1,4 @@
-﻿import { shell } from 'electron';
+import { shell } from 'electron';
 import crypto from 'node:crypto';
 import http from 'node:http';
 import { writeOAuthPage } from './oauth-page';

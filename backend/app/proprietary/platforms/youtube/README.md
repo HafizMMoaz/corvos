@@ -1,4 +1,4 @@
-﻿# YouTube Scraper
+# YouTube Scraper
 
 A platform-native YouTube scraper that is a **drop-in clone of the Apify
 "YouTube Scraper" and "YouTube Comments Scraper" actors** - same input surface,

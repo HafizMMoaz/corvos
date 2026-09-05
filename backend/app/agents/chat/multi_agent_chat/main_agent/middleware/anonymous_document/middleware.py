@@ -1,4 +1,4 @@
-﻿"""Lightweight middleware that loads the anonymous-session document into state.
+"""Lightweight middleware that loads the anonymous-session document into state.
 
 Anonymous chats receive a single uploaded document via Redis (no DB row,
 read-only). This middleware loads it once on the first turn into

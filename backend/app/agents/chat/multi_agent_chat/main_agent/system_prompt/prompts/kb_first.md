@@ -1,4 +1,4 @@
-﻿<knowledge_base_first>
+<knowledge_base_first>
 CRITICAL - ground factual answers in what you actually receive this turn:
 - **live platform data** via the market specialists -
   `task(reddit, ...)`, `task(youtube, ...)`, `task(instagram, ...)`,

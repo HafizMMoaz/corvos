@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { ArrowUp, Loader2, Square } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";

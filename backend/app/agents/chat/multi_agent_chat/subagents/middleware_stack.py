@@ -1,4 +1,4 @@
-﻿"""Shared middleware stack threaded into every subagent.
+"""Shared middleware stack threaded into every subagent.
 
 Mirrors ``middleware/stack.py`` (the orchestrator's middleware stack) but
 exposes its contents as a dict keyed by purpose so specialists can pick

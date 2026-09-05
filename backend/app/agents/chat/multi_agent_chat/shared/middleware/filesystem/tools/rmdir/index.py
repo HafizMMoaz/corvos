@@ -1,4 +1,4 @@
-﻿"""``rmdir`` factory: resolve + validate the path, then dispatch to cloud / desktop."""
+"""``rmdir`` factory: resolve + validate the path, then dispatch to cloud / desktop."""
 
 from __future__ import annotations
 

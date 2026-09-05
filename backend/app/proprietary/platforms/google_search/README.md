@@ -1,4 +1,4 @@
-﻿# Google Search Results Scraper
+# Google Search Results Scraper
 
 A platform-native Google SERP scraper intended as a **drop-in clone of the
 Apify "Google Search Results Scraper" actor** - same input surface, same

@@ -1,4 +1,4 @@
-﻿"""Behavior guard for the comment-reply notification handler."""
+"""Behavior guard for the comment-reply notification handler."""
 
 from __future__ import annotations
 

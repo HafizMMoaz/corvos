@@ -1,4 +1,4 @@
-﻿"""``edit_file`` factory: lazy-load KB doc, enforce cloud namespace, dispatch to backend."""
+"""``edit_file`` factory: lazy-load KB doc, enforce cloud namespace, dispatch to backend."""
 
 from __future__ import annotations
 

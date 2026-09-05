@@ -1,4 +1,4 @@
-﻿"""System prompt for the drafting sub-LLM inside ``create_automation``.
+"""System prompt for the drafting sub-LLM inside ``create_automation``.
 
 Converts a natural-language ``intent`` into a structured ``AutomationCreate``
 JSON object. That object becomes the payload the HITL approval card surfaces.

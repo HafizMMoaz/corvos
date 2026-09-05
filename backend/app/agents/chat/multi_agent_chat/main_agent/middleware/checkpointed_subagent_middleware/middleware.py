@@ -1,4 +1,4 @@
-﻿"""SubAgent middleware that compiles each subagent against the parent checkpointer."""
+"""SubAgent middleware that compiles each subagent against the parent checkpointer."""
 
 from __future__ import annotations
 

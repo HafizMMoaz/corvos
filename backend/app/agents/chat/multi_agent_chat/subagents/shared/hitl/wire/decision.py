@@ -1,4 +1,4 @@
-﻿"""Parse the langchain HITL resume envelope into a typed decision.
+"""Parse the langchain HITL resume envelope into a typed decision.
 
 Both self-gated approvals (``request_approval``) and middleware-gated paths
 (``PermissionMiddleware``) receive the user's reply through langgraph's

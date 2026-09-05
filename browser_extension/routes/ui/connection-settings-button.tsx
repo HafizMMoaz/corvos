@@ -1,4 +1,4 @@
-﻿import { GearIcon } from "@radix-ui/react-icons";
+import { GearIcon } from "@radix-ui/react-icons";
 import { useEffect, useState } from "react";
 import { Button } from "~/routes/ui/button";
 import {

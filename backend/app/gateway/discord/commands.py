@@ -1,4 +1,4 @@
-﻿"""Discord command/onboarding handlers."""
+"""Discord command/onboarding handlers."""
 
 from __future__ import annotations
 

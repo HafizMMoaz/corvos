@@ -1,4 +1,4 @@
-﻿"""parser_compare runner - six-arm head-to-head on n shared questions.
+"""parser_compare runner - six-arm head-to-head on n shared questions.
 
 For each (PDF, question) pair we issue six LLM calls (all sonnet 4.5):
 

@@ -1,4 +1,4 @@
-﻿"""Translate the unified langchain HITL envelope into permission-domain semantics.
+"""Translate the unified langchain HITL envelope into permission-domain semantics.
 
 ``PermissionMiddleware`` works with the canonical shape
 ``{decision_type: "once" | "approve_always" | "reject", feedback?: str, edited_args?: dict}``.

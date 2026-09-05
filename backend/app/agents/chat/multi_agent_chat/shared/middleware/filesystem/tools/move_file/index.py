@@ -1,4 +1,4 @@
-﻿"""``move_file`` factory: dispatches cloud (staged) vs desktop (direct disk) moves."""
+"""``move_file`` factory: dispatches cloud (staged) vs desktop (direct disk) moves."""
 
 from __future__ import annotations
 

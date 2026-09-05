@@ -1,4 +1,4 @@
-﻿"""Inspect what the first 30 MMLongBench-Doc PDFs would look like for scoping.
+"""Inspect what the first 30 MMLongBench-Doc PDFs would look like for scoping.
 
 Run from evals/ root via:
     python scripts/inspect_first30.py

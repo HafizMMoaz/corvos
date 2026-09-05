@@ -1,4 +1,4 @@
-﻿import { IconBrandInstagram } from "@tabler/icons-react";
+import { IconBrandInstagram } from "@tabler/icons-react";
 import type { ConnectorPageContent } from "./types";
 
 export const instagram: ConnectorPageContent = {

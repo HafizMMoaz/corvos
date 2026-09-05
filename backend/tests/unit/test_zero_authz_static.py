@@ -1,4 +1,4 @@
-﻿"""Static guards for Zero authorization wiring."""
+"""Static guards for Zero authorization wiring."""
 
 from __future__ import annotations
 

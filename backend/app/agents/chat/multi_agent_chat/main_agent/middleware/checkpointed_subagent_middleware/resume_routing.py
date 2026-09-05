@@ -1,4 +1,4 @@
-﻿"""Route a flat ``decisions`` list to per-``tool_call_id`` resume payloads.
+"""Route a flat ``decisions`` list to per-``tool_call_id`` resume payloads.
 
 The frontend submits decisions in the same order the SSE stream emitted
 approval cards. When multiple parallel subagents are paused, the backend uses

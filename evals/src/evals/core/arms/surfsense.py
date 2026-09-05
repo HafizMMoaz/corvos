@@ -1,4 +1,4 @@
-﻿"""Corvos arm: per-question fresh thread + ``/api/v1/new_chat`` stream.
+"""Corvos arm: per-question fresh thread + ``/api/v1/new_chat`` stream.
 
 For every question:
 

@@ -1,4 +1,4 @@
-﻿"""Shared strict MCP streamable-HTTP runtime fake for E2E tests."""
+"""Shared strict MCP streamable-HTTP runtime fake for E2E tests."""
 
 from __future__ import annotations
 

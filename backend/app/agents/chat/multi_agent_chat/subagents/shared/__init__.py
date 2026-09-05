@@ -1,4 +1,4 @@
-﻿"""Cross-slice helpers for route subagents."""
+"""Cross-slice helpers for route subagents."""
 
 from __future__ import annotations
 

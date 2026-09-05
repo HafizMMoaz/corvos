@@ -1,4 +1,4 @@
-﻿- `create_automation` - Draft and author a new automation. You describe the
+- `create_automation` - Draft and author a new automation. You describe the
   user's intent; a focused drafter inside the tool turns it into the full
   automation JSON; the user sees a preview on an approval card and chooses
   approve or reject. All three phases happen in a single tool call.

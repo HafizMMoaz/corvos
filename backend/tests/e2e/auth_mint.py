@@ -1,4 +1,4 @@
-﻿"""Test-only token mint endpoint for the E2E backend entrypoint.
+"""Test-only token mint endpoint for the E2E backend entrypoint.
 
 Mounted by ``tests/e2e/run_backend.py`` so Playwright can authenticate
 the seeded e2e user without hitting ``/auth/jwt/login`` (rate-limited

@@ -1,4 +1,4 @@
-﻿"""Tests for the desktop-mode safety ruleset.
+"""Tests for the desktop-mode safety ruleset.
 
 In desktop mode the agent operates against the user's real disk with no
 revision history, so destructive filesystem operations must require

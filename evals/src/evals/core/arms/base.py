@@ -1,4 +1,4 @@
-﻿"""Arm protocol + the value types every arm exchanges with a runner.
+"""Arm protocol + the value types every arm exchanges with a runner.
 
 An ``Arm`` is "one way to answer one question". Two ship in this PR:
 

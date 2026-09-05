@@ -1,4 +1,4 @@
-﻿"""Server-side message persistence helpers for the streaming chat agent.
+"""Server-side message persistence helpers for the streaming chat agent.
 
 Historically the streaming task (``stream_new_chat``/``stream_resume_chat``)
 left ``new_chat_messages`` empty and relied on the frontend to round-trip

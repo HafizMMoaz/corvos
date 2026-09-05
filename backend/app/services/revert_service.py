@@ -1,4 +1,4 @@
-﻿"""Revert service for the Corvos agent action log.
+"""Revert service for the Corvos agent action log.
 
 Implements the actual revert workflow used by
 ``POST /api/threads/{thread_id}/revert/{action_id}``. The route handler is a

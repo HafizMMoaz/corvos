@@ -1,4 +1,4 @@
-﻿"""force zero-cache to resync after upgrading to Zero >= 1.0
+"""force zero-cache to resync after upgrading to Zero >= 1.0
 
 Re-emits the current ``zero_publication`` shape using
 ``ALTER PUBLICATION ... SET TABLE`` wrapped in

@@ -1,4 +1,4 @@
-﻿"""
+"""
 ``_noop`` provider-compatibility tool + injection middleware.
 
 Some providers (LiteLLM, Bedrock, Copilot) 400 when a model call has

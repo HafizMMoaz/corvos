@@ -1,4 +1,4 @@
-﻿"""``stream_new_chat`` - public entry point for a fresh chat turn.
+"""``stream_new_chat`` - public entry point for a fresh chat turn.
 
 Slim composition layer over the per-concern modules in this folder and the
 building blocks under ``flows/shared/``. Each phase corresponds to a numbered

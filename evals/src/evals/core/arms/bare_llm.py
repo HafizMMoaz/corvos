@@ -1,4 +1,4 @@
-﻿"""Bare-LLM arm: chat completion with prompt-only input, no retrieval.
+"""Bare-LLM arm: chat completion with prompt-only input, no retrieval.
 
 Pairs with ``CorvosArm`` for any benchmark that wants to measure
 "how much does the model already know without RAG?". For factuality /

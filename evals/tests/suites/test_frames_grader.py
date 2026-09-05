@@ -1,4 +1,4 @@
-﻿"""Tests for the FRAMES grader's deterministic shortcut.
+"""Tests for the FRAMES grader's deterministic shortcut.
 
 The LLM-judge fallback is excluded here (network call); we just
 confirm the rule-based path picks up obvious correct/incorrect

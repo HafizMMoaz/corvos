@@ -1,4 +1,4 @@
-﻿"""FRAMES runner - Bare LLM (no retrieval) vs Corvos (multi-hop RAG).
+"""FRAMES runner - Bare LLM (no retrieval) vs Corvos (multi-hop RAG).
 
 Two arms run paired on every question in the sample:
 

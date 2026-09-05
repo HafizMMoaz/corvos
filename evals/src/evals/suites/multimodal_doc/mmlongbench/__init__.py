@@ -1,4 +1,4 @@
-﻿"""MMLongBench-Doc - head-to-head Native PDF (vision) vs Corvos (vision RAG).
+"""MMLongBench-Doc - head-to-head Native PDF (vision) vs Corvos (vision RAG).
 
 Source: https://huggingface.co/datasets/yubo2333/MMLongBench-Doc
 Paper:  https://arxiv.org/abs/2407.01523 (NeurIPS 2024 D&B Track)

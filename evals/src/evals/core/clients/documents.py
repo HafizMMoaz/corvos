@@ -1,4 +1,4 @@
-﻿"""Client for ``/api/v1/documents/{fileupload,status,{id}/chunks}``.
+"""Client for ``/api/v1/documents/{fileupload,status,{id}/chunks}``.
 
 Verified against:
 

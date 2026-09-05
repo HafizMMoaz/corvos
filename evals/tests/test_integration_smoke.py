@@ -1,4 +1,4 @@
-﻿"""Opt-in integration smoke against ``http://localhost:8000``.
+"""Opt-in integration smoke against ``http://localhost:8000``.
 
 Run with ``pytest -m integration``. Skipped by default. Touches the
 real backend - requires it to be reachable, OPENROUTER_API_KEY

@@ -1,4 +1,4 @@
-﻿"""Build the per-invocation ``CorvosContextSchema`` for a new-chat turn.
+"""Build the per-invocation ``CorvosContextSchema`` for a new-chat turn.
 
 Carries the per-turn read inputs that middlewares read via
 ``runtime.context.*`` instead of from their ``__init__`` closures, so the same

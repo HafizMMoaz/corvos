@@ -1,4 +1,4 @@
-﻿"""LlamaParse (LlamaCloud) parser - eval-side mirror of the backend.
+"""LlamaParse (LlamaCloud) parser - eval-side mirror of the backend.
 
 Calls ``LlamaParse.aparse`` with one of two ``parse_mode`` slugs
 depending on ``processing_mode``:

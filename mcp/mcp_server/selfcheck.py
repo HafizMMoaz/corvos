@@ -1,4 +1,4 @@
-﻿"""Offline smoke check: every tool registers with a usable name, doc, and schema.
+"""Offline smoke check: every tool registers with a usable name, doc, and schema.
 
 Runs without a backend or network - it only assembles the server and inspects
 the tool manifest the client would see. Fails loudly if a tool is missing, its

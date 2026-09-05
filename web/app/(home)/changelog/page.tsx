@@ -1,4 +1,4 @@
-﻿import { loader } from "fumadocs-core/source";
+import { loader } from "fumadocs-core/source";
 import type { MDXComponents } from "mdx/types";
 import type { Metadata } from "next";
 import type { ComponentType } from "react";

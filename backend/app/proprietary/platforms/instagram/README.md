@@ -1,4 +1,4 @@
-﻿# Instagram scraper (anonymous)
+# Instagram scraper (anonymous)
 
 Platform-native Instagram scraper. **Anonymous-only** and browser-free: every
 flow stays on the cheap HTTP tier (`app.utils.proxy` + `scrapling`), and profile

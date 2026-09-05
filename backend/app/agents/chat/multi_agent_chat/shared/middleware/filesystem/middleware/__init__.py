@@ -1,4 +1,4 @@
-﻿"""Corvos filesystem middleware: class + focused-responsibility helpers."""
+"""Corvos filesystem middleware: class + focused-responsibility helpers."""
 
 from __future__ import annotations
 

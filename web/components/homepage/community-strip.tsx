@@ -1,4 +1,4 @@
-﻿import { IconBrandDiscord, IconBrandGithub, IconBrandReddit } from "@tabler/icons-react";
+import { IconBrandDiscord, IconBrandGithub, IconBrandReddit } from "@tabler/icons-react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Reveal } from "@/components/connectors-marketing/reveal";

@@ -1,4 +1,4 @@
-﻿"""Reducers and sentinels for Corvos filesystem state.
+"""Reducers and sentinels for Corvos filesystem state.
 
 These reducers back the extra state fields used by the cloud-mode filesystem
 agent (`cwd`, `staged_dirs`, `pending_moves`, `dirty_paths`, `doc_id_by_path`,

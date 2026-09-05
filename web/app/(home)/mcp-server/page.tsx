@@ -1,4 +1,4 @@
-﻿import { IconBrandGithub } from "@tabler/icons-react";
+import { IconBrandGithub } from "@tabler/icons-react";
 import { ArrowRight, Check, Database, KeyRound, Server, TerminalSquare } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";

@@ -1,4 +1,4 @@
-﻿"""Sandbox-execution helpers for ``execute_code``.
+"""Sandbox-execution helpers for ``execute_code``.
 
 Wraps user-supplied code in a heredoc and dispatches it to the Daytona
 sandbox associated with the current chat thread, with a single retry on

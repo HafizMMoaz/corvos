@@ -1,4 +1,4 @@
-﻿"""Manual functional e2e for the Indeed scraper (app/proprietary/platforms/indeed_jobs).
+"""Manual functional e2e for the Indeed scraper (app/proprietary/platforms/indeed_jobs).
 
 Run from the backend directory:
     cd backend

@@ -1,4 +1,4 @@
-﻿"""Synthesize HITL decisions for every pending interrupt (approve-all or reject-all)."""
+"""Synthesize HITL decisions for every pending interrupt (approve-all or reject-all)."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿"""Tests for pure observability helper functions."""
+"""Tests for pure observability helper functions."""
 
 from __future__ import annotations
 

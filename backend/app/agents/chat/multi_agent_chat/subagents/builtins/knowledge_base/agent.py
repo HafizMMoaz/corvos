@@ -1,4 +1,4 @@
-﻿"""``knowledge_base`` route: full and read-only ``CorvosSubagentSpec`` builders.
+"""``knowledge_base`` route: full and read-only ``CorvosSubagentSpec`` builders.
 
 KB owns its destructive-FS approval ruleset (:data:`KB_RULESET`); rules
 are layered into KB's :class:`PermissionMiddleware` (built inside

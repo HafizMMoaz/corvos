@@ -1,4 +1,4 @@
-﻿"""
+"""
 Wildcard pattern matching + rule evaluation for the Corvos permission system.
 
 Ported from OpenCode's ``packages/opencode/src/permission/evaluate.ts`` and

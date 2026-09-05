@@ -1,4 +1,4 @@
-﻿"""Deterministic embedding fakes for E2E.
+"""Deterministic embedding fakes for E2E.
 
 Mirrors the existing `patched_embed_texts` fixture in
 `backend/tests/integration/conftest.py`:

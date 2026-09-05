@@ -1,4 +1,4 @@
-﻿"""Slice the parser_compare raw.jsonl for the n=171 run.
+"""Slice the parser_compare raw.jsonl for the n=171 run.
 
 Reports per-arm:
   * tokens & cost stats (input/output mean, $/Q distribution)

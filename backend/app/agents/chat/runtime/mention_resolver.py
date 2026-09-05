@@ -1,4 +1,4 @@
-﻿"""Resolve @-mention chips to canonical virtual paths and substitute the
+"""Resolve @-mention chips to canonical virtual paths and substitute the
 user-visible ``@title`` tokens with backtick-wrapped paths in the prompt
 the agent sees.
 

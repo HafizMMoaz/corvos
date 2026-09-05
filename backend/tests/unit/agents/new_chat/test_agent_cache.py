@@ -1,4 +1,4 @@
-﻿"""Regression tests for the compiled-agent cache.
+"""Regression tests for the compiled-agent cache.
 
 Covers the cache primitive itself (TTL, LRU, in-flight de-duplication,
 build-failure non-caching) and the cache-key signature helpers that

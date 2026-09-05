@@ -1,4 +1,4 @@
-﻿"""``walmart`` route: ``CorvosSubagentSpec`` builder for deepagents."""
+"""``walmart`` route: ``CorvosSubagentSpec`` builder for deepagents."""
 
 from __future__ import annotations
 

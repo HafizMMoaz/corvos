@@ -1,4 +1,4 @@
-﻿import { ArrowRight, Code2, Megaphone } from "lucide-react";
+import { ArrowRight, Code2, Megaphone } from "lucide-react";
 import Link from "next/link";
 import { Reveal } from "@/components/connectors-marketing/reveal";
 import { UseCaseArt, type UseCaseArtVariant } from "@/components/homepage/use-case-art";

@@ -1,4 +1,4 @@
-﻿"""Prompt templates for the three input modalities in parser_compare.
+"""Prompt templates for the three input modalities in parser_compare.
 
 We deliberately reuse the *same* core question framing as
 ``mmlongbench/prompt.py`` so byte-identical questions reach all six

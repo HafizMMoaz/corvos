@@ -1,4 +1,4 @@
-﻿"""Custom OpenTelemetry metrics for Corvos.
+"""Custom OpenTelemetry metrics for Corvos.
 
 This module owns all Corvos-specific metric instruments. Callers use the
 small helper functions below instead of constructing instruments directly so

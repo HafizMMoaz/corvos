@@ -1,4 +1,4 @@
-﻿"""Resume side-channel is keyed per ``tool_call_id`` so parallel siblings can resume independently."""
+"""Resume side-channel is keyed per ``tool_call_id`` so parallel siblings can resume independently."""
 
 from __future__ import annotations
 

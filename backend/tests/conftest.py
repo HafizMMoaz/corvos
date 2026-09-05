@@ -1,4 +1,4 @@
-﻿"""Root conftest - shared fixtures available to all test modules."""
+"""Root conftest - shared fixtures available to all test modules."""
 
 from __future__ import annotations
 

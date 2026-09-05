@@ -1,4 +1,4 @@
-﻿"""Module entry point: ``python -m evals ...``.
+"""Module entry point: ``python -m evals ...``.
 
 Delegates to ``core.cli.main``. ``core.cli`` lazily imports
 ``evals.suites`` so every benchmark gets a chance to register

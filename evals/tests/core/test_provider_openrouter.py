@@ -1,4 +1,4 @@
-﻿"""respx-mocked tests for the OpenRouter PDF provider."""
+"""respx-mocked tests for the OpenRouter PDF provider."""
 
 from __future__ import annotations
 

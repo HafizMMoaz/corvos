@@ -1,4 +1,4 @@
-﻿import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Reveal } from "@/components/connectors-marketing/reveal";
 import { MarketingSection } from "@/components/marketing/section";

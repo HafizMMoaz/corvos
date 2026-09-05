@@ -1,4 +1,4 @@
-﻿"""Runtime configuration, read once from the environment.
+"""Runtime configuration, read once from the environment.
 
 Secrets never live in code or client config files - the client (Cursor/Claude)
 passes them as environment variables when it launches this server (see README).

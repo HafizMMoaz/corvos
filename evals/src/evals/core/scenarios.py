@@ -1,4 +1,4 @@
-﻿"""Shared scenario formatting helpers for head-to-head benchmark reports.
+"""Shared scenario formatting helpers for head-to-head benchmark reports.
 
 The scenario chosen at ``setup`` time (``head-to-head``, ``symmetric-cheap``,
 ``cost-arbitrage``) materially changes how a head-to-head report should be

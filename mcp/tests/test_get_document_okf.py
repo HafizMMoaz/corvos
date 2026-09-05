@@ -1,4 +1,4 @@
-﻿"""corvos_get_document round-trips through the real tool registration.
+"""corvos_get_document round-trips through the real tool registration.
 
 The markdown form must ask the backend for the OKF concept via content
 negotiation (``Accept: text/markdown``) and pass it through untouched; the JSON

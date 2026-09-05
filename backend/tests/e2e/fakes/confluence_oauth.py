@@ -1,4 +1,4 @@
-﻿"""Strict Confluence OAuth fakes for Playwright E2E."""
+"""Strict Confluence OAuth fakes for Playwright E2E."""
 
 from __future__ import annotations
 

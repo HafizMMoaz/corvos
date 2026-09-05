@@ -1,4 +1,4 @@
-﻿"""
+"""
 OpenTelemetry span middleware for the Corvos ``new_chat`` agent.
 
 Wraps both ``model.call`` (LLM invocations) and ``tool.call`` (tool

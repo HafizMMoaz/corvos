@@ -1,4 +1,4 @@
-﻿"""Tests for the CRAG dataset loader (parser + sampling).
+"""Tests for the CRAG dataset loader (parser + sampling).
 
 The full bz2 download is excluded - these tests synthesise a tiny
 JSONL-bz2 in a tmp dir and verify the parser / stratified-sampler

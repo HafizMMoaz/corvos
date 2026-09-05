@@ -1,4 +1,4 @@
-﻿# Playwright E2E Suite
+# Playwright E2E Suite
 
 End-to-end tests for the full Corvos stack (Next.js + FastAPI +
 Celery + Postgres + Redis). Designed to scale from one connector

@@ -1,4 +1,4 @@
-﻿"""External LLM providers (used by the native arm).
+"""External LLM providers (used by the native arm).
 
 Lazy imports so the Corvos-only path doesn't transitively load the
 OpenRouter client until something actually constructs ``OpenRouterPdfProvider``.

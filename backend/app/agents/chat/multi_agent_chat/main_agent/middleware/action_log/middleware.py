@@ -1,4 +1,4 @@
-﻿"""Append-only action-log middleware for the Corvos agent.
+"""Append-only action-log middleware for the Corvos agent.
 
 Wraps every tool call and writes a row to :class:`~app.db.AgentActionLog`
 after the tool returns. Tools opt into reversibility via a ``reverse``

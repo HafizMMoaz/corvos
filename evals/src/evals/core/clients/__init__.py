@@ -1,4 +1,4 @@
-﻿"""HTTP clients for the Corvos API. All share one ``httpx.AsyncClient``."""
+"""HTTP clients for the Corvos API. All share one ``httpx.AsyncClient``."""
 
 from __future__ import annotations
 

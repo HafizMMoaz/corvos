@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { ApiSample } from "@/lib/connectors-marketing/types";

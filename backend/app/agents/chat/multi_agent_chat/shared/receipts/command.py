@@ -1,4 +1,4 @@
-﻿"""Helper for wrapping a tool result with a Receipt in a ``Command(update=...)``.
+"""Helper for wrapping a tool result with a Receipt in a ``Command(update=...)``.
 
 Most mutating subagent tools historically returned a plain ``dict`` payload
 which deepagents serialised straight into the ``ToolMessage`` content. To

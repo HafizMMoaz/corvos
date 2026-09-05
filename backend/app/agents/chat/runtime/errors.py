@@ -1,4 +1,4 @@
-﻿"""
+"""
 Typed error taxonomy for the Corvos agent stack.
 
 Used by:

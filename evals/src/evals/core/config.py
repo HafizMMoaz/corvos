@@ -1,4 +1,4 @@
-﻿"""Environment + filesystem configuration for the harness.
+"""Environment + filesystem configuration for the harness.
 
 Two responsibilities:
 

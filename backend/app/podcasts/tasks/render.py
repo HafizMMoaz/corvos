@@ -1,4 +1,4 @@
-﻿"""Audio-rendering task: RENDERING -> READY.
+"""Audio-rendering task: RENDERING -> READY.
 
 Synthesises and merges the approved transcript, stores the MP3 in the object
 store, and marks the podcast ready. The working directory is stable per podcast

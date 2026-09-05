@@ -1,4 +1,4 @@
-﻿"""Translate a plain note into Corvos's document-ingestion envelope.
+"""Translate a plain note into Corvos's document-ingestion envelope.
 
 The REST API ingests free text through the browser-extension document shape
 (title + page content + visit metadata); the backend then chunks and embeds it

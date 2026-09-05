@@ -1,4 +1,4 @@
-﻿"""Cloud and desktop ``rm`` branches.
+"""Cloud and desktop ``rm`` branches.
 
 Both branches receive an already-resolved + validated absolute path.
 """

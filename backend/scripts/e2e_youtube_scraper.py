@@ -1,4 +1,4 @@
-﻿"""Manual functional e2e for the YouTube scraper (app/proprietary/platforms/youtube).
+"""Manual functional e2e for the YouTube scraper (app/proprietary/platforms/youtube).
 
 Run from the backend directory:
     cd backend

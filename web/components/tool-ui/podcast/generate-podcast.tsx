@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import type { ToolCallMessagePartProps } from "@assistant-ui/react";
 import { Loader2, RotateCcw, Undo2, X } from "lucide-react";

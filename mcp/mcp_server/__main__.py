@@ -1,4 +1,4 @@
-﻿"""Entry point: load settings from the environment and run the MCP server.
+"""Entry point: load settings from the environment and run the MCP server.
 
 Two transports share one build:
 - ``stdio`` (default): Cursor/Claude launch one process per user; the key comes

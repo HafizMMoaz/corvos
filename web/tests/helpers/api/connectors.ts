@@ -1,4 +1,4 @@
-﻿import type { APIRequestContext } from "@playwright/test";
+import type { APIRequestContext } from "@playwright/test";
 import { authHeaders, BACKEND_URL } from "./auth";
 
 export type ConnectorRow = {

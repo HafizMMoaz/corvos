@@ -1,4 +1,4 @@
-﻿"""Tests for the CRAG HTML extractor.
+"""Tests for the CRAG HTML extractor.
 
 We don't network-fetch trafilatura; we just verify the wrapper:
 

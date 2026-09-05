@@ -1,4 +1,4 @@
-﻿"""CRAG dataset loader - download ``crag_task_1_and_2_dev_v4.jsonl.bz2`` and parse.
+"""CRAG dataset loader - download ``crag_task_1_and_2_dev_v4.jsonl.bz2`` and parse.
 
 The CRAG repo (``facebookresearch/CRAG``) ships Tasks 1 & 2 as a
 single bzip2-compressed JSONL on GitHub raw. Each row carries:

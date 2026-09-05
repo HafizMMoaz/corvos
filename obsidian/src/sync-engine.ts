@@ -1,4 +1,4 @@
-﻿import {
+import {
 	type App,
 	type CachedMetadata,
 	type Debouncer,

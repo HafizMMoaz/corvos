@@ -1,4 +1,4 @@
-﻿"""Tests for the CRAG 3-class deterministic grader.
+"""Tests for the CRAG 3-class deterministic grader.
 
 The LLM-judge fallback is excluded here (network call); these tests
 exercise the deterministic shortcut + the special-case routing for

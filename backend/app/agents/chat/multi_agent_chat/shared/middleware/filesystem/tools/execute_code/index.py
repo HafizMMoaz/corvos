@@ -1,4 +1,4 @@
-﻿"""``execute_code`` factory: bounds-check timeout, dispatch to the sandbox."""
+"""``execute_code`` factory: bounds-check timeout, dispatch to the sandbox."""
 
 from __future__ import annotations
 

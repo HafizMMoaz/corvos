@@ -1,4 +1,4 @@
-﻿"""Slicing helper that routes a flat decisions list to per-tool-call payloads.
+"""Slicing helper that routes a flat decisions list to per-tool-call payloads.
 
 The frontend submits ``decisions: list[ResumeDecision]`` in the same order the
 SSE stream emitted approval cards. When multiple parallel subagents are paused,

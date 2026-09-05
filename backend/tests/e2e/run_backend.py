@@ -1,4 +1,4 @@
-﻿"""E2E backend entrypoint.
+"""E2E backend entrypoint.
 
 Hijacks third-party SDKs at sys.modules level BEFORE any production
 code is imported, then starts the same FastAPI app + uvicorn that

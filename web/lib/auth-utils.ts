@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Authentication utilities for handling session expiration and redirects.
  */
 import { buildBackendUrl } from "@/lib/env-config";

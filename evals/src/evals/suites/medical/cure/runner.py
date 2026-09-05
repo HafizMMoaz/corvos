@@ -1,4 +1,4 @@
-﻿"""CUREv1 runner - single-arm Corvos retrieval scoring.
+"""CUREv1 runner - single-arm Corvos retrieval scoring.
 
 For each query we ask Corvos via ``/api/v1/new_chat`` (no
 ``mentioned_document_ids``) and parse chunk citations from the

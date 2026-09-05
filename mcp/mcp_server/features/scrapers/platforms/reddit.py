@@ -1,4 +1,4 @@
-﻿"""Reddit scraper tool."""
+"""Reddit scraper tool."""
 
 from __future__ import annotations
 

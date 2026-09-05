@@ -1,4 +1,4 @@
-﻿"""Regression: ``request_permission_decision`` must emit the unified LC HITL wire shape.
+"""Regression: ``request_permission_decision`` must emit the unified LC HITL wire shape.
 
 Same bug class as :mod:`test_lc_hitl_wire` for self-gated approvals: the
 permission middleware previously fired the Corvos-specific

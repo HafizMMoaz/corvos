@@ -1,4 +1,4 @@
-﻿"""Corvos Evals - domain-agnostic eval harness.
+"""Corvos Evals - domain-agnostic eval harness.
 
 Public entry-point is the ``evals`` CLI (``python -m evals``).
 Programmatic embedding is a non-goal for now; everything goes through the CLI

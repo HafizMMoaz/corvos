@@ -1,4 +1,4 @@
-﻿<provider_hints>
+<provider_hints>
 You are running on an xAI Grok model (Corvos **main agent**).
 
 Maximum terseness:

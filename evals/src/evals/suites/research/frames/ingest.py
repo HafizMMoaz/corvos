@@ -1,4 +1,4 @@
-﻿"""FRAMES ingestion: download → fetch Wikipedia → upload markdown.
+"""FRAMES ingestion: download → fetch Wikipedia → upload markdown.
 
 Steps:
 

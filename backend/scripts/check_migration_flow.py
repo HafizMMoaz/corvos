@@ -1,4 +1,4 @@
-﻿"""Self-check for the alembic fast-forward/adoption flow in alembic/env.py.
+"""Self-check for the alembic fast-forward/adoption flow in alembic/env.py.
 
 Verifies ``alembic upgrade head`` succeeds on the three DB states it must
 handle without replaying pre-workspace-rename history against a

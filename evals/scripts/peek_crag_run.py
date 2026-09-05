@@ -1,4 +1,4 @@
-﻿"""Tiny helper to inspect the latest CRAG run's per-question outputs."""
+"""Tiny helper to inspect the latest CRAG run's per-question outputs."""
 
 from __future__ import annotations
 

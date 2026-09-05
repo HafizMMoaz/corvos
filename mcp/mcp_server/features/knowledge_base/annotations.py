@@ -1,4 +1,4 @@
-﻿"""Tool-call policy hints and shared parameter types for knowledge-base tools."""
+"""Tool-call policy hints and shared parameter types for knowledge-base tools."""
 
 from __future__ import annotations
 

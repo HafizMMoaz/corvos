@@ -1,4 +1,4 @@
-﻿"""Arm protocol + concrete arms shared across suites.
+"""Arm protocol + concrete arms shared across suites.
 
 Concrete arms (``NativePdfArm``, ``CorvosArm``, ``BareLlmArm``) are
 imported lazily via ``__getattr__`` so consumers that only need the

@@ -1,4 +1,4 @@
-﻿"""Dual-mode credential resolver + httpx client factory with 401 auto-refresh.
+"""Dual-mode credential resolver + httpx client factory with 401 auto-refresh.
 
 Corvos supports ``AUTH_TYPE=LOCAL`` (email + password) and
 ``AUTH_TYPE=GOOGLE`` (Google OAuth → frontend stores JWT in ``localStorage``).

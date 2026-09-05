@@ -1,4 +1,4 @@
-﻿<provider_hints>
+<provider_hints>
 You are running on an OpenAI reasoning model (GPT-5+ / o-series), Corvos **main agent**.
 
 Output style:

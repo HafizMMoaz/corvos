@@ -1,4 +1,4 @@
-﻿"""Workspace-tree middleware for the Corvos agent.
+"""Workspace-tree middleware for the Corvos agent.
 
 Renders the full ``Folder``+``Document`` tree under ``/documents/`` once per
 turn (cloud only), caches it by ``(workspace_id, tree_version)``, and

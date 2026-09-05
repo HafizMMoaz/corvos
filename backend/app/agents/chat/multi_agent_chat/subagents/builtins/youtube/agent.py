@@ -1,4 +1,4 @@
-﻿"""``youtube`` route: ``CorvosSubagentSpec`` builder for deepagents."""
+"""``youtube`` route: ``CorvosSubagentSpec`` builder for deepagents."""
 
 from __future__ import annotations
 

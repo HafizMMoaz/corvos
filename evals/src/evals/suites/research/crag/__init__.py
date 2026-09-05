@@ -1,4 +1,4 @@
-﻿"""CRAG - Comprehensive RAG Benchmark (Yang et al., Meta, KDD Cup 2024).
+"""CRAG - Comprehensive RAG Benchmark (Yang et al., Meta, KDD Cup 2024).
 
 Source: https://github.com/facebookresearch/CRAG (Tasks 1 & 2)
 Paper:  https://arxiv.org/abs/2406.04744

@@ -1,4 +1,4 @@
-﻿import logging
+import logging
 from typing import Any, Literal
 
 from googleapiclient.errors import HttpError

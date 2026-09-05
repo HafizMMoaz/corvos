@@ -1,4 +1,4 @@
-﻿"""``instagram.details`` I/O contracts.
+"""``instagram.details`` I/O contracts.
 
 A lean surface over ``InstagramScrapeInput`` (``resultsType="details"``). Each
 output item is a profile (``detailKind="profile"``, a Corvos addition; every

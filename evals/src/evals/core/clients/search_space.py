@@ -1,4 +1,4 @@
-﻿"""Client for ``/api/v1/searchspaces`` and model-role endpoints.
+"""Client for ``/api/v1/searchspaces`` and model-role endpoints.
 
 Verified against:
 

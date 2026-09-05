@@ -1,4 +1,4 @@
-﻿[project]
+[project]
 name = "corvos-evals"
 version = "0.0.1"
 description = "Domain-agnostic evaluation harness for Corvos (medical RAG suite ships first; legal/finance/code suites slot in under suites/)."

@@ -1,4 +1,4 @@
-﻿r"""LiteLLM-native prompt caching for Corvos agents.
+r"""LiteLLM-native prompt caching for Corvos agents.
 
 Replaces the legacy ``AnthropicPromptCachingMiddleware`` (its
 ``isinstance(model, ChatAnthropic)`` gate never matched our LiteLLM stack)

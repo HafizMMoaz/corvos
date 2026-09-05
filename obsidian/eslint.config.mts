@@ -1,4 +1,4 @@
-﻿import tseslint from 'typescript-eslint';
+import tseslint from 'typescript-eslint';
 import obsidianmd from "eslint-plugin-obsidianmd";
 import globals from "globals";
 import { globalIgnores } from "eslint/config";

@@ -1,4 +1,4 @@
-﻿import { app, Menu, shell } from 'electron';
+import { app, Menu, shell } from 'electron';
 import {
   checkForUpdatesManually,
   getUpdateMenuState,

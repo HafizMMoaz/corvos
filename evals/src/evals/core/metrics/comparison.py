@@ -1,4 +1,4 @@
-﻿"""Paired comparison statistics for head-to-head benchmarks.
+"""Paired comparison statistics for head-to-head benchmarks.
 
 In every head-to-head benchmark (currently MedXpertQA-MM and
 MMLongBench-Doc) each question is answered by both arms (Native PDF

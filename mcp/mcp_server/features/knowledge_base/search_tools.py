@@ -1,4 +1,4 @@
-﻿"""Knowledge-base read tools: semantic search, list, and read one document.
+"""Knowledge-base read tools: semantic search, list, and read one document.
 
 Search and list default to the active workspace; a document read is addressed by
 id, which is unique across the account, so it needs no workspace.

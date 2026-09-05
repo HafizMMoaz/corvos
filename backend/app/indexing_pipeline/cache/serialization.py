@@ -1,4 +1,4 @@
-﻿"""Serialize an EmbeddingSet to a compact, self-describing blob (no pickle).
+"""Serialize an EmbeddingSet to a compact, self-describing blob (no pickle).
 
 Layout: ``MAGIC | uint32 header_len | json header | float32 matrix``. The header
 carries the dim, chunk count, and ordered chunk texts; the matrix holds the

@@ -1,4 +1,4 @@
-﻿"""Integration tests: Calendar indexer credential resolution for Composio vs native connectors.
+"""Integration tests: Calendar indexer credential resolution for Composio vs native connectors.
 
 Exercises ``index_google_calendar_events`` with a real PostgreSQL database
 containing seeded connector records.  Google API and Composio SDK are

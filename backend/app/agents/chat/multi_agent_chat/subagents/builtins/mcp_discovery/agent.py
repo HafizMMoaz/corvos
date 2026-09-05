@@ -1,4 +1,4 @@
-﻿"""``mcp_discovery`` route: ``CorvosSubagentSpec`` builder for deepagents.
+"""``mcp_discovery`` route: ``CorvosSubagentSpec`` builder for deepagents.
 
 Consolidates every MCP-backed connector plus interim native Gmail/Calendar
 tools. The permission ruleset is derived from the runtime tool set (not a

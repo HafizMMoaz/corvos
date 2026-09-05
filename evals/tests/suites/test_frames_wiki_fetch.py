@@ -1,4 +1,4 @@
-﻿"""Tests for the FRAMES Wikipedia fetcher.
+"""Tests for the FRAMES Wikipedia fetcher.
 
 We mock the MW API with respx so tests are network-free. Coverage:
 

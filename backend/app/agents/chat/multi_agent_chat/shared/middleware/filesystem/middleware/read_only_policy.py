@@ -1,4 +1,4 @@
-﻿"""Allowlist consulted by ``CorvosFilesystemMiddleware`` when ``read_only=True``."""
+"""Allowlist consulted by ``CorvosFilesystemMiddleware`` when ``read_only=True``."""
 
 from __future__ import annotations
 

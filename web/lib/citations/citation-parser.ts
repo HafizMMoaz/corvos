@@ -1,4 +1,4 @@
-﻿// Pure citation parsing for `[citation:...]` tokens emitted by Corvos
+// Pure citation parsing for `[citation:...]` tokens emitted by Corvos
 // agents. No React imports - consumed by both the React renderer
 // (markdown surfaces) and the Plate value transform (document viewer).
 //

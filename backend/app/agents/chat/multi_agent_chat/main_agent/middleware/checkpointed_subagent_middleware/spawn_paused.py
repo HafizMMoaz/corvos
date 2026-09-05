@@ -1,4 +1,4 @@
-﻿"""Per-workspace spawn-paused kill switch for the ``task`` boundary.
+"""Per-workspace spawn-paused kill switch for the ``task`` boundary.
 
 When operators see a runaway loop, a vendor outage, or a billing event
 that requires immediate cessation of subagent traffic for a specific

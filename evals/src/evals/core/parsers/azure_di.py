@@ -1,4 +1,4 @@
-﻿"""Azure Document Intelligence parser - eval-side mirror of the backend.
+"""Azure Document Intelligence parser - eval-side mirror of the backend.
 
 Calls ``DocumentIntelligenceClient.begin_analyze_document`` with one
 of two ``model_id`` slugs depending on ``processing_mode``:

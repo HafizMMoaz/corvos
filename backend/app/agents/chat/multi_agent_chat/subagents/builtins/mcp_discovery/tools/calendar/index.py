@@ -1,4 +1,4 @@
-﻿"""``calendar`` native tools and (empty) permission ruleset.
+"""``calendar`` native tools and (empty) permission ruleset.
 
 Tools self-gate via :func:`request_approval` in their bodies, so the
 ruleset just falls through to the Corvos allow-by-default rules.

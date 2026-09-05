@@ -1,4 +1,4 @@
-﻿"""MIRAGE runner: Corvos-only per-task accuracy.
+"""MIRAGE runner: Corvos-only per-task accuracy.
 
 The benchmark file format is one top-level dict per task (``mmlu``,
 ``medqa``, ``medmcqa``, ``pubmedqa``, ``bioasq``); each task value is

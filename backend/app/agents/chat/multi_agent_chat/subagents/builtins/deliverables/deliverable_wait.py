@@ -1,4 +1,4 @@
-﻿"""Shared poll-until-terminal helper for Celery-backed deliverables.
+"""Shared poll-until-terminal helper for Celery-backed deliverables.
 
 Lives in ``app.agents.chat.shared`` (neutral kernel package, no dependency on
 ``multi_agent_chat``) so both the shared tools under ``app/agents/shared/tools/``

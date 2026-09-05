@@ -1,4 +1,4 @@
-﻿"""Tests for the shared scenario formatter used in head-to-head reports."""
+"""Tests for the shared scenario formatter used in head-to-head reports."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿"""Real-graph parallel HITL across both approval kinds - the keystone regression.
+"""Real-graph parallel HITL across both approval kinds - the keystone regression.
 
 Pre-fix bug: the parallel-HITL routing layer (``collect_pending_tool_calls``
 + ``slice_decisions_by_tool_call`` + ``build_lg_resume_map``) only

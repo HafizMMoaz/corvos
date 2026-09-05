@@ -1,4 +1,4 @@
-﻿import { IconBrandGithub } from "@tabler/icons-react";
+import { IconBrandGithub } from "@tabler/icons-react";
 import { ArrowRight, Check, Plug, ShieldCheck, Wrench } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";

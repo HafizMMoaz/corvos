@@ -1,4 +1,4 @@
-﻿"""Cloud-mode move helper: stages source/dest into pending_moves + files."""
+"""Cloud-mode move helper: stages source/dest into pending_moves + files."""
 
 from __future__ import annotations
 

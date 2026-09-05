@@ -1,4 +1,4 @@
-﻿"""Strict drop-in replacement for the `composio` Python SDK.
+"""Strict drop-in replacement for the `composio` Python SDK.
 
 Registered as `sys.modules["composio"]` by `tests/e2e/run_backend.py`
 and `tests/e2e/run_celery.py` BEFORE any production code imports

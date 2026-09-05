@@ -1,4 +1,4 @@
-﻿"""Amazon product scraper tool."""
+"""Amazon product scraper tool."""
 
 from __future__ import annotations
 

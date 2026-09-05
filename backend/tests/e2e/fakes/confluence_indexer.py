@@ -1,4 +1,4 @@
-﻿"""Strict Confluence indexer fake for Playwright E2E."""
+"""Strict Confluence indexer fake for Playwright E2E."""
 
 from __future__ import annotations
 

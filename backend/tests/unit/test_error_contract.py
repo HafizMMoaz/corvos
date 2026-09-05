@@ -1,4 +1,4 @@
-﻿"""Unit tests for the structured error response contract.
+"""Unit tests for the structured error response contract.
 
 Validates that:
 - Global exception handlers produce the backward-compatible error envelope.

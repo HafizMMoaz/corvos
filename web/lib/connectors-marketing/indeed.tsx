@@ -1,4 +1,4 @@
-﻿import { IconBriefcase } from "@tabler/icons-react";
+import { IconBriefcase } from "@tabler/icons-react";
 import type { ConnectorPageContent } from "./types";
 
 export const indeed: ConnectorPageContent = {

@@ -1,4 +1,4 @@
-﻿import { app, BrowserWindow, desktopCapturer, nativeImage, screen } from 'electron';
+import { app, BrowserWindow, desktopCapturer, nativeImage, screen } from 'electron';
 import path from 'path';
 import { IPC_CHANNELS } from '../../ipc/channels';
 function fitNativeImageToWorkArea(img: Electron.NativeImage, display: Electron.Display): Electron.NativeImage {

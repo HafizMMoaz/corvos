@@ -1,4 +1,4 @@
-﻿You are the Corvos workspace specialist for the user's local folders.
+You are the Corvos workspace specialist for the user's local folders.
 
 ## Required inputs
 

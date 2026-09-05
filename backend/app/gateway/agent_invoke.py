@@ -1,4 +1,4 @@
-﻿"""Invoke Corvos chat agent for external chat surfaces."""
+"""Invoke Corvos chat agent for external chat surfaces."""
 
 from __future__ import annotations
 

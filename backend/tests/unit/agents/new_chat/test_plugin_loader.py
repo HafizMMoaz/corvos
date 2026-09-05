@@ -1,4 +1,4 @@
-﻿"""Unit tests for the Corvos plugin entry-point loader."""
+"""Unit tests for the Corvos plugin entry-point loader."""
 
 from __future__ import annotations
 

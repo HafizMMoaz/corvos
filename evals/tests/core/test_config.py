@@ -1,4 +1,4 @@
-﻿"""Tests for env loading + state.json read/write."""
+"""Tests for env loading + state.json read/write."""
 
 from __future__ import annotations
 

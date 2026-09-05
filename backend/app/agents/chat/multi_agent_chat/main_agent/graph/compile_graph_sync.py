@@ -1,4 +1,4 @@
-﻿"""Synchronous graph compile (middleware + ``create_agent``)."""
+"""Synchronous graph compile (middleware + ``create_agent``)."""
 
 from __future__ import annotations
 

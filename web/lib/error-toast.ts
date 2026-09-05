@@ -1,4 +1,4 @@
-﻿import { toast } from "sonner";
+import { toast } from "sonner";
 import { AbortedError, AppError, AuthenticationError, CORVOS_ISSUES_URL } from "./error";
 
 /**

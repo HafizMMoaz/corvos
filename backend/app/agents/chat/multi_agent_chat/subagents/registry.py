@@ -1,4 +1,4 @@
-﻿"""Central registry of route ``build_subagent`` callables (keyed by ``NAME``)."""
+"""Central registry of route ``build_subagent`` callables (keyed by ``NAME``)."""
 
 from __future__ import annotations
 

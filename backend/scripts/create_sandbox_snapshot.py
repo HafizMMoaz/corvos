@@ -1,4 +1,4 @@
-﻿"""Create the Daytona snapshot used by Corvos code-execution sandboxes.
+"""Create the Daytona snapshot used by Corvos code-execution sandboxes.
 
 Run from the backend directory:
     cd backend

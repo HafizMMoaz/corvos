@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import type { ToolCallMessagePartProps } from "@assistant-ui/react";
 import { Dot, Download, Loader2, Presentation, X } from "lucide-react";

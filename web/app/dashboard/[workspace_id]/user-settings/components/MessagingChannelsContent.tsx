@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { AlertTriangle, RefreshCw, ShieldAlert } from "lucide-react";
 import { useParams } from "next/navigation";

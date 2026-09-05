@@ -1,4 +1,4 @@
-﻿import { IconBrandReddit } from "@tabler/icons-react";
+import { IconBrandReddit } from "@tabler/icons-react";
 import type { ConnectorPageContent } from "./types";
 
 export const reddit: ConnectorPageContent = {

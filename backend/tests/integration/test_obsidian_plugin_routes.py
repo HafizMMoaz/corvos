@@ -1,4 +1,4 @@
-﻿"""Integration tests for the Obsidian plugin HTTP wire contract.
+"""Integration tests for the Obsidian plugin HTTP wire contract.
 
 Three concerns:
 

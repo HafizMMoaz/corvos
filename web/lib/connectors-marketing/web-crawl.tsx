@@ -1,4 +1,4 @@
-﻿import { IconWorldWww } from "@tabler/icons-react";
+import { IconWorldWww } from "@tabler/icons-react";
 import type { ConnectorPageContent } from "./types";
 
 export const webCrawl: ConnectorPageContent = {

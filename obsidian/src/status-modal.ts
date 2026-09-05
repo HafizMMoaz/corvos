@@ -1,4 +1,4 @@
-﻿import { type App, Modal, Notice, Setting } from "obsidian";
+import { type App, Modal, Notice, Setting } from "obsidian";
 import type CorvosPlugin from "./main";
 import { STATUS_VISUALS } from "./status-visuals";
 

@@ -1,4 +1,4 @@
-﻿"""
+"""
 Vercel AI SDK Data Stream Protocol Implementation
 
 This module implements the Vercel AI SDK streaming protocol for use with

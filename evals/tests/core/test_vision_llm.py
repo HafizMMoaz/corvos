@@ -1,4 +1,4 @@
-﻿"""Tests for vision LLM auto-pick + explicit-slug resolution."""
+"""Tests for vision LLM auto-pick + explicit-slug resolution."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿"""Drop Corvos docs tables (feature removed end to end)
+"""Drop Corvos docs tables (feature removed end to end)
 
 Revision ID: 146
 Revises: 145

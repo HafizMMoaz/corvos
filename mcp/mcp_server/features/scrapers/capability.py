@@ -1,4 +1,4 @@
-﻿"""Run a Corvos scraper capability and shape its result.
+"""Run a Corvos scraper capability and shape its result.
 
 Shared by every platform tool: POST a typed payload to the workspace's scraper
 door and render the returned items as markdown or JSON.

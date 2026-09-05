@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useQueryClient } from "@tanstack/react-query";
 import { useAtom, useAtomValue } from "jotai";

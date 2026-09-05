@@ -1,4 +1,4 @@
-﻿"""Composition root: build the MCP server and wire in every feature slice.
+"""Composition root: build the MCP server and wire in every feature slice.
 
 Creates the REST transport and workspace context from settings, then lets each
 feature register its tools on the server.

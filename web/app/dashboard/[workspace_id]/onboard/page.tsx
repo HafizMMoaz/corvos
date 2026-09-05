@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useAtomValue } from "jotai";
 import { useParams, useRouter } from "next/navigation";

@@ -1,4 +1,4 @@
-﻿"""HITL resume side-channel for nested subagent invocations.
+"""HITL resume side-channel for nested subagent invocations.
 
 Exposes the configurable side-channel ``stream_resume_chat`` uses to ferry
 resume payloads into a mid-flight subagent. The ``RunnableConfig`` builder and

@@ -1,4 +1,4 @@
-﻿"""POST ``/api/threads/{thread_id}/revert/{action_id}``: undo an agent action.
+"""POST ``/api/threads/{thread_id}/revert/{action_id}``: undo an agent action.
 
 The route ships **before** the UI lights up the per-message "Undo from
 here" affordance. To prevent accidental usage during the gap we return

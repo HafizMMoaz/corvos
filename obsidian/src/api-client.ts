@@ -1,4 +1,4 @@
-﻿import { requestUrl, type RequestUrlParam, type RequestUrlResponse } from "obsidian";
+import { requestUrl, type RequestUrlParam, type RequestUrlResponse } from "obsidian";
 import type {
 	ConnectResponse,
 	DeleteAck,

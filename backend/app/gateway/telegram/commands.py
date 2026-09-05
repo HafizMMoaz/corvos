@@ -1,4 +1,4 @@
-﻿"""Telegram command handlers."""
+"""Telegram command handlers."""
 
 from __future__ import annotations
 

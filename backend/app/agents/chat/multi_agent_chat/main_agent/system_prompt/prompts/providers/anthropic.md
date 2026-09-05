@@ -1,4 +1,4 @@
-﻿<provider_hints>
+<provider_hints>
 You are running on an Anthropic Claude model (Corvos **main agent**).
 
 Structured reasoning:

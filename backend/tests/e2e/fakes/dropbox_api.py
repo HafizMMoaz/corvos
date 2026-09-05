@@ -1,4 +1,4 @@
-﻿"""Strict Dropbox HTTP/API fakes for Playwright E2E.
+"""Strict Dropbox HTTP/API fakes for Playwright E2E.
 
 This module patches the Dropbox OAuth route and indexer consumer-site
 bindings. It keeps the production add/callback/indexing flow intact while

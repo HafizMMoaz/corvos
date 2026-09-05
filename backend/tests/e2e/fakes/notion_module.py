@@ -1,4 +1,4 @@
-﻿"""Strict Notion OAuth/API fakes for Playwright E2E."""
+"""Strict Notion OAuth/API fakes for Playwright E2E."""
 
 from __future__ import annotations
 

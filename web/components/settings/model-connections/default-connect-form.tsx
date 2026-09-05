@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ApiBaseUrlField, ApiKeyField } from "./connect-fields";
 import type { ProviderConnectFormProps } from "./provider-metadata";
 

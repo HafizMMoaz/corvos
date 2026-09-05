@@ -122,7 +122,7 @@ RUN printf '%s\n' \
 ARG EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
 RUN --mount=type=secret,id=HF_TOKEN \
     HF_TOKEN="$(cat /run/secrets/HF_TOKEN 2>/dev/null || true)" \
-    python -c "from chonkie import AutoEmbeddings; AutoEmbeddings.get_embeddings('${EMBEDDING_MODEL}')"
+    python -c "from chonkie import AutoEmbeddings; AutoEmbeddings.get_embeddings('${EMBEDDING_MODEL}')" || true
 
 # Install Scrapling's browser engines (patchright Chromium).
 # Scrapling pulls playwright/patchright via the `fetchers` extra; `scrapling install`

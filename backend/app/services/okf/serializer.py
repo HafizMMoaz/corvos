@@ -1,4 +1,4 @@
-﻿"""Serialize Corvos knowledge into Open Knowledge Format (OKF v0.1).
+"""Serialize Corvos knowledge into Open Knowledge Format (OKF v0.1).
 
 Pure functions with no HTTP / MCP / framework dependencies: given a
 :class:`~app.db.Document` (and, for listings, its neighbours) they return

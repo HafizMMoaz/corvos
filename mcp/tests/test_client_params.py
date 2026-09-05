@@ -1,4 +1,4 @@
-﻿"""Unset query params must be omitted, not sent as empty strings."""
+"""Unset query params must be omitted, not sent as empty strings."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿"""``AgentTaskActionParams`` - params for the ``agent_task`` action type."""
+"""``AgentTaskActionParams`` - params for the ``agent_task`` action type."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿"""Minimal anonymous / free-chat agent.
+"""Minimal anonymous / free-chat agent.
 
 The no-login chat experience must stay dead simple: the user asks a question
 and the model answers over an optionally uploaded **read-only** document. We

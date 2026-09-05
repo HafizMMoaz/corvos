@@ -1,4 +1,4 @@
-﻿"""
+"""
 DoomLoopMiddleware - pattern-based detector for repeated identical tool calls.
 
 LangChain has :class:`ToolCallLimitMiddleware` which caps the *total* number

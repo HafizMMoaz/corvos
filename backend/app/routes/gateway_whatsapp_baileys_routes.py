@@ -1,4 +1,4 @@
-﻿"""Routes for the self-hosted WhatsApp Baileys bridge."""
+"""Routes for the self-hosted WhatsApp Baileys bridge."""
 
 from __future__ import annotations
 

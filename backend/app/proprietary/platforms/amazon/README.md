@@ -1,4 +1,4 @@
-﻿# Amazon Product Scraper
+# Amazon Product Scraper
 
 Current status: product details, search and category discovery, offers, sellers,
 best-seller rankings, on-page reviews, localized delivery sessions, and product

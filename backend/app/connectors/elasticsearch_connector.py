@@ -1,4 +1,4 @@
-﻿"""
+"""
 Elasticsearch connector for Corvos
 """
 

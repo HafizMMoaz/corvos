@@ -1,4 +1,4 @@
-﻿"""Generic ``data-*`` envelopes and Corvos-specific data parts.
+"""Generic ``data-*`` envelopes and Corvos-specific data parts.
 
 Inner ``data`` dict fields use snake_case. Legacy ``threadId`` /
 ``messageId`` keys are preserved where they cross the AI SDK boundary.
