@@ -34,8 +34,8 @@ export default function PrivacyPolicy() {
 						you may self-host. This Privacy Policy covers the hosted Service; if you self-host
 						Corvos, you control your own deployment and this policy does not apply to your instance.
 						We respect your privacy and are committed to protecting your personal data. This Privacy
-						Policy explains what data we collect, how we use it, who we share it with, and the rights
-						you have over your data.
+						Policy explains what data we collect, how we use it, who we share it with, and the
+						rights you have over your data.
 					</p>
 					<p className="mt-4">
 						By accessing or using the Service, you acknowledge that you have read and understood
@@ -140,9 +140,9 @@ export default function PrivacyPolicy() {
 						advertising cookies.
 					</p>
 					<p className="mt-4">
-						See our <Link href="/cookies">Cookie Policy</Link> for the full list of cookies we use and
-						how to control them. Blocking strictly necessary cookies will prevent the Service from
-						functioning correctly.
+						See our <Link href="/cookies">Cookie Policy</Link> for the full list of cookies we use
+						and how to control them. Blocking strictly necessary cookies will prevent the Service
+						from functioning correctly.
 					</p>
 				</section>
 
@@ -285,7 +285,8 @@ export default function PrivacyPolicy() {
 						to exercise any of your rights, please contact us at:
 					</p>
 					<p className="mt-2">
-						<strong>Email:</strong> <a href="mailto:hafizmoazkhalid@gmail.com">hafizmoazkhalid@gmail.com</a>
+						<strong>Email:</strong>{" "}
+						<a href="mailto:hafizmoazkhalid@gmail.com">hafizmoazkhalid@gmail.com</a>
 					</p>
 				</section>
 			</div>

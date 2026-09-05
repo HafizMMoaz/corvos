@@ -12,6 +12,7 @@ class TtsProvider(StrEnum):
     OPENAI = "openai"
     AZURE = "azure"
     VERTEX_AI = "vertex_ai"
+    ELEVENLABS = "elevenlabs"
 
 
 def provider_from_service(service: str) -> TtsProvider:
@@ -24,4 +25,6 @@ def provider_from_service(service: str) -> TtsProvider:
     prefix = service.split("/", 1)[0].strip().lower()
     if prefix == "local":
         return TtsProvider.KOKORO
+    if prefix == "elevenlabs":
+        return TtsProvider.ELEVENLABS
     return TtsProvider(prefix)

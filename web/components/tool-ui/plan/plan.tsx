@@ -139,10 +139,7 @@ export const Plan: FC<PlanProps> = ({
 	const actionArray: Action[] = useMemo(() => {
 		if (!responseActions) return [];
 		if (Array.isArray(responseActions)) return responseActions;
-		return [
-			responseActions.confirm && { ...responseActions.confirm, id: "confirm" },
-			responseActions.cancel && { ...responseActions.cancel, id: "cancel" },
-		].filter(Boolean) as Action[];
+		return responseActions.items;
 	}, [responseActions]);
 
 	const TodoList: FC<{ items: typeof todos }> = ({ items }) => {

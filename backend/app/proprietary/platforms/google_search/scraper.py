@@ -15,7 +15,7 @@ import logging
 from collections.abc import AsyncIterator
 from typing import Any
 
-from .fetch import fetch_serp_html
+from .fetch import fetch_serp_html, resolve_goto_url
 from .parsers import parse_ai_mode, parse_serp
 from .query_builder import (
     build_ai_mode_url,
@@ -35,6 +35,55 @@ __all__ = ["iter_serps", "scrape_serps"]
 # ponytail: caps at 3 tries - each is a full ~10 s render, and beyond a few
 # tries an ad-less result is genuinely ad-less, not just unlucky.
 _PAID_ADS_MAX_TRIES = 3
+
+# Concurrent /goto redirect resolutions per SERP page. Each is a ~250-byte
+# 302; a light cap keeps a 20-query fan-out from firing 200 at once.
+_GOTO_RESOLVE_CONCURRENCY = 5
+
+
+async def _resolve_goto_links(item: SerpItem) -> None:
+    """Swap every ``/goto?url=`` token href on the item for its destination.
+
+    The parser keeps Google's encrypted redirect tokens as-is (no plaintext
+    target exists in the page); here each is resolved via the redirect's
+    Location header, in place, across organic/paid/product results and their
+    sitelinks. Direct URLs pass through untouched.
+    """
+    urls: set[str] = set()
+    for r in item.organicResults:
+        urls.add(r.url or "")
+        for sl in r.siteLinks:
+            urls.add(sl.url or "")
+    for p in item.paidResults:
+        urls.add(p.url or "")
+        for sl in p.siteLinks:
+            urls.add(sl.url or "")
+    for p in item.paidProducts:
+        urls.add(p.url or "")
+    gotos = {u for u in urls if u.startswith("/goto?")}
+    if not gotos:
+        return
+    gate = asyncio.Semaphore(_GOTO_RESOLVE_CONCURRENCY)
+
+    async def _one(u: str) -> str:
+        async with gate:
+            return await resolve_goto_url(u)
+
+    resolved = dict(zip(gotos, await asyncio.gather(*(_one(u) for u in gotos))))
+
+    def _swap(u: str | None) -> str | None:
+        return resolved.get(u or "", u)
+
+    for r in item.organicResults:
+        r.url = _swap(r.url)
+        for sl in r.siteLinks:
+            sl.url = _swap(sl.url)
+    for p in item.paidResults:
+        p.url = _swap(p.url)
+        for sl in p.siteLinks:
+            sl.url = _swap(sl.url)
+    for p in item.paidProducts:
+        p.url = _swap(p.url)
 
 
 def _search_query_stamp(
@@ -79,6 +128,8 @@ async def _serp_page_flow(
         item = await asyncio.to_thread(
             parse_serp, html, include_icons=input_model.includeIcons
         )
+        # Google's /goto redirect tokens -> real destination URLs, in place.
+        await _resolve_goto_links(item)
         if input_model.saveHtml:
             item.html = html
         if not input_model.focusOnPaidAds or item.paidResults or item.paidProducts:

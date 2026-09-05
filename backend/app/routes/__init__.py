@@ -80,6 +80,7 @@ from .stripe_routes import router as stripe_router
 from .team_memory_routes import router as team_memory_router
 from .teams_add_connector_route import router as teams_add_connector_router
 from .video_presentations_routes import router as video_presentations_router
+from .voice_agent_routes import router as voice_agent_router
 from .workspaces_routes import router as workspaces_router
 from .youtube_routes import router as youtube_router
 
@@ -154,4 +155,5 @@ router.include_router(memory_router)  # User personal memory (memory.md style)
 router.include_router(team_memory_router)  # Workspace team memory
 router.include_router(automations_router)  # Automations CRUD + run history
 router.include_router(file_storage_router)  # Original file metadata + download
+router.include_router(voice_agent_router)  # Voice agent (ElevenLabs STT/TTS)
 router.include_router(build_capabilities_router())  # Scraper-API capability doors (05)

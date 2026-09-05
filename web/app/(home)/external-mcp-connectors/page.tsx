@@ -189,10 +189,10 @@ export default function ExternalMcpConnectorsPage() {
 								Bring any external MCP server to your agents
 							</h1>
 							<p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-								External MCP connectors turn your Corvos workspace into an MCP client. Add any
-								MCP server with the same config you'd use in Cursor, and its tools are
-								auto-discovered and handed to your agents, guarded by per-tool approval. Notion,
-								Slack, Jira, and more connect with one-click OAuth.
+								External MCP connectors turn your Corvos workspace into an MCP client. Add any MCP
+								server with the same config you'd use in Cursor, and its tools are auto-discovered
+								and handed to your agents, guarded by per-tool approval. Notion, Slack, Jira, and
+								more connect with one-click OAuth.
 							</p>
 							<div className="mt-8 flex flex-wrap items-center gap-3">
 								<Button asChild size="lg">

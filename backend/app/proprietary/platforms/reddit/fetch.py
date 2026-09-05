@@ -320,6 +320,10 @@ async def warm_session(proxy: str | None) -> dict[str, str] | None:
 
     Takes the sticky ``proxy`` URL (never the fetch session) so the browser
     egresses the SAME exit IP the HTTP ``.json`` fetches will replay the jar on.
+    ``proxy=None`` (no proxy configured) is supported: the browser egresses
+    direct, and because the HTTP fetches also go direct the sticky-IP invariant
+    still holds (both phases share the machine's IP), keeping the loid bind
+    valid (confirmed live 2026-08-29).
     A module-level semaphore bounds concurrent browser launches under fan-out.
 
     What actually clears Reddit's wall is the stealth browser + ``google_search``
@@ -330,8 +334,6 @@ async def warm_session(proxy: str | None) -> dict[str, str] | None:
     still minting 3/3 across us/gb/de exits (measured 2026-07-18). A rare miss
     still self-heals: :func:`fetch_json` rotates to a fresh sticky IP and re-warms.
     """
-    if proxy is None:
-        return None
 
     # Runs on the shared browser loop: patchright can't spawn Chromium from the
     # server's Windows SelectorEventLoop (see app.utils.browser_loop).
@@ -356,11 +358,13 @@ async def warm_session(proxy: str | None) -> dict[str, str] | None:
 
 
 async def _get_page(session: Any, url: str, cookies: dict[str, str]) -> Any:
-    """GET through the warmed sticky session, or a one-shot proxied fetch.
+    """GET through the warmed sticky session, or a one-shot direct/proxied fetch.
 
     ``cookies`` is the browser-minted jar; ``over18`` is merged so NSFW listings
-    aren't blanked. The one-shot path (no bound session) has no minted jar and is
-    a best-effort fallback only - it can't clear the JS challenge.
+    aren't blanked. The one-shot path (no bound session, i.e. no proxy
+    configured) still replays the minted jar - it was warmed on the same direct
+    IP - but without one it is a best-effort fallback only (it can't clear the
+    JS challenge).
     """
     if session is not None:
         return await session.get(
@@ -369,7 +373,7 @@ async def _get_page(session: Any, url: str, cookies: dict[str, str]) -> Any:
     return await AsyncFetcher.get(
         url,
         headers=_HEADERS,
-        cookies=_OVER18_COOKIES,
+        cookies={**cookies, **_OVER18_COOKIES},
         proxy=get_proxy_url(),
         stealthy_headers=True,
         timeout=_REQUEST_TIMEOUT_S,
@@ -398,7 +402,10 @@ async def fetch_json(path: str, params: dict[str, Any] | None = None) -> Any | N
     while True:
         session = holder.session
         try:
-            if session is not None and not holder.warmed:
+            if not holder.warmed:
+                # Warm even when session is None (no proxy configured): the
+                # browser egresses direct on the same IP the HTTP fetches use,
+                # so the minted loid still binds (see warm_session).
                 warmed_ok = await holder.warm()
                 holder.warmed = True  # attempted; don't re-warm this IP
                 if not warmed_ok:

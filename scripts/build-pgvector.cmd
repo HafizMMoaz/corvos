@@ -5,9 +5,10 @@ REM the only route. Build only -- `nmake install` writes into Program Files and
 REM needs an elevated shell, so it is deliberately NOT run here.
 setlocal
 
-set "LOG=d:\Corvos\scripts\pgvector_build.txt"
+set "LOG=e:\corvos\scripts\pgvector_build.txt"
 set "PGROOT=C:\Program Files\PostgreSQL\18"
-set "VCVARS=C:\Program Files\Microsoft Visual Studio\18\Community\VC\Auxiliary\Build\vcvars64.bat"
+set "VCVARS=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
+if not exist "%VCVARS%" set "VCVARS=C:\Program Files (x86)\Microsoft Visual Studio\18\Community\VC\Auxiliary\Build\vcvars64.bat"
 set "SRC=%TEMP%\pgvector"
 
 > "%LOG%" echo === pgvector build ===

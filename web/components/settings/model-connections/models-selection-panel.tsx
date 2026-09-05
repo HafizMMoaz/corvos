@@ -124,11 +124,7 @@ export function ModelsSelectionPanel({
 						onClick={handleAddManualModel}
 						disabled={!manualModelId.trim() || isAddingManualModel}
 					>
-						{isAddingManualModel ? (
-							<Spinner size="sm" />
-						) : (
-							<Plus className="h-4 w-4" />
-						)}
+						{isAddingManualModel ? <Spinner size="sm" /> : <Plus className="h-4 w-4" />}
 						Add
 					</Button>
 				</div>

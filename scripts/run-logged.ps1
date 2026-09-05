@@ -10,11 +10,17 @@ param(
     [Parameter(Mandatory)] [string]$WorkDir,
     [Parameter(Mandatory)] [string]$OutFile,
     [Parameter(Mandatory)] [string]$ErrFile,
-    [Parameter(ValueFromRemainingArguments)] [string[]]$ArgList
+    # Child args arrive as ONE string joined with [char]31. Passing them as
+    # separate argv tokens fails: celery's own flags (-A, -Ofair) get parsed
+    # as parameters of THIS script and kill the wrapper before it launches
+    # anything. A single named-parameter value sidesteps that entirely.
+    [string]$ChildArgs
 )
 
 $ErrorActionPreference = 'Continue'
 Set-Location $WorkDir
+
+$ArgList = if ($ChildArgs) { $ChildArgs -split [char]31 } else { @() }
 
 & $Exe @ArgList 2>&1 | ForEach-Object {
     $ts = Get-Date -Format 'yyyy-MM-dd HH:mm:ss.fff'

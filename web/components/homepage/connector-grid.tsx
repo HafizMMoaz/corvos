@@ -22,9 +22,9 @@ export function ConnectorGrid() {
 					</Badge>
 				</div>
 				<p className="mt-3 max-w-2xl text-muted-foreground leading-relaxed">
-					Every connector is a typed REST endpoint with the same schema style. Call it from your
-					own app with a Corvos API key, or hand the whole catalog to your agents through the
-					MCP server. No per-site plumbing to maintain.
+					Every connector is a typed REST endpoint with the same schema style. Call it from your own
+					app with a Corvos API key, or hand the whole catalog to your agents through the MCP
+					server. No per-site plumbing to maintain.
 				</p>
 			</Reveal>
 			<Reveal>

@@ -1,6 +1,24 @@
 ﻿"use client";
+import {
+	IconBrandAmazon,
+	IconBrandGithub,
+	IconBrandGoogle,
+	IconBrandInstagram,
+	IconBrandReddit,
+	IconBrandTiktok,
+	IconBrandYoutube,
+	IconBriefcase,
+	IconMapPin,
+	IconSearch,
+} from "@tabler/icons-react";
 import { ChevronDown, Download } from "lucide-react";
-import { AnimatePresence, motion, useAnimationFrame, useMotionValue, useReducedMotion } from "motion/react";
+import {
+	AnimatePresence,
+	motion,
+	useAnimationFrame,
+	useMotionValue,
+	useReducedMotion,
+} from "motion/react";
 import Link from "next/link";
 import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 import Balancer from "react-wrap-balancer";
@@ -25,18 +43,6 @@ import {
 import { buildBackendUrl } from "@/lib/env-config";
 import { trackLoginAttempt } from "@/lib/posthog/events";
 import { cn } from "@/lib/utils";
-import {
-	IconBrandAmazon,
-	IconBrandGithub,
-	IconBrandGoogle,
-	IconBrandInstagram,
-	IconBrandReddit,
-	IconBrandTiktok,
-	IconBrandYoutube,
-	IconBriefcase,
-	IconMapPin,
-	IconSearch,
-} from "@tabler/icons-react";
 
 const GoogleLogo = ({ className }: { className?: string }) => (
 	<svg
@@ -82,16 +88,116 @@ type HeroCategory = {
 };
 
 const FLOATING_ICONS = [
-	{ name: "GitHub", Icon: IconBrandGithub, color: "#181717", startX: 5, startY: 18, wander: 100, delay: 0, bobAmp: 8, bobDur: 3.5 },
-	{ name: "Google", Icon: IconBrandGoogle, color: "#4285F4", startX: 45, startY: 15, wander: 90, delay: 1.5, bobAmp: 10, bobDur: 4 },
-	{ name: "YouTube", Icon: IconBrandYoutube, color: "#FF0000", startX: 80, startY: 20, wander: 35, delay: 0.8, bobAmp: 6, bobDur: 3 },
-	{ name: "Reddit", Icon: IconBrandReddit, color: "#FF4500", startX: 6, startY: 42, wander: 45, delay: 2, bobAmp: 9, bobDur: 3.8 },
-	{ name: "Instagram", Icon: IconBrandInstagram, color: "#E4405F", startX: 1, startY: 68, wander: 40, delay: 0.3, bobAmp: 7, bobDur: 3.2 },
-	{ name: "TikTok", Icon: IconBrandTiktok, color: "#000000", startX: 92, startY: 38, wander: 45, delay: 1.2, bobAmp: 8, bobDur: 4.2 },
-	{ name: "Maps", Icon: IconMapPin, color: "#34A853", startX: 90, startY: 62, wander: 40, delay: 2.5, bobAmp: 7, bobDur: 3.5 },
-	{ name: "SERP", Icon: IconSearch, color: "#4285F4", startX: 20, startY: 88, wander: 35, delay: 0.5, bobAmp: 6, bobDur: 3 },
-	{ name: "Indeed", Icon: IconBriefcase, color: "#2164F3", startX: 55, startY: 80, wander: 45, delay: 1.8, bobAmp: 10, bobDur: 4.5 },
-	{ name: "Amazon", Icon: IconBrandAmazon, color: "#FF9900", startX: 78, startY: 85, wander: 40, delay: 0.7, bobAmp: 7, bobDur: 3.3 },
+	{
+		name: "GitHub",
+		Icon: IconBrandGithub,
+		color: "#181717",
+		startX: 5,
+		startY: 18,
+		wander: 100,
+		delay: 0,
+		bobAmp: 8,
+		bobDur: 3.5,
+	},
+	{
+		name: "Google",
+		Icon: IconBrandGoogle,
+		color: "#4285F4",
+		startX: 45,
+		startY: 15,
+		wander: 90,
+		delay: 1.5,
+		bobAmp: 10,
+		bobDur: 4,
+	},
+	{
+		name: "YouTube",
+		Icon: IconBrandYoutube,
+		color: "#FF0000",
+		startX: 80,
+		startY: 20,
+		wander: 35,
+		delay: 0.8,
+		bobAmp: 6,
+		bobDur: 3,
+	},
+	{
+		name: "Reddit",
+		Icon: IconBrandReddit,
+		color: "#FF4500",
+		startX: 6,
+		startY: 42,
+		wander: 45,
+		delay: 2,
+		bobAmp: 9,
+		bobDur: 3.8,
+	},
+	{
+		name: "Instagram",
+		Icon: IconBrandInstagram,
+		color: "#E4405F",
+		startX: 1,
+		startY: 68,
+		wander: 40,
+		delay: 0.3,
+		bobAmp: 7,
+		bobDur: 3.2,
+	},
+	{
+		name: "TikTok",
+		Icon: IconBrandTiktok,
+		color: "#000000",
+		startX: 92,
+		startY: 38,
+		wander: 45,
+		delay: 1.2,
+		bobAmp: 8,
+		bobDur: 4.2,
+	},
+	{
+		name: "Maps",
+		Icon: IconMapPin,
+		color: "#34A853",
+		startX: 90,
+		startY: 62,
+		wander: 40,
+		delay: 2.5,
+		bobAmp: 7,
+		bobDur: 3.5,
+	},
+	{
+		name: "SERP",
+		Icon: IconSearch,
+		color: "#4285F4",
+		startX: 20,
+		startY: 88,
+		wander: 35,
+		delay: 0.5,
+		bobAmp: 6,
+		bobDur: 3,
+	},
+	{
+		name: "Indeed",
+		Icon: IconBriefcase,
+		color: "#2164F3",
+		startX: 55,
+		startY: 80,
+		wander: 45,
+		delay: 1.8,
+		bobAmp: 10,
+		bobDur: 4.5,
+	},
+	{
+		name: "Amazon",
+		Icon: IconBrandAmazon,
+		color: "#FF9900",
+		startX: 78,
+		startY: 85,
+		wander: 40,
+		delay: 0.7,
+		bobAmp: 7,
+		bobDur: 3.3,
+	},
 ];
 
 function randomBetween(min: number, max: number): number {
@@ -103,7 +209,7 @@ function lerp(a: number, b: number, t: number): number {
 }
 
 function easeInOut(t: number): number {
-	return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+	return t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2;
 }
 
 function FloatingIcon({ icon }: { icon: (typeof FLOATING_ICONS)[number] }) {
@@ -231,9 +337,9 @@ export function HeroSection() {
 							)}
 						>
 							Corvos is the open-source NotebookLM alternative for open web research. Typed
-							connectors turn the platforms where answers actually live into structured JSON, so
-							you and your agents work from what the web says right now, through one platform,
-							API, or MCP server.
+							connectors turn the platforms where answers actually live into structured JSON, so you
+							and your agents work from what the web says right now, through one platform, API, or
+							MCP server.
 						</p>
 
 						<div className="relative mb-4 flex w-full flex-col justify-center gap-y-2 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">

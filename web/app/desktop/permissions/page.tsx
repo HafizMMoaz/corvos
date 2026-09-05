@@ -132,8 +132,8 @@ export default function DesktopPermissionsPage() {
 					<div className="space-y-1">
 						<h1 className="text-2xl font-semibold tracking-tight">System Permissions</h1>
 						<p className="text-sm text-muted-foreground">
-							Corvos needs two macOS permissions for Screenshot Assist and for desktop features
-							that require focusing the app or the active application.
+							Corvos needs two macOS permissions for Screenshot Assist and for desktop features that
+							require focusing the app or the active application.
 						</p>
 					</div>
 				</div>
@@ -181,8 +181,8 @@ export default function DesktopPermissionsPage() {
 											</p>
 										)}
 										<p className="text-xs text-muted-foreground">
-											If Corvos doesn&apos;t appear in the list, click <strong>+</strong> and
-											select it from Applications.
+											If Corvos doesn&apos;t appear in the list, click <strong>+</strong> and select
+											it from Applications.
 										</p>
 									</div>
 								)}

@@ -4,7 +4,7 @@ import { useAtomValue, useSetAtom } from "jotai";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import type React from "react";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { pendingUserImageDataUrlsAtom } from "@/atoms/chat/pending-user-images.atom";
 import { llmSetupStatusAtomFamily } from "@/atoms/model-connections/model-connections-query.atoms";
 import { activeWorkspaceIdAtom } from "@/atoms/workspaces/workspace-query.atoms";
@@ -46,15 +46,33 @@ export function DashboardClientLayout({
 
 	const isReady = setupStatus?.status === "ready";
 
+	// "Skip for now" on the onboard page stores a localStorage flag so a new
+	// user who has no API keys yet isn't force-redirected back to /onboard on
+	// every navigation. The flag is workspace-scoped and self-clears once the
+	// backend reports the workspace as ready (models added later).
+	const hasSkippedOnboarding =
+		typeof window !== "undefined" &&
+		localStorage.getItem(`corvos-onboard-skipped-${workspaceId}`) === "true";
+
+	const clearSkipFlag = useCallback(() => {
+		try {
+			localStorage.removeItem(`corvos-onboard-skipped-${workspaceId}`);
+		} catch (_e) {
+			// ignore quota / security errors
+		}
+	}, [workspaceId]);
+
 	// First-run (initial_setup) is the only not-ready state that redirects, so
 	// recovery falls through to the inline composer notice and an established
 	// user who lost their models is never re-onboarded. The other direction
 	// leaves onboarding once the workspace can chat.
 	useEffect(() => {
 		if (setupLoading || setupError) return;
-		if (setupStatus?.stage === "initial_setup" && !isOnboardingPage) {
+		if (setupStatus?.stage === "initial_setup" && !isOnboardingPage && !hasSkippedOnboarding) {
 			router.replace(`/dashboard/${workspaceId}/onboard`);
 		} else if (isReady && isOnboardingPage) {
+			// Models are now configured; clear any stale skip flag and leave.
+			clearSkipFlag();
 			router.replace(`/dashboard/${workspaceId}/new-chat`);
 		}
 	}, [
@@ -63,6 +81,8 @@ export function DashboardClientLayout({
 		setupStatus?.stage,
 		isReady,
 		isOnboardingPage,
+		hasSkippedOnboarding,
+		clearSkipFlag,
 		router,
 		workspaceId,
 	]);
@@ -117,7 +137,8 @@ export function DashboardClientLayout({
 	// Suppress children during either pending redirect so neither /new-chat nor
 	// /onboard flashes for a frame.
 	const isLeavingOnboarding = isReady && isOnboardingPage;
-	const isEnteringOnboarding = setupStatus?.stage === "initial_setup" && !isOnboardingPage;
+	const isEnteringOnboarding =
+		setupStatus?.stage === "initial_setup" && !isOnboardingPage && !hasSkippedOnboarding;
 	const isRedirecting =
 		!setupLoading && !setupError && (isLeavingOnboarding || isEnteringOnboarding);
 

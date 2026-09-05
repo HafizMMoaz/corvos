@@ -37,6 +37,7 @@ dependencies = [
     "validators>=0.34.0",
     "youtube-transcript-api>=1.0.3",
     "elasticsearch>=9.1.1",
+    "elevenlabs>=1.50.0",
     "faster-whisper>=1.1.0",
     "celery[redis]>=5.5.3",
     "redis>=5.2.1",

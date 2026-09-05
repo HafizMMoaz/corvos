@@ -55,8 +55,8 @@ export const ObsidianConnectForm: FC<ConnectFormProps> = ({ onBack }) => {
 				<Info />
 				<AlertTitle>Plugin-based sync</AlertTitle>
 				<AlertDescription>
-					Corvos now syncs Obsidian via an official plugin that runs inside Obsidian itself.
-					Works on desktop and mobile, in cloud and self-hosted deployments.
+					Corvos now syncs Obsidian via an official plugin that runs inside Obsidian itself. Works
+					on desktop and mobile, in cloud and self-hosted deployments.
 				</AlertDescription>
 			</Alert>
 
@@ -71,8 +71,8 @@ export const ObsidianConnectForm: FC<ConnectFormProps> = ({ onBack }) => {
 							<h3 className="text-sm font-medium sm:text-base">Install the plugin</h3>
 						</header>
 						<p className="mb-3 text-[11px] text-muted-foreground sm:text-xs">
-							Grab the latest Corvos plugin release. Once it's in the community store, you'll
-							also be able to install it from{" "}
+							Grab the latest Corvos plugin release. Once it's in the community store, you'll also
+							be able to install it from{" "}
 							<span className="font-medium">Settings → Community plugins</span> inside Obsidian.
 						</p>
 						<a
@@ -151,9 +151,9 @@ export const ObsidianConnectForm: FC<ConnectFormProps> = ({ onBack }) => {
 							<h3 className="text-sm font-medium sm:text-base">Point the plugin at this server</h3>
 						</header>
 						<p className="text-[11px] text-muted-foreground sm:text-xs">
-							For Corvos Cloud, use the default{" "}
-							<span className="font-medium">corvos.com</span>. If you are self-hosting, set the
-							plugin's <span className="font-medium">Server URL</span> to your frontend domain.
+							For Corvos Cloud, use the default <span className="font-medium">corvos.com</span>. If
+							you are self-hosting, set the plugin's <span className="font-medium">Server URL</span>{" "}
+							to your frontend domain.
 						</p>
 					</article>
 

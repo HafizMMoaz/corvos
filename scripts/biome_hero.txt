@@ -1,0 +1,344 @@
+components\homepage\hero-section.tsx:106:35 lint/style/useExponentiationOperator  FIXABLE  ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  i Use the '**' operator instead of 'Math.pow'.
+  
+    105 Γöé function easeInOut(t: number): number {
+  > 106 Γöé 	return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+        Γöé 	                                 ^^^^^^^^^^^^^^^^^^^^^^^
+    107 Γöé }
+    108 Γöé 
+  
+  i Safe fix: Use the '**' operator instead of 'Math.pow'.
+  
+    104 104 Γöé   ΓÉì
+    105 105 Γöé   function easeInOut(t: number): number {ΓÉì
+    106     Γöé - ΓåÆ return┬╖t┬╖<┬╖0.5┬╖?┬╖2┬╖*┬╖t┬╖*┬╖t┬╖:┬╖1┬╖-┬╖Math.pow(-2┬╖*┬╖t┬╖+┬╖2,┬╖2)┬╖/┬╖2;ΓÉì
+        106 Γöé + ΓåÆ return┬╖t┬╖<┬╖0.5┬╖?┬╖2┬╖*┬╖t┬╖*┬╖t┬╖:┬╖1┬╖-┬╖(-2┬╖*┬╖t┬╖+┬╖2)┬╖**┬╖2┬╖/┬╖2;ΓÉì
+    107 107 Γöé   }ΓÉì
+    108 108 Γöé   ΓÉì
+  
+
+components\homepage\hero-section.tsx:5:8 lint/correctness/noUnusedImports  FIXABLE  ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ! These imports are unused.
+  
+    3 Γöé import { AnimatePresence, motion, useAnimationFrame, useMotionValue, useReducedMotion } from "motion/react";
+    4 Γöé import Link from "next/link";
+  > 5 Γöé import React, { memo, useCallback, useEffect, useRef, useState } from "react";
+      Γöé        ^^^^^
+    6 Γöé import Balancer from "react-wrap-balancer";
+    7 Γöé import { HeroChatDemo, type HeroChatDemoScript } from "@/components/homepage/hero-chat-demo";
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    5 Γöé import┬╖React,┬╖{┬╖memo,┬╖useCallback,┬╖useEffect,┬╖useRef,┬╖useState┬╖}┬╖from┬╖"react";ΓÉì
+      Γöé        -------                                                                
+
+components\homepage\hero-section.tsx:17:8 lint/correctness/noUnusedImports  FIXABLE  ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ! This import is unused.
+  
+    15 Γöé import { ExpandedMediaOverlay, useExpandedMedia } from "@/components/ui/expanded-gif-overlay";
+    16 Γöé import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+  > 17 Γöé import { Separator } from "@/components/ui/separator";
+       Γöé        ^^^^^^^^^^^^^
+    18 Γöé import { Skeleton } from "@/components/ui/skeleton";
+    19 Γöé import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+     14  14 Γöé   } from "@/components/ui/dropdown-menu";ΓÉì
+     15  15 Γöé   import { ExpandedMediaOverlay, useExpandedMedia } from "@/components/ui/expanded-gif-overlay";ΓÉì
+     16     Γöé - import┬╖{┬╖ScrollArea,┬╖ScrollBar┬╖}┬╖from┬╖"@/components/ui/scroll-area";ΓÉì
+     17     Γöé - import┬╖{┬╖Separator┬╖}┬╖from┬╖"@/components/ui/separator";ΓÉì
+         16 Γöé + import┬╖{┬╖ScrollArea,┬╖ScrollBar┬╖}┬╖from┬╖"@/components/ui/scroll-area";ΓÉì
+     18  17 Γöé   import { Skeleton } from "@/components/ui/skeleton";ΓÉì
+     19  18 Γöé   import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";ΓÉì
+  
+
+components\homepage\hero-section.tsx:486:7 lint/correctness/noUnusedVariables  FIXABLE  ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ! This variable CategoryPanel is unused.
+  
+    484 Γöé });
+    485 Γöé 
+  > 486 Γöé const CategoryPanel = memo(function CategoryPanel({
+        Γöé       ^^^^^^^^^^^^^
+    487 Γöé 	category,
+    488 Γöé 	reduceMotion,
+  
+  i Unused variables are often the result of typos, incomplete refactors, or other sources of bugs.
+  
+  i Unsafe fix: If this is intentional, prepend CategoryPanel with an underscore.
+  
+    484 484 Γöé   });ΓÉì
+    485 485 Γöé   ΓÉì
+    486     Γöé - const┬╖CategoryPanel┬╖=┬╖memo(function┬╖CategoryPanel({ΓÉì
+        486 Γöé + const┬╖_CategoryPanel┬╖=┬╖memo(function┬╖CategoryPanel({ΓÉì
+    487 487 Γöé   	category,ΓÉì
+    488 488 Γöé   	reduceMotion,ΓÉì
+  
+
+components\homepage\hero-section.tsx:2:1 assist/source/organizeImports  FIXABLE  ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The imports and exports are not sorted.
+  
+    1 Γöé ∩┐╜"use client";
+  > 2 Γöé import { ChevronDown, Download } from "lucide-react";
+      Γöé ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    3 Γöé import { AnimatePresence, motion, useAnimationFrame, useMotionValue, useReducedMotion } from "motion/react";
+    4 Γöé import Link from "next/link";
+  
+  i Safe fix: Organize Imports (Biome)
+  
+      1   1 Γöé   ∩┐╜"use client";ΓÉì
+      2     Γöé - import┬╖{┬╖ChevronDown,┬╖Download┬╖}┬╖from┬╖"lucide-react";ΓÉì
+      3     Γöé - import┬╖{┬╖AnimatePresence,┬╖motion,┬╖useAnimationFrame,┬╖useMotionValue,┬╖useReducedMotion┬╖}┬╖from┬╖"motion/react";ΓÉì
+      4     Γöé - import┬╖Link┬╖from┬╖"next/link";ΓÉì
+      5     Γöé - import┬╖React,┬╖{┬╖memo,┬╖useCallback,┬╖useEffect,┬╖useRef,┬╖useState┬╖}┬╖from┬╖"react";ΓÉì
+      6     Γöé - import┬╖Balancer┬╖from┬╖"react-wrap-balancer";ΓÉì
+      7     Γöé - import┬╖{┬╖HeroChatDemo,┬╖type┬╖HeroChatDemoScript┬╖}┬╖from┬╖"@/components/homepage/hero-chat-demo";ΓÉì
+      8     Γöé - import┬╖{┬╖Button┬╖}┬╖from┬╖"@/components/ui/button";ΓÉì
+      9     Γöé - import┬╖{ΓÉì
+     10     Γöé - ΓåÆ DropdownMenu,ΓÉì
+     11     Γöé - ΓåÆ DropdownMenuContent,ΓÉì
+     12     Γöé - ΓåÆ DropdownMenuItem,ΓÉì
+     13     Γöé - ΓåÆ DropdownMenuTrigger,ΓÉì
+     14     Γöé - }┬╖from┬╖"@/components/ui/dropdown-menu";ΓÉì
+     15     Γöé - import┬╖{┬╖ExpandedMediaOverlay,┬╖useExpandedMedia┬╖}┬╖from┬╖"@/components/ui/expanded-gif-overlay";ΓÉì
+     16     Γöé - import┬╖{┬╖ScrollArea,┬╖ScrollBar┬╖}┬╖from┬╖"@/components/ui/scroll-area";ΓÉì
+     17     Γöé - import┬╖{┬╖Separator┬╖}┬╖from┬╖"@/components/ui/separator";ΓÉì
+     18     Γöé - import┬╖{┬╖Skeleton┬╖}┬╖from┬╖"@/components/ui/skeleton";ΓÉì
+     19     Γöé - import┬╖{┬╖Tabs,┬╖TabsContent,┬╖TabsList,┬╖TabsTrigger┬╖}┬╖from┬╖"@/components/ui/tabs";ΓÉì
+     20     Γöé - import┬╖{ΓÉì
+     21     Γöé - ΓåÆ GITHUB_RELEASES_URL,ΓÉì
+     22     Γöé - ΓåÆ getAssetLabel,ΓÉì
+     23     Γöé - ΓåÆ usePrimaryDownload,ΓÉì
+     24     Γöé - }┬╖from┬╖"@/lib/desktop-download-utils";ΓÉì
+     25     Γöé - import┬╖{┬╖buildBackendUrl┬╖}┬╖from┬╖"@/lib/env-config";ΓÉì
+     26     Γöé - import┬╖{┬╖trackLoginAttempt┬╖}┬╖from┬╖"@/lib/posthog/events";ΓÉì
+     27     Γöé - import┬╖{┬╖cn┬╖}┬╖from┬╖"@/lib/utils";ΓÉì
+     28     Γöé - import┬╖{ΓÉì
+     29     Γöé - ΓåÆ IconBrandAmazon,ΓÉì
+     30     Γöé - ΓåÆ IconBrandGithub,ΓÉì
+     31     Γöé - ΓåÆ IconBrandGoogle,ΓÉì
+     32     Γöé - ΓåÆ IconBrandInstagram,ΓÉì
+     33     Γöé - ΓåÆ IconBrandReddit,ΓÉì
+     34     Γöé - ΓåÆ IconBrandTiktok,ΓÉì
+     35     Γöé - ΓåÆ IconBrandYoutube,ΓÉì
+     36     Γöé - ΓåÆ IconBriefcase,ΓÉì
+     37     Γöé - ΓåÆ IconMapPin,ΓÉì
+     38     Γöé - ΓåÆ IconSearch,ΓÉì
+     39     Γöé - }┬╖from┬╖"@tabler/icons-react";ΓÉì
+          2 Γöé + import┬╖{ΓÉì
+          3 Γöé + ΓåÆ IconBrandAmazon,ΓÉì
+          4 Γöé + ΓåÆ IconBrandGithub,ΓÉì
+          5 Γöé + ΓåÆ IconBrandGoogle,ΓÉì
+          6 Γöé + ΓåÆ IconBrandInstagram,ΓÉì
+          7 Γöé + ΓåÆ IconBrandReddit,ΓÉì
+          8 Γöé + ΓåÆ IconBrandTiktok,ΓÉì
+          9 Γöé + ΓåÆ IconBrandYoutube,ΓÉì
+         10 Γöé + ΓåÆ IconBriefcase,ΓÉì
+         11 Γöé + ΓåÆ IconMapPin,ΓÉì
+         12 Γöé + ΓåÆ IconSearch,ΓÉì
+         13 Γöé + }┬╖from┬╖"@tabler/icons-react";ΓÉì
+         14 Γöé + import┬╖{┬╖ChevronDown,┬╖Download┬╖}┬╖from┬╖"lucide-react";ΓÉì
+         15 Γöé + import┬╖{┬╖AnimatePresence,┬╖motion,┬╖useAnimationFrame,┬╖useMotionValue,┬╖useReducedMotion┬╖}┬╖from┬╖"motion/react";ΓÉì
+         16 Γöé + import┬╖Link┬╖from┬╖"next/link";ΓÉì
+         17 Γöé + import┬╖React,┬╖{┬╖memo,┬╖useCallback,┬╖useEffect,┬╖useRef,┬╖useState┬╖}┬╖from┬╖"react";ΓÉì
+         18 Γöé + import┬╖Balancer┬╖from┬╖"react-wrap-balancer";ΓÉì
+         19 Γöé + import┬╖{┬╖HeroChatDemo,┬╖type┬╖HeroChatDemoScript┬╖}┬╖from┬╖"@/components/homepage/hero-chat-demo";ΓÉì
+         20 Γöé + import┬╖{┬╖Button┬╖}┬╖from┬╖"@/components/ui/button";ΓÉì
+         21 Γöé + import┬╖{ΓÉì
+         22 Γöé + ΓåÆ DropdownMenu,ΓÉì
+         23 Γöé + ΓåÆ DropdownMenuContent,ΓÉì
+         24 Γöé + ΓåÆ DropdownMenuItem,ΓÉì
+         25 Γöé + ΓåÆ DropdownMenuTrigger,ΓÉì
+         26 Γöé + }┬╖from┬╖"@/components/ui/dropdown-menu";ΓÉì
+         27 Γöé + import┬╖{┬╖ExpandedMediaOverlay,┬╖useExpandedMedia┬╖}┬╖from┬╖"@/components/ui/expanded-gif-overlay";ΓÉì
+         28 Γöé + import┬╖{┬╖ScrollArea,┬╖ScrollBar┬╖}┬╖from┬╖"@/components/ui/scroll-area";ΓÉì
+         29 Γöé + import┬╖{┬╖Separator┬╖}┬╖from┬╖"@/components/ui/separator";ΓÉì
+         30 Γöé + import┬╖{┬╖Skeleton┬╖}┬╖from┬╖"@/components/ui/skeleton";ΓÉì
+         31 Γöé + import┬╖{┬╖Tabs,┬╖TabsContent,┬╖TabsList,┬╖TabsTrigger┬╖}┬╖from┬╖"@/components/ui/tabs";ΓÉì
+         32 Γöé + import┬╖{ΓÉì
+         33 Γöé + ΓåÆ GITHUB_RELEASES_URL,ΓÉì
+         34 Γöé + ΓåÆ getAssetLabel,ΓÉì
+         35 Γöé + ΓåÆ usePrimaryDownload,ΓÉì
+         36 Γöé + }┬╖from┬╖"@/lib/desktop-download-utils";ΓÉì
+         37 Γöé + import┬╖{┬╖buildBackendUrl┬╖}┬╖from┬╖"@/lib/env-config";ΓÉì
+         38 Γöé + import┬╖{┬╖trackLoginAttempt┬╖}┬╖from┬╖"@/lib/posthog/events";ΓÉì
+         39 Γöé + import┬╖{┬╖cn┬╖}┬╖from┬╖"@/lib/utils";ΓÉì
+     40  40 Γöé   ΓÉì
+     41  41 Γöé   const GoogleLogo = ({ className }: { className?: string }) => (ΓÉì
+  
+
+components\homepage\hero-section.tsx format ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Formatter would have printed the following content:
+  
+      1     Γöé - ∩┐╜"use┬╖client";ΓÉì
+      2     Γöé - import┬╖{┬╖ChevronDown,┬╖Download┬╖}┬╖from┬╖"lucide-react";ΓÉì
+      3     Γöé - import┬╖{┬╖AnimatePresence,┬╖motion,┬╖useAnimationFrame,┬╖useMotionValue,┬╖useReducedMotion┬╖}┬╖from┬╖"motion/react";ΓÉì
+      4     Γöé - import┬╖Link┬╖from┬╖"next/link";ΓÉì
+      5     Γöé - import┬╖React,┬╖{┬╖memo,┬╖useCallback,┬╖useEffect,┬╖useRef,┬╖useState┬╖}┬╖from┬╖"react";ΓÉì
+      6     Γöé - import┬╖Balancer┬╖from┬╖"react-wrap-balancer";ΓÉì
+      7     Γöé - import┬╖{┬╖HeroChatDemo,┬╖type┬╖HeroChatDemoScript┬╖}┬╖from┬╖"@/components/homepage/hero-chat-demo";ΓÉì
+      8     Γöé - import┬╖{┬╖Button┬╖}┬╖from┬╖"@/components/ui/button";ΓÉì
+      9     Γöé - import┬╖{ΓÉì
+     10     Γöé - ΓåÆ DropdownMenu,ΓÉì
+     11     Γöé - ΓåÆ DropdownMenuContent,ΓÉì
+     12     Γöé - ΓåÆ DropdownMenuItem,ΓÉì
+     13     Γöé - ΓåÆ DropdownMenuTrigger,ΓÉì
+     14     Γöé - }┬╖from┬╖"@/components/ui/dropdown-menu";ΓÉì
+     15     Γöé - import┬╖{┬╖ExpandedMediaOverlay,┬╖useExpandedMedia┬╖}┬╖from┬╖"@/components/ui/expanded-gif-overlay";ΓÉì
+     16     Γöé - import┬╖{┬╖ScrollArea,┬╖ScrollBar┬╖}┬╖from┬╖"@/components/ui/scroll-area";ΓÉì
+     17     Γöé - import┬╖{┬╖Separator┬╖}┬╖from┬╖"@/components/ui/separator";ΓÉì
+     18     Γöé - import┬╖{┬╖Skeleton┬╖}┬╖from┬╖"@/components/ui/skeleton";ΓÉì
+     19     Γöé - import┬╖{┬╖Tabs,┬╖TabsContent,┬╖TabsList,┬╖TabsTrigger┬╖}┬╖from┬╖"@/components/ui/tabs";ΓÉì
+     20     Γöé - import┬╖{ΓÉì
+     21     Γöé - ΓåÆ GITHUB_RELEASES_URL,ΓÉì
+     22     Γöé - ΓåÆ getAssetLabel,ΓÉì
+     23     Γöé - ΓåÆ usePrimaryDownload,ΓÉì
+     24     Γöé - }┬╖from┬╖"@/lib/desktop-download-utils";ΓÉì
+     25     Γöé - import┬╖{┬╖buildBackendUrl┬╖}┬╖from┬╖"@/lib/env-config";ΓÉì
+     26     Γöé - import┬╖{┬╖trackLoginAttempt┬╖}┬╖from┬╖"@/lib/posthog/events";ΓÉì
+     27     Γöé - import┬╖{┬╖cn┬╖}┬╖from┬╖"@/lib/utils";ΓÉì
+     28     Γöé - import┬╖{ΓÉì
+     29     Γöé - ΓåÆ IconBrandAmazon,ΓÉì
+     30     Γöé - ΓåÆ IconBrandGithub,ΓÉì
+     31     Γöé - ΓåÆ IconBrandGoogle,ΓÉì
+     32     Γöé - ΓåÆ IconBrandInstagram,ΓÉì
+     33     Γöé - ΓåÆ IconBrandReddit,ΓÉì
+     34     Γöé - ΓåÆ IconBrandTiktok,ΓÉì
+     35     Γöé - ΓåÆ IconBrandYoutube,ΓÉì
+     36     Γöé - ΓåÆ IconBriefcase,ΓÉì
+     37     Γöé - ΓåÆ IconMapPin,ΓÉì
+     38     Γöé - ΓåÆ IconSearch,ΓÉì
+     39     Γöé - }┬╖from┬╖"@tabler/icons-react";ΓÉì
+     40     Γöé - ΓÉì
+     41     Γöé - const┬╖GoogleLogo┬╖=┬╖({┬╖className┬╖}:┬╖{┬╖className?:┬╖string┬╖})┬╖=>┬╖(ΓÉì
+     42     Γöé - ΓåÆ <svgΓÉì
+     43     Γöé - ΓåÆ ΓåÆ className={className}ΓÉì
+     44     Γöé - ΓåÆ ΓåÆ viewBox="0┬╖0┬╖24┬╖24"ΓÉì
+     45     Γöé - ΓåÆ ΓåÆ xmlns="http://www.w3.org/2000/svg"ΓÉì
+     46     Γöé - ΓåÆ ΓåÆ role="img"ΓÉì
+     47     Γöé - ΓåÆ ΓåÆ aria-label="Google┬╖logo"ΓÉì
+     48     Γöé - ΓåÆ >ΓÉì
+     49     Γöé - ΓåÆ ΓåÆ <title>Google┬╖logo</title>ΓÉì
+     50     Γöé - ΓåÆ ΓåÆ <pathΓÉì
+     51     Γöé - ΓåÆ ΓåÆ ΓåÆ d="M22.56┬╖12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26┬╖1.37-1.04┬╖2.53-2.21┬╖3.31v2.77h3.57c2.08-1.92┬╖3.28-4.74┬╖3.28-8.09z"ΓÉì
+     52     Γöé - ΓåÆ ΓåÆ ΓåÆ fill="#4285F4"ΓÉì
+     53     Γöé - ΓåÆ ΓåÆ />ΓÉì
+     54     Γöé - ΓåÆ ΓåÆ <pathΓÉì
+     55     Γöé - ΓåÆ ΓåÆ ΓåÆ d="M12┬╖23c2.97┬╖0┬╖5.46-.98┬╖7.28-2.66l-3.57-2.77c-.98.66-2.23┬╖1.06-3.71┬╖1.06-2.86┬╖0-5.29-1.93-6.16-4.53H2.18v2.84C3.99┬╖20.53┬╖7.7┬╖23┬╖12┬╖23z"ΓÉì
+     56     Γöé - ΓåÆ ΓåÆ ΓåÆ fill="#34A853"ΓÉì
+     57     Γöé - ΓåÆ ΓåÆ />ΓÉì
+     58     Γöé - ΓåÆ ΓåÆ <pathΓÉì
+     59     Γöé - ΓåÆ ΓåÆ ΓåÆ d="M5.84┬╖14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43┬╖8.55┬╖1┬╖10.22┬╖1┬╖12s.43┬╖3.45┬╖1.18┬╖4.93l2.85-2.22.81-.62z"ΓÉì
+     60     Γöé - ΓåÆ ΓåÆ ΓåÆ fill="#FBBC05"ΓÉì
+     61     Γöé - ΓåÆ ΓåÆ />ΓÉì
+     62     Γöé - ΓåÆ ΓåÆ <pathΓÉì
+     63     Γöé - ΓåÆ ΓåÆ ΓåÆ d="M12┬╖5.38c1.62┬╖0┬╖3.06.56┬╖4.21┬╖1.64l3.15-3.15C17.45┬╖2.09┬╖14.97┬╖1┬╖12┬╖1┬╖7.7┬╖1┬╖3.99┬╖3.47┬╖2.18┬╖7.07l3.66┬╖2.84c.87-2.6┬╖3.3-4.53┬╖6.16-4.53z"ΓÉì
+     64     Γöé - ΓåÆ ΓåÆ ΓåÆ fill="#EA4335"ΓÉì
+     65     Γöé - ΓåÆ ΓåÆ />ΓÉì
+     66     Γöé - ΓåÆ </svg>ΓÉì
+     67     Γöé - );ΓÉì
+     68     Γöé - ΓÉì
+     69     Γöé - type┬╖HeroUseCase┬╖=┬╖{ΓÉì
+     70     Γöé - ΓåÆ id:┬╖string;ΓÉì
+     71     Γöé - ΓåÆ title:┬╖string;ΓÉì
+     72     Γöé - ΓåÆ description:┬╖string;ΓÉì
+     73     Γöé - ΓåÆ src:┬╖string┬╖|┬╖null;ΓÉì
+     74     Γöé - ΓåÆ /**┬╖Scripted┬╖chat┬╖demo┬╖shown┬╖when┬╖there┬╖is┬╖no┬╖recorded┬╖video.┬╖*/ΓÉì
+     75     Γöé - ΓåÆ demo?:┬╖HeroChatDemoScript;ΓÉì
+     76     Γöé - };ΓÉì
+     77     Γöé - ΓÉì
+     78     Γöé - type┬╖HeroCategory┬╖=┬╖{ΓÉì
+     79     Γöé - ΓåÆ id:┬╖string;ΓÉì
+     80     Γöé - ΓåÆ label:┬╖string;ΓÉì
+     81     Γöé - ΓåÆ useCases:┬╖HeroUseCase[];ΓÉì
+     82     Γöé - };ΓÉì
+     83     Γöé - ΓÉì
+     84     Γöé - const┬╖FLOATING_ICONS┬╖=┬╖[ΓÉì
+     85     Γöé - ΓåÆ {┬╖name:┬╖"GitHub",┬╖Icon:┬╖IconBrandGithub,┬╖color:┬╖"#181717",┬╖startX:┬╖5,┬╖startY:┬╖18,┬╖wander:┬╖100,┬╖delay:┬╖0,┬╖bobAmp:┬╖8,┬╖bobDur:┬╖3.5┬╖},ΓÉì
+     86     Γöé - ΓåÆ {┬╖name:┬╖"Google",┬╖Icon:┬╖IconBrandGoogle,┬╖color:┬╖"#4285F4",┬╖startX:┬╖45,┬╖startY:┬╖15,┬╖wander:┬╖90,┬╖delay:┬╖1.5,┬╖bobAmp:┬╖10,┬╖bobDur:┬╖4┬╖},ΓÉì
+     87     Γöé - ΓåÆ {┬╖name:┬╖"YouTube",┬╖Icon:┬╖IconBrandYoutube,┬╖color:┬╖"#FF0000",┬╖startX:┬╖80,┬╖startY:┬╖20,┬╖wander:┬╖35,┬╖delay:┬╖0.8,┬╖bobAmp:┬╖6,┬╖bobDur:┬╖3┬╖},ΓÉì
+     88     Γöé - ΓåÆ {┬╖name:┬╖"Reddit",┬╖Icon:┬╖IconBrandReddit,┬╖color:┬╖"#FF4500",┬╖startX:┬╖6,┬╖startY:┬╖42,┬╖wander:┬╖45,┬╖delay:┬╖2,┬╖bobAmp:┬╖9,┬╖bobDur:┬╖3.8┬╖},ΓÉì
+     89     Γöé - ΓåÆ {┬╖name:┬╖"Instagram",┬╖Icon:┬╖IconBrandInstagram,┬╖color:┬╖"#E4405F",┬╖startX:┬╖1,┬╖startY:┬╖68,┬╖wander:┬╖40,┬╖delay:┬╖0.3,┬╖bobAmp:┬╖7,┬╖bobDur:┬╖3.2┬╖},ΓÉì
+     90     Γöé - ΓåÆ {┬╖name:┬╖"TikTok",┬╖Icon:┬╖IconBrandTiktok,┬╖color:┬╖"#000000",┬╖startX:┬╖92,┬╖startY:┬╖38,┬╖wander:┬╖45,┬╖delay:┬╖1.2,┬╖bobAmp:┬╖8,┬╖bobDur:┬╖4.2┬╖},ΓÉì
+     91     Γöé - ΓåÆ {┬╖name:┬╖"Maps",┬╖Icon:┬╖IconMapPin,┬╖color:┬╖"#34A853",┬╖startX:┬╖90,┬╖startY:┬╖62,┬╖wander:┬╖40,┬╖delay:┬╖2.5,┬╖bobAmp:┬╖7,┬╖bobDur:┬╖3.5┬╖},ΓÉì
+     92     Γöé - ΓåÆ {┬╖name:┬╖"SERP",┬╖Icon:┬╖IconSearch,┬╖color:┬╖"#4285F4",┬╖startX:┬╖20,┬╖startY:┬╖88,┬╖wander:┬╖35,┬╖delay:┬╖0.5,┬╖bobAmp:┬╖6,┬╖bobDur:┬╖3┬╖},ΓÉì
+     93     Γöé - ΓåÆ {┬╖name:┬╖"Indeed",┬╖Icon:┬╖IconBriefcase,┬╖color:┬╖"#2164F3",┬╖startX:┬╖55,┬╖startY:┬╖80,┬╖wander:┬╖45,┬╖delay:┬╖1.8,┬╖bobAmp:┬╖10,┬╖bobDur:┬╖4.5┬╖},ΓÉì
+     94     Γöé - ΓåÆ {┬╖name:┬╖"Amazon",┬╖Icon:┬╖IconBrandAmazon,┬╖color:┬╖"#FF9900",┬╖startX:┬╖78,┬╖startY:┬╖85,┬╖wander:┬╖40,┬╖delay:┬╖0.7,┬╖bobAmp:┬╖7,┬╖bobDur:┬╖3.3┬╖},ΓÉì
+     95     Γöé - ];ΓÉì
+     96     Γöé - ΓÉì
+     97     Γöé - function┬╖randomBetween(min:┬╖number,┬╖max:┬╖number):┬╖number┬╖{ΓÉì
+     98     Γöé - ΓåÆ return┬╖Math.random()┬╖*┬╖(max┬╖-┬╖min)┬╖+┬╖min;ΓÉì
+     99     Γöé - }ΓÉì
+    100     Γöé - ΓÉì
+    101     Γöé - function┬╖lerp(a:┬╖number,┬╖b:┬╖number,┬╖t:┬╖number):┬╖number┬╖{ΓÉì
+    102     Γöé - ΓåÆ return┬╖a┬╖+┬╖(b┬╖-┬╖a)┬╖*┬╖t;ΓÉì
+    103     Γöé - }ΓÉì
+    104     Γöé - ΓÉì
+    105     Γöé - function┬╖easeInOut(t:┬╖number):┬╖number┬╖{ΓÉì
+    106     Γöé - ΓåÆ return┬╖t┬╖<┬╖0.5┬╖?┬╖2┬╖*┬╖t┬╖*┬╖t┬╖:┬╖1┬╖-┬╖Math.pow(-2┬╖*┬╖t┬╖+┬╖2,┬╖2)┬╖/┬╖2;ΓÉì
+    107     Γöé - }ΓÉì
+    108     Γöé - ΓÉì
+    109     Γöé - function┬╖FloatingIcon({┬╖icon┬╖}:┬╖{┬╖icon:┬╖(typeof┬╖FLOATING_ICONS)[number]┬╖})┬╖{ΓÉì
+    110     Γöé - ΓåÆ const┬╖reduceMotion┬╖=┬╖useReducedMotion();ΓÉì
+    111     Γöé - ΓåÆ const┬╖x┬╖=┬╖useMotionValue(0);ΓÉì
+    112     Γöé - ΓåÆ const┬╖y┬╖=┬╖useMotionValue(0);ΓÉì
+    113     Γöé - ΓåÆ const┬╖rotate┬╖=┬╖useMotionValue(0);ΓÉì
+    114     Γöé - ΓåÆ const┬╖scale┬╖=┬╖useMotionValue(1);ΓÉì
+    115     Γöé - ΓÉì
+    116     Γöé - ΓåÆ const┬╖targetRef┬╖=┬╖useRef({┬╖x:┬╖0,┬╖y:┬╖0,┬╖rotate:┬╖0,┬╖scale:┬╖1┬╖});ΓÉì
+    117     Γöé - ΓåÆ const┬╖prevRef┬╖=┬╖useRef({┬╖x:┬╖0,┬╖y:┬╖0,┬╖rotate:┬╖0,┬╖scale:┬╖1┬╖});ΓÉì
+    118     Γöé - ΓåÆ const┬╖progressRef┬╖=┬╖useRef(0);ΓÉì
+    119     Γöé - ΓåÆ const┬╖durationRef┬╖=┬╖useRef(60);ΓÉì
+    120     Γöé - ΓåÆ const┬╖elapsedRef┬╖=┬╖useRef(0);ΓÉì
+    121     Γöé - ΓåÆ const┬╖startedRef┬╖=┬╖useRef(false);ΓÉì
+    122     Γöé - ΓåÆ const┬╖lastTimeRef┬╖=┬╖useRef(0);ΓÉì
+    123     Γöé - ΓÉì
+    124     Γöé - ΓåÆ useAnimationFrame(()┬╖=>┬╖{ΓÉì
+    125     Γöé - ΓåÆ ΓåÆ if┬╖(reduceMotion)┬╖return;ΓÉì
+    126     Γöé - ΓÉì
+    127     Γöé - ΓåÆ ΓåÆ const┬╖now┬╖=┬╖performance.now();ΓÉì
+    128     Γöé - ΓåÆ ΓåÆ if┬╖(lastTimeRef.current┬╖===┬╖0)┬╖{ΓÉì
+    129     Γöé - ΓåÆ ΓåÆ ΓåÆ lastTimeRef.current┬╖=┬╖now;ΓÉì
+    130     Γöé - ΓåÆ ΓåÆ ΓåÆ return;ΓÉì
+    131     Γöé - ΓåÆ ΓåÆ }ΓÉì
+    132     Γöé - ΓåÆ ΓåÆ const┬╖delta┬╖=┬╖Math.min((now┬╖-┬╖lastTimeRef.current)┬╖/┬╖1000,┬╖0.1);ΓÉì
+    133     Γöé - ΓåÆ ΓåÆ lastTimeRef.current┬╖=┬╖now;ΓÉì
+    134     Γöé - ΓÉì
+    135     Γöé - ΓåÆ ΓåÆ elapsedRef.current┬╖+=┬╖delta;ΓÉì
+    136     Γöé - ΓåÆ ΓåÆ if┬╖(elapsedRef.current┬╖<┬╖icon.delay)┬╖return;ΓÉì
+    137     Γöé - ΓÉì
+    138     Γöé - ΓåÆ ΓåÆ if┬╖(!startedRef.current)┬╖{ΓÉì
+    139     Γöé - ΓåÆ ΓåÆ ΓåÆ startedRef.current┬╖=┬╖true;ΓÉì
+    140     Γöé - ΓåÆ ΓåÆ ΓåÆ targetRef.current┬╖=┬╖{ΓÉì
+    141     Γöé - ΓåÆ ΓåÆ ΓåÆ ΓåÆ x:┬╖randomBetween(-icon.wander,┬╖icon.wander),ΓÉì
+    142     Γöé - ΓåÆ ΓåÆ ΓåÆ ΓåÆ y:┬╖randomBetween(-icon.wander,┬╖icon.wander),ΓÉì
+    143     Γöé - ΓåÆ ΓåÆ ΓåÆ ΓåÆ rotate:┬╖randomBetween(-4,┬╖4),ΓÉì
+    144     Γöé - ΓåÆ ΓåÆ ΓåÆ ΓåÆ scale:┬╖randomBetween(0.98,┬╖1.04),ΓÉì
+    145     Γöé - ΓåÆ ΓåÆ ΓåÆ };ΓÉì
+    146     Γöé - ΓåÆ ΓåÆ ΓåÆ durationRef.current┬╖=┬╖randomBetween(40,┬╖80);ΓÉì
+    147     Γöé - ΓåÆ ΓåÆ }ΓÉì
+    148     Γöé - ΓÉì
+    149     Γöé - ΓåÆ ΓåÆ progressRef.current┬╖+=┬╖delta┬╖/┬╖durationRef.current;ΓÉì
+    150     Γöé - ΓÉì
+  1005 more lines truncated
+  
+
+Checked 1 file in 29ms. No fixes applied.
+Found 2 errors.
+Found 3 warnings.
+Found 1 info.
+check ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Some errors were emitted while running checks.
+  
+

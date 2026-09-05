@@ -3,9 +3,11 @@ import icon from "data-base64:~assets/icon.png";
 import { sendToBackground } from "@plasmohq/messaging";
 import { Storage } from "@plasmohq/storage";
 import {
+	ChatBubbleIcon,
 	CrossCircledIcon,
 	DiscIcon,
 	ExitIcon,
+	EyeOpenIcon,
 	FileIcon,
 	ReloadIcon,
 	UploadIcon,
@@ -56,6 +58,7 @@ const HomePage = () => {
 	const [value, setValue] = React.useState<string>("");
 	const [workspaces, setWorkspaces] = useState([]);
 	const [isSaving, setIsSaving] = useState(false);
+	const [autoCapture, setAutoCapture] = useState(false);
 
 	useEffect(() => {
 		const checkWorkspaces = async () => {
@@ -142,6 +145,47 @@ const HomePage = () => {
 
 		onLoad();
 	}, []);
+
+	useEffect(() => {
+		async function loadAutoCapture(): Promise<void> {
+			try {
+				const storage = new Storage({ area: "local" });
+				const enabled = await storage.get<boolean>("auto_capture");
+				setAutoCapture(enabled === true);
+			} catch (error) {
+				console.log(error);
+			}
+		}
+		loadAutoCapture();
+	}, []);
+
+	async function toggleAutoCapture(): Promise<void> {
+		const storage = new Storage({ area: "local" });
+		const next = !autoCapture;
+		setAutoCapture(next);
+		await storage.set("auto_capture", next);
+		toast({
+			title: next ? "Researcher mode on" : "Researcher mode off",
+			description: next
+					? "Pages you visit are saved to your knowledge base automatically"
+					: "Automatic page capture stopped",
+		});
+	}
+
+	async function openChatPanel(): Promise<void> {
+		try {
+			const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+			if (tab?.windowId !== undefined) {
+				await chrome.sidePanel.open({ windowId: tab.windowId });
+			}
+		} catch (error) {
+			toast({
+				title: "Could not open the chat panel",
+				description: "Please try again",
+				variant: "destructive",
+			});
+		}
+	}
 
 	async function clearMem(): Promise<void> {
 		try {
@@ -469,6 +513,29 @@ const HomePage = () => {
 						</div>
 
 						<div className="grid gap-3">
+							<Button
+								variant="default"
+								className="group flex w-full items-center justify-center space-x-2 bg-gradient-to-r from-teal-500 to-emerald-500 text-white transition-all hover:from-teal-600 hover:to-emerald-600"
+								onClick={() => openChatPanel()}
+							>
+								<ChatBubbleIcon className="h-4 w-4 transition-transform group-hover:scale-110" />
+								<span>Chat with this page (AI)</span>
+							</Button>
+
+							<Button
+								variant="outline"
+								className="flex w-full items-center justify-between border-gray-700 bg-gray-900 text-gray-200 hover:bg-gray-700"
+								onClick={() => toggleAutoCapture()}
+							>
+								<span className="flex items-center space-x-2">
+									<EyeOpenIcon className="h-4 w-4 text-teal-400" />
+									<span>Researcher mode</span>
+								</span>
+								<span className={autoCapture ? "text-teal-300" : "text-gray-500"}>
+									{autoCapture ? "ON - auto-capturing" : "OFF"}
+								</span>
+							</Button>
+
 							<Button
 								variant="destructive"
 								className="group flex w-full items-center justify-center space-x-2 bg-red-500/90 text-white hover:bg-red-600"

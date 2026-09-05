@@ -1,0 +1,28 @@
+=== create corvos role 27/08/2026  5:22:54.10 ===
+        1 file(s) copied.
+backup exit=0
+rewrite exit=0
+The postgresql-x64-18 - PostgreSQL Server 18 service is stopping.
+The postgresql-x64-18 - PostgreSQL Server 18 service was stopped successfully.
+
+The postgresql-x64-18 - PostgreSQL Server 18 service is starting.
+The postgresql-x64-18 - PostgreSQL Server 18 service was started successfully.
+
+restart exit=0
+DO
+role exit=0
+CREATE DATABASE
+createdb exit=1
+ERROR:  extension "vector" is not available
+HINT:  The extension must first be installed on the system where PostgreSQL is running.
+pgvector exit=1
+        1 file(s) copied.
+restore exit=0
+The postgresql-x64-18 - PostgreSQL Server 18 service is stopping.
+The postgresql-x64-18 - PostgreSQL Server 18 service was stopped successfully.
+
+The postgresql-x64-18 - PostgreSQL Server 18 service is starting.
+The postgresql-x64-18 - PostgreSQL Server 18 service was started successfully.
+
+final-restart exit=0
+=== done ===

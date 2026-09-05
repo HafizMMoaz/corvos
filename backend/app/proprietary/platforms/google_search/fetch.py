@@ -128,6 +128,15 @@ _POOL_WAIT_S = 0.25
 # than hanging a request forever under saturation.
 _FETCH_DEADLINE_S = float(os.getenv("GOOGLE_SEARCH_FETCH_DEADLINE_S", "180"))
 
+# No-proxy mode: how many direct renders to try on the shared session. The
+# wall is soft on a clean direct IP - the first render of a fresh session eats
+# a 429 /sorry page and the immediate same-session re-fetch passes (the session
+# then stays warm for later queries), so retry a bounded number of times
+# instead of giving up after one render (live-verified 2026-08-29; see the
+# no-proxy branch of fetch_serp_html).
+_DIRECT_RENDER_ATTEMPTS = int(os.getenv("GOOGLE_SEARCH_DIRECT_RENDER_ATTEMPTS", "3"))
+_DIRECT_RETRY_BACKOFF_S = 0.75
+
 # A usable precheck responds in <1 s; anything slower is a dead/slow sticky IP
 # (seen hanging ~60 s). Abandon it on this deadline so a slow IP costs no more
 # than a walled one, keeping per-page time predictable.
@@ -537,6 +546,10 @@ async def fetch_serp_html(url: str, *, mobile: bool = False) -> str | None:
     the per-fetch deadline / IP budget runs out. Requires the browser tier -
     without it we cannot get JS-built results. ``mobile`` renders with a phone
     UA/viewport (the ``mobileResults`` input).
+
+    Without a proxy, a bounded series of direct renders runs on the shared
+    session instead (the wall is soft on a clean direct IP; see
+    :data:`_DIRECT_RENDER_ATTEMPTS`).
     """
     if AsyncStealthySession is None:
         logger.error("[google_search] browser tier unavailable; cannot render SERPs")
@@ -544,11 +557,25 @@ async def fetch_serp_html(url: str, *, mobile: bool = False) -> str | None:
 
     base = get_proxy_url()
     if not base:
-        # No proxy configured: a single direct render, no pool bookkeeping.
-        with contextlib.suppress(Exception):
-            page = await _render(url, None, mobile=mobile)
-            html = page.html_content or ""
-            return html if (page.status == 200 and _has_results(html)) else None
+        # No proxy configured: direct renders on the shared session, no pool
+        # bookkeeping. A fresh session's first render often eats a soft 429
+        # /sorry wall; the same-session re-fetch passes and the session stays
+        # warm for later queries, so retry a bounded number of times.
+        for attempt in range(1, _DIRECT_RENDER_ATTEMPTS + 1):
+            with contextlib.suppress(Exception):
+                page = await _render(url, None, mobile=mobile)
+                html = page.html_content or ""
+                if page.status == 200 and _has_results(html):
+                    return html
+                logger.debug(
+                    "[google_search] direct render %d/%d: status=%s len=%d, no results",
+                    attempt,
+                    _DIRECT_RENDER_ATTEMPTS,
+                    page.status,
+                    len(html),
+                )
+            if attempt < _DIRECT_RENDER_ATTEMPTS:
+                await asyncio.sleep(_DIRECT_RETRY_BACKOFF_S)
         return None
 
     deadline = time.monotonic() + _FETCH_DEADLINE_S
@@ -621,3 +648,47 @@ async def fetch_serp_html(url: str, *, mobile: bool = False) -> str | None:
         "[google_search] gave up on %s (deadline/%d-IP budget)", url, _MAX_IP_ATTEMPTS
     )
     return None
+
+
+# --- /goto redirect resolution ---------------------------------------------
+#
+# Google wraps organic-result anchors in encrypted ``/goto?url=<token>``
+# redirects (the token's protobuf payload carries no plaintext target), so the
+# parser keeps the token href and the scraper resolves it here: the endpoint
+# answers with a tiny 302 whose Location IS the destination URL.
+_GOTO_ORIGIN = "https://www.google.com"
+_GOTO_CACHE: dict[str, str] = {}  # absolute /goto url -> destination
+_GOTO_CACHE_MAX = 2048  # tokens are near-unique per SERP; bound the map
+
+
+async def resolve_goto_url(url: str) -> str:
+    """Resolve one Google ``/goto?url=`` redirect to its destination URL.
+
+    Non-goto URLs pass through untouched. A failed resolution (timeout, no
+    Location, non-redirect) falls back to the absolute redirect URL itself so
+    a result is never dropped over a lost link.
+    """
+    if not url.startswith("/goto?"):
+        return url
+    absolute = _GOTO_ORIGIN + url
+    cached = _GOTO_CACHE.get(absolute)
+    if cached:
+        return cached
+    try:
+        r = await AsyncFetcher.get(
+            absolute,
+            stealthy_headers=True,
+            timeout=10,
+            follow_redirects=False,
+        )
+        location = (r.headers or {}).get("location") if isinstance(r.headers, dict) else None
+        if r.status in (301, 302, 303, 307, 308) and location and location.startswith("http"):
+            if len(_GOTO_CACHE) < _GOTO_CACHE_MAX:
+                _GOTO_CACHE[absolute] = location
+            return location
+        logger.debug(
+            "[google_search] goto resolve: status=%s location=%r", r.status, location
+        )
+    except Exception as e:
+        logger.debug("[google_search] goto resolve failed: %r", e)
+    return absolute

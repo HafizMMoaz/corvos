@@ -26,6 +26,7 @@ import {
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import { type FC, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { toast } from "sonner";
 import {
 	agentToolsAtom,
 	disabledToolsAtom,
@@ -67,6 +68,9 @@ import {
 } from "@/components/assistant-ui/inline-mention-editor";
 import { TooltipIconButton } from "@/components/assistant-ui/tooltip-icon-button";
 import { UserMessage } from "@/components/assistant-ui/user-message";
+import { VoiceCallPanel } from "@/components/assistant-ui/voice-call-panel";
+import { VoiceRecordingButton } from "@/components/assistant-ui/voice-recording-button";
+import { VoiceSettingsPopover } from "@/components/assistant-ui/voice-settings-popover";
 import { ChatExamplePrompts } from "@/components/new-chat/chat-example-prompts";
 import { ChatHeader } from "@/components/new-chat/chat-header";
 import { ComposerSuggestionPopoverContent } from "@/components/new-chat/composer-suggestion-popup";
@@ -963,6 +967,7 @@ const Composer: FC<ComposerProps> = ({ isLoadingMessages = false }) => {
 						isLoadingMessages={isLoadingMessages}
 						isThreadRunning={isThreadRunning}
 						workspaceId={workspaceId ?? 0}
+						threadId={threadId}
 						onChatModelSelected={handleChatModelSelected}
 					/>
 				</div>
@@ -1032,6 +1037,7 @@ interface ComposerActionProps {
 	isLoadingMessages?: boolean;
 	isThreadRunning?: boolean;
 	workspaceId: number;
+	threadId?: number | null;
 	onChatModelSelected?: () => void;
 }
 
@@ -1040,6 +1046,7 @@ const ComposerAction: FC<ComposerActionProps> = ({
 	isLoadingMessages = false,
 	isThreadRunning = false,
 	workspaceId,
+	threadId,
 	onChatModelSelected,
 }) => {
 	const mentionedDocuments = useAtomValue(mentionedDocumentsAtom);
@@ -1487,6 +1494,32 @@ const ComposerAction: FC<ComposerActionProps> = ({
 					className="h-9 max-w-[44vw] px-2 sm:max-w-none sm:px-3"
 					onChatModelSelected={onChatModelSelected}
 				/>
+				<VoiceRecordingButton
+					workspaceId={workspaceId}
+					threadId={threadId}
+					disabled={isBlockedByOtherUser || isLoadingMessages}
+					onResult={(result) => {
+						if (result.transcription) {
+							toast.success(`You said: ${result.transcription}`, {
+								description: result.replyText,
+								duration: 6000,
+							});
+						}
+					}}
+				/>
+				<VoiceCallPanel
+					workspaceId={workspaceId}
+					threadId={threadId}
+					onTurnResult={(result) => {
+						if (result.transcription) {
+							toast.success(`You said: ${result.transcription}`, {
+								description: result.replyText,
+								duration: 5000,
+							});
+						}
+					}}
+				/>
+				<VoiceSettingsPopover />
 				<AuiIf condition={({ thread }) => !thread.isRunning}>
 					<ComposerPrimitive.Send asChild disabled={isSendDisabled}>
 						<TooltipIconButton

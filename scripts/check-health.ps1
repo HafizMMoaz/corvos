@@ -2,8 +2,8 @@
 # free of a fatal startup error. Fails loudly per-service so a partial start is
 # obvious rather than silently half-working.
 $ErrorActionPreference = 'Continue'
-$report = 'd:\Corvos\scripts\health.txt'
-$logs = 'd:\Corvos\scripts\logs'
+$report = 'e:\corvos\scripts\health.txt'
+$logs = 'e:\corvos\scripts\logs'
 $lines = @("=== health $(Get-Date -Format o) ===")
 
 $targets = @(
@@ -31,7 +31,7 @@ foreach ($p in 5432, 6379, 8000, 6848, 3000) {
 }
 
 # Celery has no HTTP port; a live worker answers a broker ping.
-Push-Location 'd:\Corvos\backend'
+Push-Location 'e:\corvos\backend'
 $ping = & uv run celery -A app.celery_app inspect ping --timeout 15 2>&1 | Select-Object -Last 6
 Pop-Location
 $lines += '--- celery inspect ping ---'

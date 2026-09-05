@@ -2,7 +2,7 @@
 
 import { useAtomValue } from "jotai";
 import { useParams, useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import {
 	llmSetupStatusAtomFamily,
 	modelConnectionsAtom,
@@ -29,6 +29,17 @@ export default function OnboardPage() {
 	// explicit CTA once the workspace can chat.
 	const isReady = setupStatus?.status === "ready";
 
+	// "Skip for now" - persist a localStorage flag keyed by workspace so the
+	// layout gate's initial_setup redirect doesn't bounce the user back here.
+	const handleSkip = useCallback(() => {
+		try {
+			localStorage.setItem(`corvos-onboard-skipped-${workspaceId}`, "true");
+		} catch (_e) {
+			// ignore quota / security errors
+		}
+		router.replace(`/dashboard/${workspaceId}/new-chat`);
+	}, [router, workspaceId]);
+
 	return (
 		<div className="flex min-h-screen select-none flex-col items-center justify-center bg-main-panel p-4">
 			<div className="w-full max-w-3xl space-y-6 text-center">
@@ -44,13 +55,18 @@ export default function OnboardPage() {
 					connections={connections}
 					className="flex flex-col gap-6 text-left"
 					footerAction={
-						<Button
-							className="min-w-[112px]"
-							disabled={!isReady}
-							onClick={() => router.replace(`/dashboard/${workspaceId}/new-chat`)}
-						>
-							Start
-						</Button>
+						<div className="flex items-center gap-3">
+							<Button
+								className="min-w-[112px]"
+								disabled={!isReady}
+								onClick={() => router.replace(`/dashboard/${workspaceId}/new-chat`)}
+							>
+								Start
+							</Button>
+							<Button variant="ghost" size="sm" onClick={handleSkip}>
+								Skip for now
+							</Button>
+						</div>
 					}
 					showAddProviderHeader={false}
 				/>

@@ -175,3 +175,53 @@ class UserFeatureOverrideRead(BaseModel):
     created_by_id: UUID | None
     created_at: datetime
     updated_at: datetime
+
+
+# ============ Admin Subscriptions List Schema ============
+
+
+class AdminSubscriptionRead(BaseModel):
+    """One row of the admin subscriptions list: a `PaddleSubscription`
+    (upserted from Paddle webhooks, see `app.services.paddle_service`)
+    joined with its user's email and plan's name. Read-only -- subscription
+    state always flows in from Paddle; the admin UI only displays it."""
+
+    id: int
+    user_id: UUID
+    user_email: str
+    plan_id: int | None
+    plan_name: str | None
+    paddle_subscription_id: str
+    paddle_customer_id: str
+    status: str
+    current_period_end: datetime | None
+    cancel_at_period_end: bool
+    created_at: datetime
+    updated_at: datetime
+
+
+# ============ Admin Users List Schemas ============
+
+
+class AdminUserListItemRead(BaseModel):
+    """One row of the admin users list. `user` has no created_at column, so
+    `last_login` (nullable) is the only recency signal available."""
+
+    id: UUID
+    email: str
+    display_name: str | None
+    is_active: bool
+    is_superuser: bool
+    plan_id: int | None
+    plan_name: str | None
+    credit_micros_balance: int
+    last_login: datetime | None
+
+
+class AdminUserListResponse(BaseModel):
+    """Response for `GET /admin/users` (paginated)."""
+
+    users: list[AdminUserListItemRead]
+    total: int
+    limit: int
+    offset: int

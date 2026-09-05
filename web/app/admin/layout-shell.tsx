@@ -61,14 +61,12 @@ export function AdminLayoutShell({ children }: AdminLayoutShellProps) {
 				label: "Billing & Plans",
 				href: "/admin/billing",
 				icon: <CreditCard className="h-4 w-4" />,
-				disabled: true,
 			},
 			{
 				value: "users" as const,
 				label: "Users",
 				href: "/admin/users",
 				icon: <Users className="h-4 w-4" />,
-				disabled: true,
 			},
 		],
 		[]

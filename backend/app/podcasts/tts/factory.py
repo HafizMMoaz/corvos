@@ -10,6 +10,10 @@ from .port import TextToSpeech
 # treated as a LiteLLM-hosted model (``openai/...``, ``vertex_ai/...``, etc.).
 KOKORO_SERVICE = "local/kokoro"
 
+# ElevenLabs service prefix; ``elevenlabs/...`` selects the ElevenLabs adapter
+# with an optional model suffix (e.g. ``elevenlabs/eleven_turbo_v2_5``).
+ELEVENLABS_PREFIX = "elevenlabs"
+
 
 @lru_cache(maxsize=1)
 def get_text_to_speech() -> TextToSpeech:
@@ -28,6 +32,19 @@ def get_text_to_speech() -> TextToSpeech:
         from .adapters.kokoro import KokoroTextToSpeech
 
         return KokoroTextToSpeech()
+
+    # ElevenLabs: ``elevenlabs`` or ``elevenlabs/<model>``
+    prefix = service.split("/", 1)[0].strip().lower()
+    if prefix == ELEVENLABS_PREFIX:
+        from .adapters.elevenlabs import ElevenLabsTextToSpeech
+
+        # Allow ``elevenlabs/eleven_turbo_v2_5`` to override the model
+        parts = service.split("/", 1)
+        model = parts[1] if len(parts) > 1 and parts[1] else "eleven_multilingual_v2"
+        return ElevenLabsTextToSpeech(
+            api_key=app_config.ELEVENLABS_API_KEY,
+            model=model,
+        )
 
     from .adapters.litellm import LiteLlmTextToSpeech
 

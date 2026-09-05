@@ -15,11 +15,23 @@ param(
 )
 
 $ErrorActionPreference = 'Continue'
-$root = 'd:\Corvos'
+$root = 'e:\corvos'
 $logs = Join-Path $root 'scripts\logs'
 New-Item -ItemType Directory -Force -Path $logs | Out-Null
 $report = Join-Path $root 'scripts\start_native.txt'
 $lines = @("=== start-native ($Service) $(Get-Date -Format o) ===")
+
+function ConvertTo-EscapedCommandLine {
+    # Start-Process -ArgumentList joins array elements with bare spaces and only
+    # quotes elements containing SPACES -- an arg like --queues=a,b,c keeps its
+    # commas unquoted, and CommandLineToArgvW splits commas into separate args,
+    # which silently ate the wrapper's -OutFile/-ErrFile params. Pre-quote
+    # anything with a separator character and hand over ONE escaped string.
+    param([string[]]$Parts)
+    ($Parts | ForEach-Object {
+        if ($_ -match '[ \t,"\x00-\x1f]') { '"' + $_.Replace('"', '\"') + '"' } else { $_ }
+    }) -join ' '
+}
 
 function Start-Svc {
     # NOTE: the arg-list parameter must NOT be named $Args -- that collides with
@@ -44,12 +56,17 @@ function Start-Svc {
     # -RedirectStandardError: that redirection just streams bytes straight to
     # the file with no per-line timestamp, so the wrapper adds one.
     $wrapper = Join-Path $PSScriptRoot 'run-logged.ps1'
+    # Child args go as ONE -ChildArgs value joined with [char]31 -- see
+    # run-logged.ps1: loose argv tokens like celery's -A would be parsed as
+    # parameters of the wrapper script and kill it before launch.
     $wrapperArgs = @(
         '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', $wrapper,
-        '-Exe', $exePath, '-WorkDir', $WorkDir, '-OutFile', $out, '-ErrFile', $err
-    ) + $ArgList
+        '-Exe', $exePath, '-WorkDir', $WorkDir, '-OutFile', $out, '-ErrFile', $err,
+        '-ChildArgs', ($ArgList -join [char]31)
+    )
     try {
-        $p = Start-Process -FilePath 'powershell.exe' -ArgumentList $wrapperArgs `
+        $escaped = ConvertTo-EscapedCommandLine $wrapperArgs
+        $p = Start-Process -FilePath 'powershell.exe' -ArgumentList $escaped `
             -WindowStyle Hidden -PassThru
         $script:lines += "started $Name pid=$($p.Id) : $exePath $($ArgList -join ' ')"
     }

@@ -529,7 +529,6 @@ def test_unknown_extension_classified_as_unsupported():
     [
         "malware.exe",
         "archive.zip",
-        "video.mov",
         "font.woff2",
         "model.blend",
         "data.parquet",
@@ -560,6 +559,10 @@ def test_unsupported_extensions_classified_correctly(filename):
         ("letter.odt", "document"),
         ("readme.md", "plaintext"),
         ("data.csv", "direct_convert"),
+        ("clip.avi", "video"),
+        ("clip.mkv", "video"),
+        ("clip.mov", "video"),
+        ("clip.flv", "video"),
     ],
 )
 def test_parseable_extensions_classified_correctly(filename, expected):

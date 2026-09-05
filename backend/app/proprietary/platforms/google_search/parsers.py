@@ -9,7 +9,9 @@ Selectors are the current desktop layout's (verified live, Jul 2026):
 
 * organic result container ...... ``div.tF2Cxc``
 * title ......................... ``h3``
-* link .......................... first ``<a href>`` in the block
+* link .......................... first ``<a href>`` in the block (an
+  encrypted ``/goto?url=`` redirect token when Google wraps anchors; resolved
+  to the destination URL by the scraper's goto pass, see fetch.resolve_goto_url)
 * displayed (green) URL ......... ``cite`` (first line, when it's a URL)
 * source/site name .............. ``.VuuXrf``
 * description ................... ``.VwiC3b``
@@ -107,9 +109,13 @@ def parse_results_total(doc: Adaptor) -> int | None:
 
 
 def _first_link(block) -> str | None:
+    # Google now wraps result anchors in encrypted ``/goto?url=<token>``
+    # redirects (no plaintext target inside the page). Keep the token href
+    # here; the scraper resolves it to the destination via the redirect's
+    # Location (see fetch.resolve_goto_url).
     for a in block.css("a"):
         href = a.attrib.get("href")
-        if href and href.startswith("http"):
+        if href and (href.startswith("http") or href.startswith("/goto?")):
             return href
     return None
 

@@ -234,7 +234,7 @@ export function EditorPanelContent({
 						document_id: -1,
 						title: inferredTitle,
 						document_type: "NOTE",
-						source_markdown: readResult.content,
+						source_markdown: readResult.content ?? "",
 					};
 					markdownRef.current = content.source_markdown;
 					setLocalFileContent(content.source_markdown);

@@ -12,7 +12,7 @@ from collections.abc import Iterable
 from dataclasses import dataclass
 from functools import lru_cache
 
-from .data import AZURE_VOICES, KOKORO_VOICES, OPENAI_VOICES, VERTEX_VOICES
+from .data import AZURE_VOICES, ELEVENLABS_VOICES, KOKORO_VOICES, OPENAI_VOICES, VERTEX_VOICES
 from .data.languages import COMMON_LANGUAGES
 from .provider import TtsProvider
 from .voice import ANY_LANGUAGE, CatalogVoice
@@ -77,4 +77,6 @@ class VoiceCatalog:
 @lru_cache(maxsize=1)
 def get_voice_catalog() -> VoiceCatalog:
     """The process-wide catalog assembled from every provider's roster."""
-    return VoiceCatalog((*KOKORO_VOICES, *OPENAI_VOICES, *AZURE_VOICES, *VERTEX_VOICES))
+    return VoiceCatalog(
+        (*KOKORO_VOICES, *OPENAI_VOICES, *AZURE_VOICES, *VERTEX_VOICES, *ELEVENLABS_VOICES)
+    )

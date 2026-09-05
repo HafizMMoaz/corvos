@@ -1,0 +1,61 @@
+=== pgvector install ===
+--- copying extension files ---
+        1 file(s) copied.
+        1 file(s) copied.
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.1.0--0.1.1.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.1.1--0.1.3.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.1.3--0.1.4.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.1.4--0.1.5.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.1.5--0.1.6.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.1.6--0.1.7.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.1.7--0.1.8.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.1.8--0.2.0.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.2.0--0.2.1.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.2.1--0.2.2.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.2.2--0.2.3.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.2.3--0.2.4.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.2.4--0.2.5.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.2.5--0.2.6.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.2.6--0.2.7.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.2.7--0.3.0.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.3.0--0.3.1.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.3.1--0.3.2.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.3.2--0.4.0.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.4.0--0.4.1.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.4.1--0.4.2.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.4.2--0.4.3.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.4.3--0.4.4.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.4.4--0.5.0.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.5.0--0.5.1.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.5.1--0.6.0.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.6.0--0.6.1.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.6.1--0.6.2.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.6.2--0.7.0.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.7.0--0.7.1.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.7.1--0.7.2.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.7.2--0.7.3.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.7.3--0.7.4.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.7.4--0.8.0.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.8.0--0.8.1.sql
+C:\Users\hafiz\AppData\Local\Temp\pgvector\sql\vector--0.8.1.sql
+       36 file(s) copied.
+--- setting wal_level=logical (ALTER SYSTEM) ---
+ALTER SYSTEM
+--- restarting postgresql-x64-18 ---
+The postgresql-x64-18 - PostgreSQL Server 18 service is stopping.
+The postgresql-x64-18 - PostgreSQL Server 18 service was stopped successfully.
+
+The postgresql-x64-18 - PostgreSQL Server 18 service is starting.
+The postgresql-x64-18 - PostgreSQL Server 18 service was started successfully.
+
+--- creating corvos database ---
+skipped - database already created by create-corvos-role.cmd
+--- enabling extensions in corvos ---
+CREATE EXTENSION
+CREATE EXTENSION
+--- verification ---
+wal_level=logical
+installed=vector 0.8.1
+installed=pg_trgm 1.6
+roundtrip=1
+=== done ===

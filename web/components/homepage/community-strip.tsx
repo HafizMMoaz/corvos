@@ -18,8 +18,8 @@ export function CommunityStrip() {
 						Open Source, Knowledge at Scale
 					</h2>
 					<p className="mx-auto mt-3 max-w-xl text-muted-foreground leading-relaxed">
-						Browse the code, deploy on your own infrastructer, or help steer the roadmap. Star the repo,
-						join the community, or self-host everything. Start free, no credit card needed.
+						Browse the code, deploy on your own infrastructer, or help steer the roadmap. Star the
+						repo, join the community, or self-host everything. Start free, no credit card needed.
 					</p>
 					<div className="mt-7 flex flex-wrap justify-center gap-3">
 						<Button asChild size="lg">
