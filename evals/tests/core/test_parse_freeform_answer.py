@@ -1,4 +1,4 @@
-﻿"""Tests for ``evals.core.parse.freeform_answer``."""
+"""Tests for ``evals.core.parse.freeform_answer``."""
 
 from __future__ import annotations
 

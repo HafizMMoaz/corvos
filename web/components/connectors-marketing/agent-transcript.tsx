@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Check } from "lucide-react";
 import { motion, useReducedMotion, type Variants } from "motion/react";

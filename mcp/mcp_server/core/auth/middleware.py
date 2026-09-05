@@ -1,4 +1,4 @@
-﻿"""ASGI middleware that establishes the caller's identity for each request.
+"""ASGI middleware that establishes the caller's identity for each request.
 
 A pure ASGI middleware, deliberately not Starlette's ``BaseHTTPMiddleware``:
 the latter runs the endpoint in a separate task, so a contextvar set in it does

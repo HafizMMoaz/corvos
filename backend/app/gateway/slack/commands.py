@@ -1,4 +1,4 @@
-﻿"""Slack command/onboarding handlers."""
+"""Slack command/onboarding handlers."""
 
 from __future__ import annotations
 

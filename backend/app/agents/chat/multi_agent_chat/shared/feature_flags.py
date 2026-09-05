@@ -1,4 +1,4 @@
-﻿"""Feature flags for the Corvos new_chat agent stack.
+"""Feature flags for the Corvos new_chat agent stack.
 
 Flags are resolved at agent build time. Most upgrades default ON so Docker
 updates work without operators adding new env vars; risky integrations stay

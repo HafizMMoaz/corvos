@@ -1,4 +1,4 @@
-﻿import { PostHog } from 'posthog-node';
+import { PostHog } from 'posthog-node';
 import { machineIdSync } from 'node-machine-id';
 import { app } from 'electron';
 

@@ -1,4 +1,4 @@
-﻿"""Native-PDF arm provider: OpenRouter ``chat/completions`` with PDF input.
+"""Native-PDF arm provider: OpenRouter ``chat/completions`` with PDF input.
 
 Per `<https://openrouter.ai/docs/features/multimodal/pdfs>`__ the wire
 shape is OpenAI-compatible with one PDF-specific extra:

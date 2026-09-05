@@ -1,4 +1,4 @@
-﻿"""Main-agent middleware list assembly: one line per slot.
+"""Main-agent middleware list assembly: one line per slot.
 
 The main agent is a pure router - both filesystem reads/writes AND knowledge-base
 retrieval are owned by the ``knowledge_base`` subagent and reached via the

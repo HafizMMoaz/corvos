@@ -1,4 +1,4 @@
-﻿"""Tests for the skills backends used by Corvos's SkillsMiddleware."""
+"""Tests for the skills backends used by Corvos's SkillsMiddleware."""
 
 from __future__ import annotations
 

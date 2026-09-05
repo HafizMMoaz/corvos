@@ -1,4 +1,4 @@
-﻿"""Lock in the default-allow layering used by ``chat_deepagent``.
+"""Lock in the default-allow layering used by ``chat_deepagent``.
 
 The agent factory wires ``PermissionMiddleware`` with three rulesets,
 earliest -> latest:

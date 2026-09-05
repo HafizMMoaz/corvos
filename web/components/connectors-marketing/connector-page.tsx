@@ -1,4 +1,4 @@
-﻿import { IconBrandGithub } from "@tabler/icons-react";
+import { IconBrandGithub } from "@tabler/icons-react";
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 import { MarketingSection } from "@/components/marketing/section";

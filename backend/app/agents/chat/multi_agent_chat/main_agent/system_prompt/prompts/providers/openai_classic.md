@@ -1,4 +1,4 @@
-﻿<provider_hints>
+<provider_hints>
 You are running on a classic OpenAI chat model (GPT-4 family), Corvos **main agent**.
 
 Persistence:

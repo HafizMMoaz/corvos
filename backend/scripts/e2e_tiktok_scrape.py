@@ -1,4 +1,4 @@
-﻿"""Manual functional e2e for the TikTok scraper (blob + browser-listing seams).
+"""Manual functional e2e for the TikTok scraper (blob + browser-listing seams).
 
 Run from the backend directory:
     cd backend

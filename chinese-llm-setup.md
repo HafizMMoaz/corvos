@@ -1,4 +1,4 @@
-﻿# Chinese LLM Setup Guide
+# Chinese LLM Setup Guide
 
 This guide helps you configure and use Chinese LLM providers in Corvos.
 

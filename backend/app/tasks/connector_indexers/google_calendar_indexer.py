@@ -1,4 +1,4 @@
-﻿"""
+"""
 Google Calendar connector indexer.
 
 Uses the shared IndexingPipelineService for document deduplication,

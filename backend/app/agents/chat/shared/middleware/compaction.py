@@ -1,4 +1,4 @@
-﻿"""Corvos compaction middleware.
+"""Corvos compaction middleware.
 
 Extends ``SummarizationMiddleware`` with three Corvos behaviors:
 

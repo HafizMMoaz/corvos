@@ -1,4 +1,4 @@
-﻿"""``instagram.scrape`` executor: verb input → scraper → media items."""
+"""``instagram.scrape`` executor: verb input → scraper → media items."""
 
 from __future__ import annotations
 

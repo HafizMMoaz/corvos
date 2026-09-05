@@ -1,4 +1,4 @@
-﻿"""End-to-end smoke test for vision / image config wiring.
+"""End-to-end smoke test for vision / image config wiring.
 
 Loads the live ``global_llm_config.yaml`` (no mocking, no fixtures) and
 exercises every chat / vision / image-generation config + the OpenRouter

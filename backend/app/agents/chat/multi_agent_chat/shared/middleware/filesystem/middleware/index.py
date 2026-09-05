@@ -1,4 +1,4 @@
-﻿"""Public surface of the middleware package: class + helpers used by tool factories."""
+"""Public surface of the middleware package: class + helpers used by tool factories."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿r"""Tests for ``apply_litellm_prompt_caching`` in
+r"""Tests for ``apply_litellm_prompt_caching`` in
 :mod:`app.agents.chat.runtime.prompt_caching`.
 
 The helper replaces the legacy ``AnthropicPromptCachingMiddleware`` (which

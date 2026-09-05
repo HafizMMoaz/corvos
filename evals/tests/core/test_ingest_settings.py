@@ -1,4 +1,4 @@
-﻿"""Unit tests for ``evals.core.ingest_settings``.
+"""Unit tests for ``evals.core.ingest_settings``.
 
 Covers:
 

@@ -1,4 +1,4 @@
-﻿"""Open Knowledge Format (OKF v0.1) serialization for the Corvos KB.
+"""Open Knowledge Format (OKF v0.1) serialization for the Corvos KB.
 
 Single source of truth for turning documents and folders into OKF concepts,
 ``index.md`` listings and ``log.md`` logs. Pure KB-layer functions; every

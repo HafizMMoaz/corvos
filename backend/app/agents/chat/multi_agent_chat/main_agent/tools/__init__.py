@@ -1,4 +1,4 @@
-﻿"""Main-agent Corvos tool allowlist."""
+"""Main-agent Corvos tool allowlist."""
 
 from __future__ import annotations
 

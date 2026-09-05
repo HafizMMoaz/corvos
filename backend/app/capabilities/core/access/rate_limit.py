@@ -1,4 +1,4 @@
-﻿"""Per-workspace rate limit for the capability doors (05).
+"""Per-workspace rate limit for the capability doors (05).
 
 A secondary abuse guard; the credit meter-gate (03c) is the primary control.
 Fixed-window over Redis (shared across workers) with a per-worker in-memory

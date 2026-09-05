@@ -1,4 +1,4 @@
-﻿"""Messaging gateway routes."""
+"""Messaging gateway routes."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿"""Structured error hierarchy for Corvos.
+"""Structured error hierarchy for Corvos.
 
 Every error response follows a backward-compatible contract:
 

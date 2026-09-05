@@ -1,4 +1,4 @@
-﻿"""Public composition factory for the filesystem middleware."""
+"""Public composition factory for the filesystem middleware."""
 
 from __future__ import annotations
 

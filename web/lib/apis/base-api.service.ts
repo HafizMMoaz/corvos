@@ -1,4 +1,4 @@
-﻿import type { ZodType } from "zod";
+import type { ZodType } from "zod";
 import { getDesktopAccessToken } from "@/lib/auth-fetch";
 import { buildBackendUrl } from "@/lib/env-config";
 import { getClientPlatform } from "../agent-filesystem";

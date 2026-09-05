@@ -1,4 +1,4 @@
-﻿"""Behavioural guarantees for parallel ``task`` tool calls (non-HITL cases).
+"""Behavioural guarantees for parallel ``task`` tool calls (non-HITL cases).
 
 The HITL bridge tests in ``test_hitl_bridge.py`` cover the parallel-interrupt
 flow. This file covers the *normal* parallel paths (no interrupts) and the

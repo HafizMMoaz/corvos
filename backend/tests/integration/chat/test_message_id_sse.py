@@ -1,4 +1,4 @@
-﻿"""Integration tests for the SSE-based message ID handshake.
+"""Integration tests for the SSE-based message ID handshake.
 
 The streaming generators (``stream_new_chat`` / ``stream_resume_chat``)
 emit two new events after their respective persistence helpers resolve

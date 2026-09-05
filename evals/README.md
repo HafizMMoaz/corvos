@@ -1,4 +1,4 @@
-﻿# Corvos Evals
+# Corvos Evals
 
 Domain-agnostic eval harness for Corvos. Each benchmark is a Python subpackage under `suites/<domain>/<benchmark>/` that self-registers with the CLI; `core/` is the shared infrastructure (HTTP clients, arms, parsers, metrics, report writer, registry). The harness talks to Corvos over HTTP only - it does **not** import any backend Python module - so it ships in its own venv and never bloats the FastAPI runtime image.
 

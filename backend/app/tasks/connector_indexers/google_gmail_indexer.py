@@ -1,4 +1,4 @@
-﻿"""
+"""
 Google Gmail connector indexer.
 
 Uses the shared IndexingPipelineService for document deduplication,

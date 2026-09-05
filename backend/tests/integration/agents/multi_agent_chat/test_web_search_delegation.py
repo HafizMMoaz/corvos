@@ -1,4 +1,4 @@
-﻿"""Backend E2E: public web search now flows through the ``google_search`` route.
+"""Backend E2E: public web search now flows through the ``google_search`` route.
 
 After the Google-only consolidation the main agent has no ``web_search`` tool;
 a web query must be delegated to the ``google_search`` subagent via ``task``.

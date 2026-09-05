@@ -1,4 +1,4 @@
-﻿"""Walmart scraper tools: products/listings and deep reviews."""
+"""Walmart scraper tools: products/listings and deep reviews."""
 
 from __future__ import annotations
 

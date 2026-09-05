@@ -1,4 +1,4 @@
-﻿"""Build the permission-ask interrupt payload (LC HITL wire + Corvos context)."""
+"""Build the permission-ask interrupt payload (LC HITL wire + Corvos context)."""
 
 from __future__ import annotations
 

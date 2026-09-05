@@ -1,4 +1,4 @@
-﻿"""
+"""
 Utility functions for Corvos agents.
 
 This module provides shared utility functions used across the new_chat agent modules.

@@ -1,4 +1,4 @@
-﻿import { defineConfig, devices } from "@playwright/test";
+import { defineConfig, devices } from "@playwright/test";
 
 const PORT = process.env.PORT || "3000";
 const BACKEND_PORT = process.env.BACKEND_PORT || "8000";

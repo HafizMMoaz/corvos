@@ -1,4 +1,4 @@
-﻿"""Integration tests: Gmail indexer credential resolution for Composio vs native connectors.
+"""Integration tests: Gmail indexer credential resolution for Composio vs native connectors.
 
 Exercises ``index_google_gmail_messages`` with a real PostgreSQL database
 containing seeded connector records.  Google API and Composio SDK are

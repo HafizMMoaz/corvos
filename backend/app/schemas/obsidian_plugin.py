@@ -1,4 +1,4 @@
-﻿"""Wire schemas spoken between the Corvos Obsidian plugin and the backend.
+"""Wire schemas spoken between the Corvos Obsidian plugin and the backend.
 
 All schemas inherit ``extra='ignore'`` from :class:`_PluginBase` so additive
 field changes never break either side; hard breaks live behind a new URL

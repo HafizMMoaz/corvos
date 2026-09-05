@@ -1,4 +1,4 @@
-﻿"""Per-thread asyncio lock + cooperative cancel token, keyed by ``thread_id``.
+"""Per-thread asyncio lock + cooperative cancel token, keyed by ``thread_id``.
 
 Refuses a second concurrent turn on the same thread (e.g. double-clicked
 "send") that would otherwise race on the same checkpoint and duplicate tool

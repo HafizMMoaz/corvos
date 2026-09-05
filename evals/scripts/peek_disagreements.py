@@ -1,4 +1,4 @@
-﻿"""Show questions where Corvos was wrong but long-context was right (and vice versa)."""
+"""Show questions where Corvos was wrong but long-context was right (and vice versa)."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿"""End-to-end resume-bridge tests against a real LangGraph subagent."""
+"""End-to-end resume-bridge tests against a real LangGraph subagent."""
 
 from __future__ import annotations
 

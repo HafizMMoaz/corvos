@@ -1,4 +1,4 @@
-﻿"""Generate deterministic one-page PDFs for connector E2E fixtures."""
+"""Generate deterministic one-page PDFs for connector E2E fixtures."""
 
 from __future__ import annotations
 

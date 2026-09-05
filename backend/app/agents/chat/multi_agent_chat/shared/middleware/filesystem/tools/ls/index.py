@@ -1,4 +1,4 @@
-﻿"""``ls`` factory: resolve target, page through backend listing."""
+"""``ls`` factory: resolve target, page through backend listing."""
 
 from __future__ import annotations
 

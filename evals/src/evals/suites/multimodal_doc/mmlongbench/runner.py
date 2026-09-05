@@ -1,4 +1,4 @@
-﻿"""MMLongBench-Doc runner - head-to-head Native PDF (vision) vs Corvos (vision RAG).
+"""MMLongBench-Doc runner - head-to-head Native PDF (vision) vs Corvos (vision RAG).
 
 Differences from a typical MCQ head-to-head:
 

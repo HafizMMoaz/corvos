@@ -1,4 +1,4 @@
-﻿"""CRAG ingestion: download → extract → upload → per-question doc map.
+"""CRAG ingestion: download → extract → upload → per-question doc map.
 
 Steps:
 

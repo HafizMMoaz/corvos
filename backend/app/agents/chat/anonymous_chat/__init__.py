@@ -1,4 +1,4 @@
-﻿"""Anonymous / free-chat agent.
+"""Anonymous / free-chat agent.
 
 The no-login chat experience: a deliberately minimal agent that bypasses the
 full Corvos deep-agent stack (filesystem, knowledge-base persistence,

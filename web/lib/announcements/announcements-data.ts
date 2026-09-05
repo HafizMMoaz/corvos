@@ -1,4 +1,4 @@
-﻿import type { Announcement } from "@/contracts/types/announcement.types";
+import type { Announcement } from "@/contracts/types/announcement.types";
 
 /**
  * Static announcements data.

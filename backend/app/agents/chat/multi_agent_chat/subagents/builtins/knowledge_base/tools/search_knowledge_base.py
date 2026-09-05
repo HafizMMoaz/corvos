@@ -1,4 +1,4 @@
-﻿"""On-demand ``search_knowledge_base`` knowledge_base-subagent tool (citation-spine RAG).
+"""On-demand ``search_knowledge_base`` knowledge_base-subagent tool (citation-spine RAG).
 
 The knowledge_base subagent calls this when it needs hybrid semantic + keyword
 retrieval over the user's indexed knowledge base. The tool runs one hybrid

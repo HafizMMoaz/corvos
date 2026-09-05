@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Minimal cron describer for the 5-field patterns the Corvos drafter LLM
  * actually produces (daily, weekdays, weekly, monthly, hourly). Falls back
  * to the raw expression when unrecognized so the user still sees something

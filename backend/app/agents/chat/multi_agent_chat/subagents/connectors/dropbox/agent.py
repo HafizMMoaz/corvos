@@ -1,4 +1,4 @@
-﻿"""``dropbox`` route: ``CorvosSubagentSpec`` builder for deepagents.
+"""``dropbox`` route: ``CorvosSubagentSpec`` builder for deepagents.
 
 Tools self-gate inside their bodies via :func:`request_approval`; the
 empty :data:`tools.index.RULESET` is layered into a per-subagent

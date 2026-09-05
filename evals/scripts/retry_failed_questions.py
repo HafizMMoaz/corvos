@@ -1,4 +1,4 @@
-﻿"""Retry only the failed (arm, question) pairs from a previous parser_compare run.
+"""Retry only the failed (arm, question) pairs from a previous parser_compare run.
 
 The original parser_compare run records one row per (arm, qid) in
 ``raw.jsonl``. Some of those rows came back with transient transport

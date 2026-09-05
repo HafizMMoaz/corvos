@@ -1,4 +1,4 @@
-﻿import brain from "data-base64:~assets/brain.png";
+import brain from "data-base64:~assets/brain.png";
 import icon from "data-base64:~assets/icon.png";
 import { sendToBackground } from "@plasmohq/messaging";
 import { Storage } from "@plasmohq/storage";

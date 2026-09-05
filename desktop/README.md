@@ -1,4 +1,4 @@
-﻿# Corvos Desktop
+# Corvos Desktop
 
 Electron wrapper around the Corvos web app. Packages the Next.js standalone build into a native desktop application with OAuth support, deep linking, and system browser integration.
 

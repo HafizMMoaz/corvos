@@ -1,4 +1,4 @@
-﻿import { IconMapPin } from "@tabler/icons-react";
+import { IconMapPin } from "@tabler/icons-react";
 import type { ConnectorPageContent } from "./types";
 
 export const googleMaps: ConnectorPageContent = {

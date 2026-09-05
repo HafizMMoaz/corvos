@@ -1,4 +1,4 @@
-﻿"""Chat model stream: text, reasoning, and tool-call chunk SSE."""
+"""Chat model stream: text, reasoning, and tool-call chunk SSE."""
 
 from __future__ import annotations
 

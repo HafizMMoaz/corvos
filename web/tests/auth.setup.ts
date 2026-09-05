@@ -1,4 +1,4 @@
-﻿import path from "node:path";
+import path from "node:path";
 import { expect, test as setup } from "@playwright/test";
 import { announcements } from "../lib/announcements/announcements-data";
 import { acquireTestToken } from "./helpers/api/auth";

@@ -1,4 +1,4 @@
-﻿"""
+"""
 Centralized performance monitoring for Corvos backend.
 
 Provides:

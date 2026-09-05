@@ -1,4 +1,4 @@
-﻿"""respx-mocked tests for the Corvos HTTP clients."""
+"""respx-mocked tests for the Corvos HTTP clients."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿"""Scraper run history: list past runs and fetch one in full.
+"""Scraper run history: list past runs and fetch one in full.
 
 A scrape whose inline result was truncated is retrievable here by run id, so the
 model never re-runs a scraper just to recover output.

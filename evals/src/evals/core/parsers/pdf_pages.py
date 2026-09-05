@@ -1,4 +1,4 @@
-﻿"""Tiny pypdf wrapper for "how many pages does this PDF have?".
+"""Tiny pypdf wrapper for "how many pages does this PDF have?".
 
 Used by ``parser_compare`` to:
 

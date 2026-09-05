@@ -1,4 +1,4 @@
-﻿"""Tests for Corvos filesystem state reducers."""
+"""Tests for Corvos filesystem state reducers."""
 
 from __future__ import annotations
 

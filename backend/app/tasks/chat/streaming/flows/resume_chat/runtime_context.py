@@ -1,4 +1,4 @@
-﻿"""Build the per-invocation ``CorvosContextSchema`` for a resume turn.
+"""Build the per-invocation ``CorvosContextSchema`` for a resume turn.
 
 Resume doesn't carry new ``mentioned_document_ids`` (those are seeded by the
 original turn). We still build the context so future middleware extensions

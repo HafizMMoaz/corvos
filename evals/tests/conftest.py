@@ -1,4 +1,4 @@
-﻿"""Shared pytest fixtures for corvos-evals."""
+"""Shared pytest fixtures for corvos-evals."""
 
 from __future__ import annotations
 

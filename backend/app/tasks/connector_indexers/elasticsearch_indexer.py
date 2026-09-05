@@ -1,4 +1,4 @@
-﻿"""
+"""
 Elasticsearch indexer for Corvos
 
 Implements 2-phase document status updates for real-time UI feedback:

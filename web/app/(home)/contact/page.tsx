@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { ContactFormGridWithDetails } from "@/components/contact/contact-form";
 
 export const metadata: Metadata = {

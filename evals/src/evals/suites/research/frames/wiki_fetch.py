@@ -1,4 +1,4 @@
-﻿"""Wikipedia article fetcher → plain-text markdown, with disk cache.
+"""Wikipedia article fetcher → plain-text markdown, with disk cache.
 
 We hit the MediaWiki action API for *plain text* extracts:
 

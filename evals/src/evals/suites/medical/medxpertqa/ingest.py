@@ -1,4 +1,4 @@
-﻿"""MedXpertQA-MM ingestion.
+"""MedXpertQA-MM ingestion.
 
 Steps:
 

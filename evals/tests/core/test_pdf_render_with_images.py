@@ -1,4 +1,4 @@
-﻿"""Tests for ``render_pdf_with_images`` - covers image embedding +
+"""Tests for ``render_pdf_with_images`` - covers image embedding +
 deterministic byte output, mirroring ``test_pdf_render.py`` for the
 text-only path.
 """

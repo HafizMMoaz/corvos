@@ -1,4 +1,4 @@
-﻿"""Project ``workspace_tree_text`` from state into a SystemMessage."""
+"""Project ``workspace_tree_text`` from state into a SystemMessage."""
 
 from __future__ import annotations
 

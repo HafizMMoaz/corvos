@@ -1,4 +1,4 @@
-﻿import { Notice, Platform, Plugin } from "obsidian";
+import { Notice, Platform, Plugin } from "obsidian";
 import { CorvosApiClient } from "./api-client";
 import { PersistentQueue } from "./queue";
 import { CorvosSettingTab } from "./settings";

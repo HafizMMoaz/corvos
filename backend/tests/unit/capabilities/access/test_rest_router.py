@@ -1,4 +1,4 @@
-﻿"""The REST door generator turns registry verbs into typed POST routes (05)."""
+"""The REST door generator turns registry verbs into typed POST routes (05)."""
 
 from types import SimpleNamespace
 

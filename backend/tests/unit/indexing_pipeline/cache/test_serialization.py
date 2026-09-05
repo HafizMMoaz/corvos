@@ -1,4 +1,4 @@
-﻿import numpy as np
+import numpy as np
 import pytest
 
 from app.indexing_pipeline.cache.schemas import CachedChunk, EmbeddingSet

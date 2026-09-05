@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Check, Copy, Info, Webhook } from "lucide-react";
 import type { FC } from "react";

@@ -1,4 +1,4 @@
-﻿"""Vision LLM resolution + auto-pick logic for the harness's ``setup`` command.
+"""Vision LLM resolution + auto-pick logic for the harness's ``setup`` command.
 
 Two responsibilities:
 

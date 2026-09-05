@@ -1,4 +1,4 @@
-﻿"""Long-lived external chat inbox processing.
+"""Long-lived external chat inbox processing.
 
 This module owns the agent-turn execution path for external chat surfaces.
 FastAPI calls into it after webhook and BYO long-poll intake persist inbox rows.

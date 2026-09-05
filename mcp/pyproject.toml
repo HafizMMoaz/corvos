@@ -1,4 +1,4 @@
-﻿[project]
+[project]
 name = "corvos-mcp"
 version = "0.0.1"
 description = "MCP server exposing Corvos scrapers, knowledge base, and workspace tools over the REST API."

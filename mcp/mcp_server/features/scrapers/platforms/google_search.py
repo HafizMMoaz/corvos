@@ -1,4 +1,4 @@
-﻿"""Google Search scraper tool."""
+"""Google Search scraper tool."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿"""Tests for the SSE consumer."""
+"""Tests for the SSE consumer."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿"""Manual functional e2e for the Instagram scraper (app/proprietary/platforms/instagram).
+"""Manual functional e2e for the Instagram scraper (app/proprietary/platforms/instagram).
 
 Run from the backend directory:
     cd backend

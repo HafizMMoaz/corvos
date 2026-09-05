@@ -1,4 +1,4 @@
-﻿"""
+"""
 Context schema definitions for Corvos agents.
 
 This module defines the per-invocation context object passed to the Corvos

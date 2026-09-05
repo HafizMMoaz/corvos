@@ -1,4 +1,4 @@
-﻿"""parser_compare ingestion: pre-extract markdown 4 ways per PDF.
+"""parser_compare ingestion: pre-extract markdown 4 ways per PDF.
 
 For each PDF in scope, we run all four (parser × mode) combinations
 in parallel and persist the resulting markdown alongside the PDF:

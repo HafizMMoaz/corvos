@@ -1,4 +1,4 @@
-﻿"""Knowledge-base write tools: add a note, upload a file, update, and delete.
+"""Knowledge-base write tools: add a note, upload a file, update, and delete.
 
 Add and upload target the active workspace; update and delete address a document
 by its account-unique id, so they need no workspace.

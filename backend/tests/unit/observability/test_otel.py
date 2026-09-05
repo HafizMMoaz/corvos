@@ -1,4 +1,4 @@
-﻿"""Tests for the Corvos OpenTelemetry shim."""
+"""Tests for the Corvos OpenTelemetry shim."""
 
 from __future__ import annotations
 

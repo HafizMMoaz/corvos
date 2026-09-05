@@ -1,4 +1,4 @@
-﻿import {
+import {
 	IconBrandDiscord,
 	IconBrandGithub,
 	IconBrandLinkedin,

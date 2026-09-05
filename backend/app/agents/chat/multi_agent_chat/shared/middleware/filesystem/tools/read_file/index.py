@@ -1,4 +1,4 @@
-﻿"""``read_file`` factory: state-cache lookup, then lazy KB load, then disk read."""
+"""``read_file`` factory: state-cache lookup, then lazy KB load, then disk read."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿/** Shared types for the Corvos Obsidian plugin. Leaf module - no src/ imports. */
+/** Shared types for the Corvos Obsidian plugin. Leaf module - no src/ imports. */
 
 export interface CorvosPluginSettings {
 	serverUrl: string;

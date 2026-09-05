@@ -1,4 +1,4 @@
-﻿import { app } from 'electron';
+import { app } from 'electron';
 
 import { registerGlobalErrorHandlers, showErrorDialog } from './modules/errors';
 import { startNextServer, stopNextServer } from './modules/server';

@@ -1,4 +1,4 @@
-﻿"""Context-window summarization with Corvos protected sections."""
+"""Context-window summarization with Corvos protected sections."""
 
 from __future__ import annotations
 

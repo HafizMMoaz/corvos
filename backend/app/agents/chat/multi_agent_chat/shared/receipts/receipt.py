@@ -1,4 +1,4 @@
-﻿"""Receipt: structured handle returned by every mutating subagent tool.
+"""Receipt: structured handle returned by every mutating subagent tool.
 
 Generalises the Hermes ``entry`` dict (see ``references/hermes-agent/tools/
 delegate_tool.py:1663-1697``) for our 5 deliverable types + 15 connectors +

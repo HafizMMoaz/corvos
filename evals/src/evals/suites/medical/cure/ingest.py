@@ -1,4 +1,4 @@
-﻿"""CUREv1 ingestion.
+"""CUREv1 ingestion.
 
 For each (lang, discipline) requested, downloads the corpus split via
 ``datasets.load_dataset(path="clinia/CUREv1", name="corpus", split=<discipline>)``,

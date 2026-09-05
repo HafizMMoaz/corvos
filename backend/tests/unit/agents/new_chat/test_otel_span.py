@@ -1,4 +1,4 @@
-﻿"""Tests for the OtelSpanMiddleware adapter."""
+"""Tests for the OtelSpanMiddleware adapter."""
 
 from __future__ import annotations
 

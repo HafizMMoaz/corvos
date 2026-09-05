@@ -1,4 +1,4 @@
-﻿# Synthetic Global LLM configuration for E2E ONLY.
+# Synthetic Global LLM configuration for E2E ONLY.
 #
 # Why this file exists:
 #   backend/app/config/global_llm_config.yaml is gitignored

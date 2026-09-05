@@ -1,4 +1,4 @@
-﻿"""Obsidian plugin ingestion routes (``/api/v1/obsidian/*``).
+"""Obsidian plugin ingestion routes (``/api/v1/obsidian/*``).
 
 Wire surface for the ``obsidian/`` plugin. Versioning anchor is
 the ``/api/v1/`` URL prefix; additive feature detection rides the

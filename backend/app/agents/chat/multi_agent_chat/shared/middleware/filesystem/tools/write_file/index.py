@@ -1,4 +1,4 @@
-﻿"""``write_file`` factory: resolve target, enforce cloud namespace, dispatch to backend."""
+"""``write_file`` factory: resolve target, enforce cloud namespace, dispatch to backend."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿<provider_hints>
+<provider_hints>
 You are running on a DeepSeek model (Corvos **main agent**).
 
 Reasoning hygiene (R1-aware):

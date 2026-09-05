@@ -1,4 +1,4 @@
-﻿"""Real-graph contract: parallel resume must key ``Command(resume=...)`` by ``Interrupt.id``.
+"""Real-graph contract: parallel resume must key ``Command(resume=...)`` by ``Interrupt.id``.
 
 When the parent state has multiple pending interrupts, langgraph rejects a
 scalar ``Command(resume=v)`` with::

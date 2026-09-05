@@ -1,4 +1,4 @@
-﻿"""Entry-point based plugin loader for Corvos agent middleware.
+"""Entry-point based plugin loader for Corvos agent middleware.
 
 LangChain's :class:`AgentMiddleware` ABC already covers the practical
 surface most plugins need (``before_agent`` / ``before_model`` /

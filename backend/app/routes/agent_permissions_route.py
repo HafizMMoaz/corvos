@@ -1,4 +1,4 @@
-﻿"""CRUD for :class:`app.db.AgentPermissionRule`.
+"""CRUD for :class:`app.db.AgentPermissionRule`.
 
 Surfaces the permission rules consumed by
 :class:`PermissionMiddleware`. Rules are scoped at one of three levels:

@@ -1,4 +1,4 @@
-﻿"""MMLongBench-Doc ingestion.
+"""MMLongBench-Doc ingestion.
 
 Steps:
 

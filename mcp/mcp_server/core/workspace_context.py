@@ -1,4 +1,4 @@
-﻿"""Active-workspace state and natural-language resolution of a workspace.
+"""Active-workspace state and natural-language resolution of a workspace.
 
 Every workspace-scoped tool takes a workspace by name or id, or omits it to use
 the active one. This keeps ids out of the conversation: the model (or user)

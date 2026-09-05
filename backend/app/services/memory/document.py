@@ -1,4 +1,4 @@
-﻿"""Memory-specific markdown document model and canonical renderer.
+"""Memory-specific markdown document model and canonical renderer.
 
 This intentionally parses only Corvos memory's small markdown contract:
 ``##`` sections with dated bullet items. Unknown lines are preserved so user

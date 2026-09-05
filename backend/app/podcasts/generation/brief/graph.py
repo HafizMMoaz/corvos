@@ -1,4 +1,4 @@
-﻿"""The brief-planning graph: propose a reviewable spec from defaults."""
+"""The brief-planning graph: propose a reviewable spec from defaults."""
 
 from __future__ import annotations
 

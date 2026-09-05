@@ -1,4 +1,4 @@
-﻿"""Shared strict MCP OAuth fake dispatcher for E2E tests."""
+"""Shared strict MCP OAuth fake dispatcher for E2E tests."""
 
 from __future__ import annotations
 

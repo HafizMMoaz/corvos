@@ -1,4 +1,4 @@
-﻿// Server component
+// Server component
 
 import { cookies } from "next/headers";
 import type React from "react";

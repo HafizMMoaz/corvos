@@ -1,4 +1,4 @@
-﻿import posthog from "posthog-js";
+import posthog from "posthog-js";
 
 /**
  * PostHog initialisation for the Next.js renderer.

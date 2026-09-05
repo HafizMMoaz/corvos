@@ -1,4 +1,4 @@
-﻿"""CUREv1 - secondary single-arm Corvos retrieval measurement.
+"""CUREv1 - secondary single-arm Corvos retrieval measurement.
 
 Source: https://huggingface.co/datasets/clinia/CUREv1
 Paper: https://arxiv.org/html/2412.06954v4

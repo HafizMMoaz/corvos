@@ -1,4 +1,4 @@
-﻿"""LLM-backed memory rewrite helpers."""
+"""LLM-backed memory rewrite helpers."""
 
 from __future__ import annotations
 

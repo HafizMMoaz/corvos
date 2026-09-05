@@ -1,4 +1,4 @@
-﻿# Crawler testbench - manual undetectability & extraction scorecard (Phase 3f)
+# Crawler testbench - manual undetectability & extraction scorecard (Phase 3f)
 
 A **manual, repeatable scorecard** for the Universal WebURL Crawler. It answers
 one question with evidence: *how undetectable (and how correct) is the crawler

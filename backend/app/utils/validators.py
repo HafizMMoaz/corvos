@@ -1,4 +1,4 @@
-﻿"""
+"""
 Validation utilities for Corvos backend.
 
 This module contains validation functions that were previously scattered across

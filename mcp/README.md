@@ -1,4 +1,4 @@
-﻿# Corvos MCP Server
+# Corvos MCP Server
 
 A [Model Context Protocol](https://modelcontextprotocol.io/) server that exposes
 Corvos to MCP clients like **Claude Code**, **Cursor**, and **Claude Desktop**.

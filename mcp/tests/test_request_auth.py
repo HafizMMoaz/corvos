@@ -1,4 +1,4 @@
-﻿"""Per-request key resolution and the Authorization header the backend receives.
+"""Per-request key resolution and the Authorization header the backend receives.
 
 Covers the security-critical behaviors: the per-request key wins over the env
 fallback, the fallback covers stdio, a missing key is refused, and concurrent

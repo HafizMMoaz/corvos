@@ -1,4 +1,4 @@
-﻿"""Strict Microsoft OneDrive Graph fakes for Playwright E2E.
+"""Strict Microsoft OneDrive Graph fakes for Playwright E2E.
 
 This module patches the OneDrive OAuth route and indexer consumer-site
 bindings. It keeps the production add/callback/indexing flow intact while

@@ -1,4 +1,4 @@
-﻿"""Factory for inline Markdown reports: optional KB sourcing, section-aware revision, short-lived DB sessions."""
+"""Factory for inline Markdown reports: optional KB sourcing, section-aware revision, short-lived DB sessions."""
 
 import asyncio
 import json

@@ -1,4 +1,4 @@
-﻿"""YouTube scraper tools: videos and comments."""
+"""YouTube scraper tools: videos and comments."""
 
 from __future__ import annotations
 

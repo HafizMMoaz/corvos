@@ -1,4 +1,4 @@
-﻿"""Unit tests: Composio credential helpers + ``get_access_token`` masking guard.
+"""Unit tests: Composio credential helpers + ``get_access_token`` masking guard.
 
 Covers two seams between Corvos and Composio:
 

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { SidebarButtonBadge } from "@/components/layout/ui/sidebar/SidebarButton";
 import { AgentSetupTabs } from "@/components/mcp/agent-setup-tabs";

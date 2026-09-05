@@ -1,4 +1,4 @@
-﻿"""Behavior guard for the notifications inbox HTTP API.
+"""Behavior guard for the notifications inbox HTTP API.
 
 Rows are seeded through the transactional db_session and read back through the
 real endpoints (auth + DB bound to the same transaction), pinning list filters,

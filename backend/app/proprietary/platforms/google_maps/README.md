@@ -1,4 +1,4 @@
-﻿# Google Maps Scraper
+# Google Maps Scraper
 
 A platform-native Google Maps scraper intended as a **drop-in clone of the
 Apify "Google Maps Scraper" and "Google Maps Reviews Scraper" actors** - same

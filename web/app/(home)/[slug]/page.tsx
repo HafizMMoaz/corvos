@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ConnectorPage } from "@/components/connectors-marketing/connector-page";
 import { FAQJsonLd, JsonLd } from "@/components/seo/json-ld";

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { AlertCircle, CheckCircle2, Hash, Info, Lock, RefreshCw } from "lucide-react";
 import { type FC, useCallback, useEffect, useState } from "react";

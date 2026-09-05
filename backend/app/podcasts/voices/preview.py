@@ -1,4 +1,4 @@
-﻿"""Audible previews so users pick voices by sound, not by name.
+"""Audible previews so users pick voices by sound, not by name.
 
 A preview is a short sample sentence synthesised in the voice's own language.
 Samples are served through the same content-addressed cache the renderer uses,

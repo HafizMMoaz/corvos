@@ -1,4 +1,4 @@
-﻿"""The note-to-document envelope mapping."""
+"""The note-to-document envelope mapping."""
 
 from __future__ import annotations
 

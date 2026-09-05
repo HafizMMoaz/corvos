@@ -1,4 +1,4 @@
-﻿"""Programmatic OpenTelemetry bootstrap for Corvos backend processes."""
+"""Programmatic OpenTelemetry bootstrap for Corvos backend processes."""
 
 from __future__ import annotations
 

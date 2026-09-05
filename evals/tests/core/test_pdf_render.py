@@ -1,4 +1,4 @@
-﻿"""Smoke tests for PDF rendering.
+"""Smoke tests for PDF rendering.
 
 We don't pull a full PDF parser into the test deps; the assertions
 are bytes-level (``%PDF`` magic, deterministic CreationDate scrub).

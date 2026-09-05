@@ -1,4 +1,4 @@
-﻿"""Strict Notion MCP OAuth/tool fakes for Playwright E2E.
+"""Strict Notion MCP OAuth/tool fakes for Playwright E2E.
 
 Notion migrated from indexed OAuth to the hosted Notion MCP server
 (``https://mcp.notion.com/mcp``, DCR/RFC 7591). This fake mirrors

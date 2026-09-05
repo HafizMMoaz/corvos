@@ -1,4 +1,4 @@
-﻿"""Multimodal long-document benchmarks (PDFs with embedded images/charts/tables).
+"""Multimodal long-document benchmarks (PDFs with embedded images/charts/tables).
 
 Distinct from the medical suite because these documents are domain-mixed
 (research reports, financials, manuals, government, brochures, papers).

@@ -1,4 +1,4 @@
-﻿import { loader } from "fumadocs-core/source";
+import { loader } from "fumadocs-core/source";
 import type { MetadataRoute } from "next";
 import { blog, changelog } from "@/.source/server";
 import { getAllConnectorSlugs } from "@/lib/connectors-marketing";

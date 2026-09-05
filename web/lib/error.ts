@@ -1,4 +1,4 @@
-﻿export const CORVOS_ISSUES_URL = "https://github.com/HafizMMoaz/Corvos/issues";
+export const CORVOS_ISSUES_URL = "https://github.com/HafizMMoaz/Corvos/issues";
 
 /** One field-level failure from a 422 validation response. */
 export interface ValidationFieldError {

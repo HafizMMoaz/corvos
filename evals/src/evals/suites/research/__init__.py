@@ -1,4 +1,4 @@
-﻿"""Research / multi-document RAG benchmarks.
+"""Research / multi-document RAG benchmarks.
 
 Distinct from ``multimodal_doc`` (PDF-bound) and ``medical`` (one
 question = one source PDF). Benchmarks here put *retrieval and

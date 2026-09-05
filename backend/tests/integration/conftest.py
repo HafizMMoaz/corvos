@@ -1,4 +1,4 @@
-﻿import importlib
+import importlib
 import sys
 import uuid
 from unittest.mock import MagicMock

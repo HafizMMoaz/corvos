@@ -1,4 +1,4 @@
-﻿"""Memory injection middleware for the Corvos agent.
+"""Memory injection middleware for the Corvos agent.
 
 Injects memory markdown into the system prompt on every turn:
 - Private threads: only personal memory (<user_memory>)

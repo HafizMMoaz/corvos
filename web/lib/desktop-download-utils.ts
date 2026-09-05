@@ -1,4 +1,4 @@
-﻿import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export type OSInfo = {
 	os: "macOS" | "Windows" | "Linux" | "Android" | "iOS";

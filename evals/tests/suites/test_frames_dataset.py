@@ -1,4 +1,4 @@
-﻿"""Tests for the FRAMES dataset parser.
+"""Tests for the FRAMES dataset parser.
 
 Network-free: we round-trip a tiny fixture TSV through pandas and
 ``load_questions`` to confirm:

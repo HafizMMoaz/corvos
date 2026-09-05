@@ -1,4 +1,4 @@
-﻿"""Side-effectful entry point: pause the graph and return the permission decision.
+"""Side-effectful entry point: pause the graph and return the permission decision.
 
 Wraps :func:`langgraph.types.interrupt` with the OTel spans the Corvos
 dashboard expects, then projects the resume value through

@@ -1,4 +1,4 @@
-﻿"""Real-graph contract: heterogeneous decisions route correctly across parallel subagents.
+"""Real-graph contract: heterogeneous decisions route correctly across parallel subagents.
 
 The simple "approve everything" parallel test (see
 ``test_parallel_resume_command_keying``) proves the routing wires up at all,

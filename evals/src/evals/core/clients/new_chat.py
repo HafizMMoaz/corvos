@@ -1,4 +1,4 @@
-﻿"""Client for ``/api/v1/threads`` and ``/api/v1/new_chat`` (SSE).
+"""Client for ``/api/v1/threads`` and ``/api/v1/new_chat`` (SSE).
 
 Verified against:
 

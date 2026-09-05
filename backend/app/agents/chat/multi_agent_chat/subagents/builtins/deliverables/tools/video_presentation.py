@@ -1,4 +1,4 @@
-﻿"""Factory for a video-presentation tool.
+"""Factory for a video-presentation tool.
 
 Dispatches the heavy generation to Celery and then polls the
 video-presentation row until it reaches a terminal status (READY/FAILED).

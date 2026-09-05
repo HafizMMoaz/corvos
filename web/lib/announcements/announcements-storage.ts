@@ -1,4 +1,4 @@
-﻿import type { AnnouncementUserState } from "@/contracts/types/announcement.types";
+import type { AnnouncementUserState } from "@/contracts/types/announcement.types";
 
 const STORAGE_KEY = "corvos_announcements_state";
 

@@ -1,4 +1,4 @@
-﻿"""add external chat surface tables
+"""add external chat surface tables
 
 Revision ID: 149
 Revises: 148

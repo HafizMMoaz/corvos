@@ -1,4 +1,4 @@
-﻿"""Per-upload ingestion settings shared across every benchmark.
+"""Per-upload ingestion settings shared across every benchmark.
 
 The Corvos ``POST /api/v1/documents/fileupload`` endpoint exposes
 exactly three knobs (verified at

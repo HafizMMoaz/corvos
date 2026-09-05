@@ -1,4 +1,4 @@
-﻿"""
+"""
 RetryAfterMiddleware - Header-aware retry with custom backoff and SSE eventing.
 
 LangChain's :class:`ModelRetryMiddleware` retries on exceptions but ignores

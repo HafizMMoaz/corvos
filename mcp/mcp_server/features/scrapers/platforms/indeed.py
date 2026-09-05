@@ -1,4 +1,4 @@
-﻿"""Indeed scraper tool."""
+"""Indeed scraper tool."""
 
 from __future__ import annotations
 

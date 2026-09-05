@@ -1,4 +1,4 @@
-﻿import { IconBrandYoutube } from "@tabler/icons-react";
+import { IconBrandYoutube } from "@tabler/icons-react";
 import type { ConnectorPageContent } from "./types";
 
 export const youtube: ConnectorPageContent = {

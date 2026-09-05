@@ -1,4 +1,4 @@
-﻿"""MMLongBench-Doc prompt template.
+"""MMLongBench-Doc prompt template.
 
 Both arms get the same prompt - only the document delivery channel
 differs (native PDF embedded in the OpenRouter request vs Corvos

@@ -1,4 +1,4 @@
-﻿import { SquareArrowOutUpRight } from "lucide-react";
+import { SquareArrowOutUpRight } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQJsonLd, JsonLd } from "@/components/seo/json-ld";

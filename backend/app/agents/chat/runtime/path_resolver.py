@@ -1,4 +1,4 @@
-﻿"""Canonical virtual-path resolver for Corvos knowledge-base documents.
+"""Canonical virtual-path resolver for Corvos knowledge-base documents.
 
 This module is the single source of truth for mapping ``Document`` rows to
 virtual paths under ``/documents/`` and back. It is used by:

@@ -1,4 +1,4 @@
-﻿"""E2E Celery worker entrypoint.
+"""E2E Celery worker entrypoint.
 
 Same sys.modules hijack + LLM/embedding patches as run_backend.py,
 applied before importing the production celery_app. Celery workers

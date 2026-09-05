@@ -1,4 +1,4 @@
-﻿"""Construction recipe for :class:`PermissionMiddleware` shared across stacks.
+"""Construction recipe for :class:`PermissionMiddleware` shared across stacks.
 
 Single source of truth used by both the main-agent stack and every subagent
 stack. Rule layers are evaluated earliest-to-latest (last match wins,

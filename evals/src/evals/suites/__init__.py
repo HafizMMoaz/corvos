@@ -1,4 +1,4 @@
-﻿"""Suite registry auto-discovery.
+"""Suite registry auto-discovery.
 
 Importing ``evals.suites`` walks every subpackage one level deep
 (domain like ``medical``) AND its benchmark subpackages

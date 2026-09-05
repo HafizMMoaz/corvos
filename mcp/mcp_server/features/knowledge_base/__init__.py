@@ -1,4 +1,4 @@
-﻿"""Knowledge-base tools: search the KB and manage its documents.
+"""Knowledge-base tools: search the KB and manage its documents.
 
 Semantic search plus the document lifecycle - list, read, add text, upload a
 file, update, and delete - over a workspace's knowledge base. Read tools live in

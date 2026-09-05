@@ -1,4 +1,4 @@
-﻿"""Instagram scraper tools: posts/reels and profile details (anonymous-only)."""
+"""Instagram scraper tools: posts/reels and profile details (anonymous-only)."""
 
 from __future__ import annotations
 

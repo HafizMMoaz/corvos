@@ -1,4 +1,4 @@
-﻿"""FRAMES prompt templates.
+"""FRAMES prompt templates.
 
 Two templates: one for the bare-LLM arm (no retrieval), one for
 Corvos (the agent retrieves; we mostly just instruct it on

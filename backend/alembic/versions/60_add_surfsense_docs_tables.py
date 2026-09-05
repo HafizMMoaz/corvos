@@ -1,4 +1,4 @@
-﻿"""Add Corvos docs tables for global documentation storage
+"""Add Corvos docs tables for global documentation storage
 
 Revision ID: 60
 Revises: 59

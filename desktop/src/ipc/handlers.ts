@@ -1,4 +1,4 @@
-﻿import { app, BrowserWindow, ipcMain, shell } from 'electron';
+import { app, BrowserWindow, ipcMain, shell } from 'electron';
 import { IPC_CHANNELS } from './channels';
 import {
   getPermissionsStatus,

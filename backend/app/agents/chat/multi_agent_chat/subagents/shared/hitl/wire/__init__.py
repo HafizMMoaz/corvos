@@ -1,4 +1,4 @@
-﻿"""Single source of truth for the langchain HITL wire format used by every approval path.
+"""Single source of truth for the langchain HITL wire format used by every approval path.
 
 Public surface:
 - :func:`build_lc_hitl_payload` - outbound (interrupt argument).

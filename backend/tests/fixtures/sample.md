@@ -1,4 +1,4 @@
-﻿# Corvos Test Document
+# Corvos Test Document
 
 ## Overview
 

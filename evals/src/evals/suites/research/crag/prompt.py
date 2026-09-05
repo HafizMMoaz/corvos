@@ -1,4 +1,4 @@
-﻿"""CRAG prompt templates for the three competing arms.
+"""CRAG prompt templates for the three competing arms.
 
 The CRAG paper grades each prediction as one of:
 

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { IconBrandGithub } from "@tabler/icons-react";
 import { useQuery } from "@tanstack/react-query";

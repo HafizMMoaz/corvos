@@ -1,4 +1,4 @@
-﻿"""Deterministic ``.txt`` / ``.md`` → single PDF via reportlab.
+"""Deterministic ``.txt`` / ``.md`` → single PDF via reportlab.
 
 Used wherever a benchmark needs the same source bytes fed to both the
 native-PDF arm and the Corvos ingestion arm. The head-to-head

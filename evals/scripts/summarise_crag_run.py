@@ -1,4 +1,4 @@
-﻿"""Render a quick textual summary of the latest CRAG run."""
+"""Render a quick textual summary of the latest CRAG run."""
 
 from __future__ import annotations
 

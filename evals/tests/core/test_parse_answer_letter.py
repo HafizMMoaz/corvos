@@ -1,4 +1,4 @@
-﻿"""Tests for the MCQ answer-letter extractor."""
+"""Tests for the MCQ answer-letter extractor."""
 
 from __future__ import annotations
 

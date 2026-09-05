@@ -1,4 +1,4 @@
-﻿"""Resolve user-supplied paths to absolute paths the backends accept."""
+"""Resolve user-supplied paths to absolute paths the backends accept."""
 
 from __future__ import annotations
 

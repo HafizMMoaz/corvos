@@ -1,4 +1,4 @@
-﻿"""
+"""
 Composio Connector Base Module.
 
 Provides a base class for interacting with various services via Composio,

@@ -1,4 +1,4 @@
-﻿"""Register the Corvos Telegram webhook."""
+"""Register the Corvos Telegram webhook."""
 
 from __future__ import annotations
 

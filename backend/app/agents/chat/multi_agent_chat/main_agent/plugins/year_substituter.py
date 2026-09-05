@@ -1,4 +1,4 @@
-﻿"""Reference plugin: substitute ``{{year}}`` in tool descriptions.
+"""Reference plugin: substitute ``{{year}}`` in tool descriptions.
 
 Demonstrates the :meth:`AgentMiddleware.awrap_tool_call` hook -- the
 plugin sees every tool invocation and can rewrite the request *or* the

@@ -1,4 +1,4 @@
-﻿"""Default safe-by-construction allowlist for self-gated approvals.
+"""Default safe-by-construction allowlist for self-gated approvals.
 
 Tools listed here mirror the safety profile of ``write_file`` against the
 Corvos KB: each call creates exactly one artifact in the user's own

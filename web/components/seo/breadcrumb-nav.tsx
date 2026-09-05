@@ -1,4 +1,4 @@
-﻿import { ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { BreadcrumbJsonLd } from "./json-ld";
 

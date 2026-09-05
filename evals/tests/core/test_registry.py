@@ -1,4 +1,4 @@
-﻿"""Registry + auto-discovery tests.
+"""Registry + auto-discovery tests.
 
 * Auto-discovery skips packages starting with ``_`` (so test fixtures
   don't leak into the production catalogue).

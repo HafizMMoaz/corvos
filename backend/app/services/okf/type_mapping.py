@@ -1,4 +1,4 @@
-﻿"""Map Corvos document types to OKF concept ``type`` strings and ``resource`` URIs.
+"""Map Corvos document types to OKF concept ``type`` strings and ``resource`` URIs.
 
 OKF (Open Knowledge Format v0.1) requires a non-empty, human-friendly ``type`` on
 every concept and recommends a ``resource`` URI pointing at the underlying asset.

@@ -1,4 +1,4 @@
-﻿import { IconBrandWalmart } from "@tabler/icons-react";
+import { IconBrandWalmart } from "@tabler/icons-react";
 import type { ConnectorPageContent } from "./types";
 
 export const walmart: ConnectorPageContent = {

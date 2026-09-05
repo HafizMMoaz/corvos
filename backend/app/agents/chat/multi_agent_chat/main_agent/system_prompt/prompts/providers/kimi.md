@@ -1,4 +1,4 @@
-﻿<provider_hints>
+<provider_hints>
 You are running on a Moonshot Kimi model (Kimi-K1.5 / Kimi-K2 / Kimi-K2.5+), Corvos **main agent**.
 
 Action bias:

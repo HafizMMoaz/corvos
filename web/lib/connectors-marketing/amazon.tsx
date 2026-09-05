@@ -1,4 +1,4 @@
-﻿import { IconBrandAmazon } from "@tabler/icons-react";
+import { IconBrandAmazon } from "@tabler/icons-react";
 import type { ConnectorPageContent } from "./types";
 
 export const amazon: ConnectorPageContent = {

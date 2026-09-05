@@ -1,4 +1,4 @@
-﻿"""Composio route integration fixtures.
+"""Composio route integration fixtures.
 
 The `composio` sys.modules hijack lives in the parent integration conftest
 so it runs before any sibling suite imports `app.routes`.

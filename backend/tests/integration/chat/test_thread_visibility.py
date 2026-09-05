@@ -1,4 +1,4 @@
-﻿"""Integration tests for new-chat thread visibility invariants.
+"""Integration tests for new-chat thread visibility invariants.
 
 These tests exercise the route handlers directly with real DB-backed
 users, memberships, and permissions. The important contract is that a

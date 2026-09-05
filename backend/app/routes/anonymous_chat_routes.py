@@ -1,4 +1,4 @@
-﻿"""Public API endpoints for anonymous (no-login) chat."""
+"""Public API endpoints for anonymous (no-login) chat."""
 
 from __future__ import annotations
 

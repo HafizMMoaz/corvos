@@ -1,4 +1,4 @@
-﻿import { app, globalShortcut, Menu, nativeImage, Tray, type NativeImage } from 'electron';
+import { app, globalShortcut, Menu, nativeImage, Tray, type NativeImage } from 'electron';
 import path from 'path';
 import { runGeneralAssistShortcut } from './general-assist';
 import { runScreenshotAssistShortcut } from './screen-capture';

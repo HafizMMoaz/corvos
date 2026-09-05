@@ -1,4 +1,4 @@
-﻿"""Tuning constants for the checkpointed subagent middleware.
+"""Tuning constants for the checkpointed subagent middleware.
 
 ``EXCLUDED_STATE_KEYS`` and ``DEFAULT_SUBAGENT_RECURSION_LIMIT`` are part of the
 subagent-invocation contract shared with subagents and now live in

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { IconCalendar, IconMailFilled } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import Image from "next/image";

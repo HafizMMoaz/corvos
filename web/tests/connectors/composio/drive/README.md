@@ -1,4 +1,4 @@
-﻿# Composio Google Drive - E2E
+# Composio Google Drive - E2E
 
 Phase 1 Playwright coverage for the Composio Drive connector.
 

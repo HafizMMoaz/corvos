@@ -1,4 +1,4 @@
-﻿import path from 'path';
+import path from 'path';
 import { app, utilityProcess } from 'electron';
 import { getPort } from 'get-port-please';
 

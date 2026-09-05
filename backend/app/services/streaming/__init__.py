@@ -1,4 +1,4 @@
-﻿"""Single-responsibility split of the streaming SSE protocol.
+"""Single-responsibility split of the streaming SSE protocol.
 
 Layout:
 * ``envelope/`` - SSE wire framing + ID generators

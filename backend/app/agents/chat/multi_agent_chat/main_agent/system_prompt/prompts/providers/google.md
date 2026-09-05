@@ -1,4 +1,4 @@
-﻿<provider_hints>
+<provider_hints>
 You are running on a Google Gemini model (Corvos **main agent**).
 
 Output style:

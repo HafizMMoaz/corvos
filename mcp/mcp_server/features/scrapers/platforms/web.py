@@ -1,4 +1,4 @@
-﻿"""Web crawl scraper tool."""
+"""Web crawl scraper tool."""
 
 from __future__ import annotations
 

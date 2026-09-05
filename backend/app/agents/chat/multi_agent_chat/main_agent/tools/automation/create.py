@@ -1,4 +1,4 @@
-﻿"""``create_automation`` - NL intent → drafted JSON → HITL approval card → persisted.
+"""``create_automation`` - NL intent → drafted JSON → HITL approval card → persisted.
 
 Single tool that:
 

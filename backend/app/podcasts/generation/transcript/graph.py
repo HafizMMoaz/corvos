@@ -1,4 +1,4 @@
-﻿"""The transcript-drafting graph: outline, draft segments, finalize."""
+"""The transcript-drafting graph: outline, draft segments, finalize."""
 
 from __future__ import annotations
 

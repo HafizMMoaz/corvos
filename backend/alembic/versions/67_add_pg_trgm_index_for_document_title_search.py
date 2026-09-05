@@ -1,4 +1,4 @@
-﻿"""Add pg_trgm indexes for efficient document title search
+"""Add pg_trgm indexes for efficient document title search
 
 Revision ID: 67
 Revises: 66

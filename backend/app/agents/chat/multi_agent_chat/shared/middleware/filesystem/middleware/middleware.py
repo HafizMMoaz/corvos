@@ -1,4 +1,4 @@
-﻿"""``CorvosFilesystemMiddleware``: per-session state + tool registration."""
+"""``CorvosFilesystemMiddleware``: per-session state + tool registration."""
 
 from __future__ import annotations
 

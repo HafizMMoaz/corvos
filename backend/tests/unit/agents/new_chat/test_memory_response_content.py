@@ -1,4 +1,4 @@
-﻿"""Unit tests for extracting text from LLM memory responses."""
+"""Unit tests for extracting text from LLM memory responses."""
 
 import pytest
 

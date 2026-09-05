@@ -1,4 +1,4 @@
-﻿import type { APIRequestContext } from "@playwright/test";
+import type { APIRequestContext } from "@playwright/test";
 
 /**
  * Direct backend auth helper. Uses the desktop login endpoint when the

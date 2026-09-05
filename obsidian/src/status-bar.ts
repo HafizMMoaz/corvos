@@ -1,4 +1,4 @@
-﻿import { setIcon } from "obsidian";
+import { setIcon } from "obsidian";
 import { STATUS_VISUALS } from "./status-visuals";
 import type { StatusState } from "./types";
 

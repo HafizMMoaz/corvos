@@ -1,4 +1,4 @@
-﻿"""Route a flat ``decisions`` list back to the right paused subagent.
+"""Route a flat ``decisions`` list back to the right paused subagent.
 
 Each pending interrupt is stamped with its originating ``tool_call_id`` (see
 ``checkpointed_subagent_middleware.propagation``) so the resume slicer can

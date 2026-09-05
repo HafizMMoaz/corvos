@@ -1,4 +1,4 @@
-﻿"""Run one ``agent_task`` invocation: ainvoke + auto-decision resume loop."""
+"""Run one ``agent_task`` invocation: ainvoke + auto-decision resume loop."""
 
 from __future__ import annotations
 

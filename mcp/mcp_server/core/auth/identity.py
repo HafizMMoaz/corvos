@@ -1,4 +1,4 @@
-﻿"""Request-scoped caller identity.
+"""Request-scoped caller identity.
 
 Over streamable-http one process serves many users, so the caller's key lives in
 a contextvar for the life of a request: the auth middleware binds it and the

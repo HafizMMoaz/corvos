@@ -1,4 +1,4 @@
-﻿"""Extract a Corvos API key from request headers.
+"""Extract a Corvos API key from request headers.
 
 Pure header parsing, kept separate from transport and state.
 """

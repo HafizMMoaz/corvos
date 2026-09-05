@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Crop, Rocket, RotateCcw, Zap } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";

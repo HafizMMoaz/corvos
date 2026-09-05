@@ -1,4 +1,4 @@
-﻿"""Canonical Zero publication definition for Corvos.
+"""Canonical Zero publication definition for Corvos.
 
 This module is the single source of truth for ``zero_publication``. Future
 publication changes should update ``ZERO_PUBLICATION`` and call

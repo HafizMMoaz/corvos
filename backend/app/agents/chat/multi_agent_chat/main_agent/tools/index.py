@@ -1,4 +1,4 @@
-﻿"""Main-agent Corvos builtin tool names (not full ``new_chat``).
+"""Main-agent Corvos builtin tool names (not full ``new_chat``).
 
 Connector integrations, MCP, deliverables, etc. are delegated via ``task`` subagents.
 """

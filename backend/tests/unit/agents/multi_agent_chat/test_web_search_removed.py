@@ -1,4 +1,4 @@
-﻿"""Guardrail: the multi-engine ``web_search`` tool is fully retired.
+"""Guardrail: the multi-engine ``web_search`` tool is fully retired.
 
 Public web search now runs exclusively through the ``google_search`` subagent,
 and the four search connector types (Tavily/SearXNG/Linkup/Baidu) are soft-

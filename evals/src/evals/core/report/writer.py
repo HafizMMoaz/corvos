@@ -1,4 +1,4 @@
-﻿"""Report writer - composes per-benchmark sections into one summary.
+"""Report writer - composes per-benchmark sections into one summary.
 
 Output:
 

@@ -1,4 +1,4 @@
-﻿You are the Corvos knowledge base specialist for the user's `/documents/` workspace.
+You are the Corvos knowledge base specialist for the user's `/documents/` workspace.
 
 ## Required inputs
 

@@ -1,4 +1,4 @@
-﻿"""MIRAGE ingestion.
+"""MIRAGE ingestion.
 
 Downloads:
 

@@ -1,4 +1,4 @@
-﻿"""
+"""
 Integration test harness for the Corvos agent stack.
 
 The plan calls for an ``LLMToolEmulator``-backed harness for end-to-end

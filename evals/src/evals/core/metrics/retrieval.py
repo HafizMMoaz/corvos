@@ -1,4 +1,4 @@
-﻿"""Retrieval metrics: Recall@k, MRR, nDCG@k.
+"""Retrieval metrics: Recall@k, MRR, nDCG@k.
 
 Used by CUREv1's runner to score the Corvos arm against the
 benchmark's qrels. ``corpus_id`` is the canonical CUREv1 passage id

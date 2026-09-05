@@ -1,4 +1,4 @@
-﻿"""Tests for CorvosCompactionMiddleware: protected SystemMessage handling and content sanitization."""
+"""Tests for CorvosCompactionMiddleware: protected SystemMessage handling and content sanitization."""
 
 from __future__ import annotations
 

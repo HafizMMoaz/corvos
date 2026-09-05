@@ -1,4 +1,4 @@
-﻿"""``cd`` factory: resolve target, verify existence (staged + on-disk), update cwd."""
+"""``cd`` factory: resolve target, verify existence (staged + on-disk), update cwd."""
 
 from __future__ import annotations
 

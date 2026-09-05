@@ -1,4 +1,4 @@
-﻿"""Cloud-only write namespace policy.
+"""Cloud-only write namespace policy.
 
 A write is allowed iff it lands under ``/documents/`` OR its basename uses
 the ``temp_`` scratch prefix. The anonymous uploaded document is read-only

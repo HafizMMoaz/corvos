@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import PricingBasic from "@/components/pricing/pricing-section";
 import { JsonLd } from "@/components/seo/json-ld";
 

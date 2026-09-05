@@ -1,4 +1,4 @@
-﻿<routing>
+<routing>
 You have two execution channels. Pick the one that owns the work - never
 simulate one with the other.
 

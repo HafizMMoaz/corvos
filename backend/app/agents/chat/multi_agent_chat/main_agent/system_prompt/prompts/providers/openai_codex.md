@@ -1,4 +1,4 @@
-﻿<provider_hints>
+<provider_hints>
 You are running on an OpenAI Codex-class model (Corvos **main agent**).
 
 Output style:

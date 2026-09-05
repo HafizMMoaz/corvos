@@ -1,4 +1,4 @@
-﻿"""Strict Linear MCP OAuth/tool fakes for Playwright E2E."""
+"""Strict Linear MCP OAuth/tool fakes for Playwright E2E."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿"""FRAMES - multi-hop Wikipedia retrieval & reasoning (google/frames-benchmark).
+"""FRAMES - multi-hop Wikipedia retrieval & reasoning (google/frames-benchmark).
 
 Source: https://huggingface.co/datasets/google/frames-benchmark
 Paper:  https://arxiv.org/abs/2409.12941 (Krishna et al., 2024)

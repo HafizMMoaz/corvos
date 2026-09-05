@@ -1,4 +1,4 @@
-﻿"""Self-check for ensure_publication on a create_all-bootstrapped scratch DB."""
+"""Self-check for ensure_publication on a create_all-bootstrapped scratch DB."""
 
 import asyncio
 

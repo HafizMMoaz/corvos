@@ -1,4 +1,4 @@
-﻿"""Corvos's subagent contribution: deepagents spec + permission ruleset."""
+"""Corvos's subagent contribution: deepagents spec + permission ruleset."""
 
 from __future__ import annotations
 

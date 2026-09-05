@@ -1,4 +1,4 @@
-﻿"""MedXpertQA-MM runner - Native PDF (vision) vs Corvos (vision RAG).
+"""MedXpertQA-MM runner - Native PDF (vision) vs Corvos (vision RAG).
 
 Headline benchmark for the medical suite.
 

@@ -1,4 +1,4 @@
-﻿"""generate_podcast: thinking-step copy."""
+"""generate_podcast: thinking-step copy."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿# Reddit scraper (anonymous, no browser)
+# Reddit scraper (anonymous, no browser)
 
 Platform-native Reddit scraper (anonymous, no browser). Standalone
 module: it depends only on `app.utils.proxy` + `scrapling` and exposes a stable

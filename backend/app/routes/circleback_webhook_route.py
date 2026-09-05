@@ -1,4 +1,4 @@
-﻿"""
+"""
 Circleback Webhook Route
 
 This module provides a webhook endpoint for receiving meeting data from Circleback.

@@ -1,4 +1,4 @@
-﻿"""
+"""
 Daytona sandbox provider for Corvos deep agent.
 
 Manages the lifecycle of sandboxed code execution environments.

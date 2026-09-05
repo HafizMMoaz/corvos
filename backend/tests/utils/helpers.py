@@ -1,4 +1,4 @@
-﻿"""Shared test helpers for authentication, polling, and cleanup."""
+"""Shared test helpers for authentication, polling, and cleanup."""
 
 from __future__ import annotations
 

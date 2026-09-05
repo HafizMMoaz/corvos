@@ -1,4 +1,4 @@
-﻿import { ConnectorFaq } from "@/components/connectors-marketing/connector-faq";
+import { ConnectorFaq } from "@/components/connectors-marketing/connector-faq";
 import { Reveal } from "@/components/connectors-marketing/reveal";
 import { MarketingSection } from "@/components/marketing/section";
 import { FAQJsonLd } from "@/components/seo/json-ld";

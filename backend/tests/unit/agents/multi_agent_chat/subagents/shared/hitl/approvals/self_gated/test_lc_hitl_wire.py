@@ -1,4 +1,4 @@
-﻿"""Regression: ``request_approval`` must emit the unified LC HITL wire shape.
+"""Regression: ``request_approval`` must emit the unified LC HITL wire shape.
 
 Before this fix, self-gated approvals fired the Corvos-specific
 ``{type, action, context}`` shape which the parallel-HITL routing layer

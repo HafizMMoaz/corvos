@@ -1,4 +1,4 @@
-﻿"""Shared middleware components for the Corvos chat agents."""
+"""Shared middleware components for the Corvos chat agents."""
 
 from app.agents.chat.shared.middleware.compaction import (
     CorvosCompactionMiddleware,

@@ -1,4 +1,4 @@
-﻿"""``pwd`` factory: read the cwd from state."""
+"""``pwd`` factory: read the cwd from state."""
 
 from __future__ import annotations
 

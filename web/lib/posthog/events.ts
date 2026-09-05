@@ -1,4 +1,4 @@
-﻿import posthog from "posthog-js";
+import posthog from "posthog-js";
 import type { ChatErrorKind, ChatErrorSeverity, ChatFlow } from "@/lib/chat/chat-error-classifier";
 import { getConnectorTelemetryMeta } from "@/lib/connector-telemetry";
 

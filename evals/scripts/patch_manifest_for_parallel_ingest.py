@@ -1,4 +1,4 @@
-﻿"""Stub the mmlongbench manifest so parser_compare can extract in parallel.
+"""Stub the mmlongbench manifest so parser_compare can extract in parallel.
 
 The mmlongbench Corvos ingest writes its manifest only at the very
 end of the upload pipeline (~hours of celery work). parser_compare's

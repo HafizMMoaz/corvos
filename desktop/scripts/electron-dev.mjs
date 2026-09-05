@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Linux dev: (1) ELECTRON_DISABLE_SANDBOX before start - setuid chrome-sandbox in node_modules.
  * (2) --ozone-platform=x11 - use X11 via XWayland so global shortcuts / GPU warnings match many
  *     Linux Electron setups better than native Wayland. Set CORVOS_ELECTRON_WAYLAND=1 to skip (2).

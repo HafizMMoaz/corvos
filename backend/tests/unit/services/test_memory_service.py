@@ -1,4 +1,4 @@
-﻿"""Unit tests for the first-class memory service."""
+"""Unit tests for the first-class memory service."""
 
 from types import SimpleNamespace
 

@@ -1,4 +1,4 @@
-﻿"""CRAG runner - Bare LLM vs Long-Context LLM vs Corvos.
+"""CRAG runner - Bare LLM vs Long-Context LLM vs Corvos.
 
 Three arms run paired on every question in the sample. All three
 answer with the same model (CRAG is a head-to-head benchmark, not a

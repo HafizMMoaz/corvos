@@ -1,4 +1,4 @@
-﻿"""parser_compare - six-way head-to-head on long multimodal PDFs.
+"""parser_compare - six-way head-to-head on long multimodal PDFs.
 
 Same 5 mmlongbench PDFs that ``mmlongbench`` already ingested
 (``search_space_id=55``), one question per PDF for the smoke run.

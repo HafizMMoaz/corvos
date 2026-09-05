@@ -1,4 +1,4 @@
-﻿"""Podcast API + task integration fixtures.
+"""Podcast API + task integration fixtures.
 
 The app's DB session and current-user dependencies ride the test's transactional
 `db_session`, so seeded rows and rows touched through the endpoints (or the task

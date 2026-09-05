@@ -1,4 +1,4 @@
-﻿"""Manual functional e2e for Phase 3 crawler core (3a / 3b).
+"""Manual functional e2e for Phase 3 crawler core (3a / 3b).
 
 Run from the backend directory:
     cd backend

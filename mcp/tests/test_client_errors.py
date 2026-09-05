@@ -1,4 +1,4 @@
-﻿"""HTTP failure translation: status hints, server detail, and body parsing."""
+"""HTTP failure translation: status hints, server detail, and body parsing."""
 
 from __future__ import annotations
 

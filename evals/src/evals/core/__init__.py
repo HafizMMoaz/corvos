@@ -1,4 +1,4 @@
-﻿"""Domain-agnostic infrastructure shared by every suite.
+"""Domain-agnostic infrastructure shared by every suite.
 
 Nothing under ``core/`` knows or cares about a specific evaluation domain.
 Suites live under ``evals.suites.<domain>.<benchmark>`` and

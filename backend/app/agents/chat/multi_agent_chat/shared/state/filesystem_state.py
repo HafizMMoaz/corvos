@@ -1,4 +1,4 @@
-﻿"""LangGraph state schema additions used by the Corvos filesystem agent.
+"""LangGraph state schema additions used by the Corvos filesystem agent.
 
 This schema extends deepagents' upstream :class:`FilesystemState` with the
 extra fields needed to implement Postgres-backed virtual filesystem semantics:

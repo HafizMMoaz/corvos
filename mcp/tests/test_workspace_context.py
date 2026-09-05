@@ -1,4 +1,4 @@
-﻿"""Workspace resolution: names, ids, defaults, and the ambiguous cases."""
+"""Workspace resolution: names, ids, defaults, and the ambiguous cases."""
 
 from __future__ import annotations
 

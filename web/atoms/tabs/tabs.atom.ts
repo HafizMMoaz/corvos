@@ -1,4 +1,4 @@
-﻿import { atom } from "jotai";
+import { atom } from "jotai";
 import { atomWithStorage, createJSONStorage } from "jotai/utils";
 
 export type TabType = "chat" | "document";

@@ -1,4 +1,4 @@
-﻿"""MCP OAuth 2.1 metadata discovery, Dynamic Client Registration, and token exchange."""
+"""MCP OAuth 2.1 metadata discovery, Dynamic Client Registration, and token exchange."""
 
 from __future__ import annotations
 

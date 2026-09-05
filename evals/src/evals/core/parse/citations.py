@@ -1,4 +1,4 @@
-﻿"""Python port of the canonical citation parser.
+"""Python port of the canonical citation parser.
 
 Source of truth: ``web/lib/citations/citation-parser.ts:20-21``.
 The pattern is byte-for-byte identical to the TS export ``CITATION_REGEX``

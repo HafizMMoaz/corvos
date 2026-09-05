@@ -1,4 +1,4 @@
-﻿"""TTL-LRU cache for compiled Corvos deep agents.
+"""TTL-LRU cache for compiled Corvos deep agents.
 
 Why this exists
 ---------------

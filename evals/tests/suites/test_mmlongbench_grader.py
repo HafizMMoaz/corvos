@@ -1,4 +1,4 @@
-﻿"""Tests for the MMLongBench-Doc format-aware grader.
+"""Tests for the MMLongBench-Doc format-aware grader.
 
 The grader is the critical correctness piece for the open-ended
 benchmark (no MCQ shortcut), so we cover all five formats with

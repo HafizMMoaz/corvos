@@ -1,4 +1,4 @@
-﻿"""SubAgent ``task`` tool wiring required for HITL inside subagents.
+"""SubAgent ``task`` tool wiring required for HITL inside subagents.
 
 Replaces upstream ``SubAgentMiddleware`` to:
 

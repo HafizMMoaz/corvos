@@ -1,4 +1,4 @@
-﻿"""TikTok scraper tools: scrape (videos), comments, user search, and trending."""
+"""TikTok scraper tools: scrape (videos), comments, user search, and trending."""
 
 from __future__ import annotations
 

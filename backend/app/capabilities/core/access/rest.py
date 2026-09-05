@@ -1,4 +1,4 @@
-﻿"""Generate the REST door from the capability registry (05).
+"""Generate the REST door from the capability registry (05).
 
 One typed ``POST`` per verb under ``/workspaces/{id}/scrapers/{platform}/{verb}``;
 each runs the same thin adapter: authn -> workspace authz -> meter-gate -> executor

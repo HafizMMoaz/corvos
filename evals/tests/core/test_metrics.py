@@ -1,4 +1,4 @@
-﻿"""Metric correctness - Wilson, McNemar, retrieval scores."""
+"""Metric correctness - Wilson, McNemar, retrieval scores."""
 
 from __future__ import annotations
 

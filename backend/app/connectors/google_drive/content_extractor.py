@@ -1,4 +1,4 @@
-﻿"""Content extraction for Google Drive files."""
+"""Content extraction for Google Drive files."""
 
 import contextlib
 import logging

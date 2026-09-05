@@ -1,4 +1,4 @@
-﻿"""Postgres-backed virtual filesystem for the Corvos agent (cloud mode).
+"""Postgres-backed virtual filesystem for the Corvos agent (cloud mode).
 
 The backend is **strictly conforming** to deepagents'
 :class:`BackendProtocol`. It returns ``WriteResult`` / ``EditResult`` / list

@@ -1,4 +1,4 @@
-﻿"""Build the langchain HITL ``interrupt(...)`` payload - single source of truth.
+"""Build the langchain HITL ``interrupt(...)`` payload - single source of truth.
 
 Every approval path in the multi-agent stack - self-gated tool bodies that call
 ``request_approval``, and middleware-gated paths (``HumanInTheLoopMiddleware``,

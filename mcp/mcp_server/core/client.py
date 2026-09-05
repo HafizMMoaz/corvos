@@ -1,4 +1,4 @@
-﻿"""Authenticated transport to a Corvos backend's REST API.
+"""Authenticated transport to a Corvos backend's REST API.
 
 Sends requests to fully-formed paths, returns parsed JSON, and turns any
 transport or HTTP failure into a readable ``ToolError``.

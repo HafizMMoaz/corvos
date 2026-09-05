@@ -1,4 +1,4 @@
-﻿"""Tests for the agent feature-flag system."""
+"""Tests for the agent feature-flag system."""
 
 from __future__ import annotations
 

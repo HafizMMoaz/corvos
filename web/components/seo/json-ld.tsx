@@ -1,4 +1,4 @@
-﻿interface JsonLdProps {
+interface JsonLdProps {
 	data: Record<string, unknown>;
 }
 

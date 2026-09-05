@@ -1,4 +1,4 @@
-﻿import { Reveal } from "@/components/connectors-marketing/reveal";
+import { Reveal } from "@/components/connectors-marketing/reveal";
 import { MarketingSection } from "@/components/marketing/section";
 
 const COLUMNS = [

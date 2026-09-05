@@ -1,4 +1,4 @@
-﻿"""``mkdir`` factory: cloud stages for end-of-turn; desktop hits disk immediately."""
+"""``mkdir`` factory: cloud stages for end-of-turn; desktop hits disk immediately."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿"""Scraper tools: one MCP surface per Corvos platform capability.
+"""Scraper tools: one MCP surface per Corvos platform capability.
 
 Web crawl, Google Search, Reddit, YouTube, Google Maps, Amazon, Indeed, and
 Walmart each get a tool that maps a natural-language request to the workspace's

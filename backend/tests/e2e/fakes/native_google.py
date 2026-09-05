@@ -1,4 +1,4 @@
-﻿"""Strict native Google SDK fakes for Playwright E2E.
+"""Strict native Google SDK fakes for Playwright E2E.
 
 This module patches the production Google OAuth and Drive SDK bindings used by
 the native Google connector happy paths. It deliberately does not replace the

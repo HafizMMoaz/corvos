@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Docling Document Processing Service for Corvos
 SSL-safe implementation with pre-downloaded models

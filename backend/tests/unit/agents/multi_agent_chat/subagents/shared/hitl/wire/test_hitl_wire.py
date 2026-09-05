@@ -1,4 +1,4 @@
-﻿"""Unit contract for the unified LC HITL wire format.
+"""Unit contract for the unified LC HITL wire format.
 
 Both the self-gated approval primitive (``request_approval``) and the
 middleware-gated permission ask (``PermissionMiddleware``) must serialize

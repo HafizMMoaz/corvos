@@ -1,4 +1,4 @@
-﻿"""``indeed`` route: ``CorvosSubagentSpec`` builder for deepagents."""
+"""``indeed`` route: ``CorvosSubagentSpec`` builder for deepagents."""
 
 from __future__ import annotations
 

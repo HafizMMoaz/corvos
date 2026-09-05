@@ -1,4 +1,4 @@
-﻿import { loader } from "fumadocs-core/source";
+import { loader } from "fumadocs-core/source";
 import type { Metadata } from "next";
 import { blog } from "@/.source/server";
 import { BlogWithSearchMagazine } from "./blog-magazine";

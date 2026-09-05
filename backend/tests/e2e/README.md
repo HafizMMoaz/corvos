@@ -1,4 +1,4 @@
-﻿# Backend E2E Harness
+# Backend E2E Harness
 
 This directory contains the test-only backend entrypoints and fakes used by
 Playwright. They are not part of the production image: `.dockerignore` excludes
