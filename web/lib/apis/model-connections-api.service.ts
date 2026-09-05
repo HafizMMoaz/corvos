@@ -99,10 +99,7 @@ class ModelConnectionsApiService {
 		return baseApiService.post(`/api/v1/model-connections/${id}/discover`, modelListResponse);
 	};
 
-	addManualModel = async (
-		connectionId: number,
-		request: ModelSelection
-	): Promise<ModelRead> => {
+	addManualModel = async (connectionId: number, request: ModelSelection): Promise<ModelRead> => {
 		const parsed = modelSelection.safeParse(request);
 		if (!parsed.success) {
 			throw new ValidationError(parsed.error.issues.map((issue) => issue.message).join(", "));

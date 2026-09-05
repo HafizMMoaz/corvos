@@ -172,7 +172,7 @@ export function RolesContent() {
 								<TableRow key={role.id}>
 									<TableCell className="font-medium">{role.name}</TableCell>
 									<TableCell className="max-w-[320px] truncate text-muted-foreground">
-										{role.description || "—"}
+										{role.description || "-"}
 									</TableCell>
 									<TableCell>
 										{role.permissions.includes("*")

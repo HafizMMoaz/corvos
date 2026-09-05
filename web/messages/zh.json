@@ -306,6 +306,7 @@
 		"no_rows_selected": "未选择任何行",
 		"delete_success_count": "成功删除 {count} 个文档",
 		"delete_partial_failed": "部分文档无法删除",
+		"delete_success": "文档删除成功",
 		"delete_error": "删除文档时出错",
 		"filter_by_title": "按标题筛选...",
 		"bulk_delete": "删除所选",

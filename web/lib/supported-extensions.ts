@@ -7,6 +7,19 @@ const audioFileTypes: Record<string, string[]> = {
 	"text/plain": [".txt"],
 };
 
+const videoFileTypes: Record<string, string[]> = {
+	"video/x-msvideo": [".avi"],
+	"video/quicktime": [".mov"],
+	"video/x-matroska": [".mkv"],
+	"video/x-flv": [".flv"],
+	"video/x-ms-wmv": [".wmv"],
+	"video/3gpp": [".3gp"],
+	"video/ogg": [".ogv"],
+	"video/x-m4v": [".m4v"],
+	"video/mpeg": [".mpg"],
+	"video/dvd": [".vob"],
+};
+
 const commonTypes: Record<string, string[]> = {
 	"application/pdf": [".pdf"],
 	"application/vnd.openxmlformats-officedocument.wordprocessingml.document": [".docx"],
@@ -43,6 +56,7 @@ export const FILE_TYPE_CONFIG: Record<string, Record<string, string[]>> = {
 		"image/gif": [".gif"],
 		"image/svg+xml": [".svg"],
 		...audioFileTypes,
+		...videoFileTypes,
 	},
 	DOCLING: {
 		...commonTypes,
@@ -50,11 +64,13 @@ export const FILE_TYPE_CONFIG: Record<string, Record<string, string[]>> = {
 		"text/html": [".html", ".htm", ".xhtml"],
 		"image/tiff": [".tiff", ".tif"],
 		...audioFileTypes,
+		...videoFileTypes,
 	},
 	AZURE_DI: {
 		...commonTypes,
 		"image/heic": [".heic"],
 		...audioFileTypes,
+		...videoFileTypes,
 	},
 	default: {
 		...commonTypes,
@@ -72,6 +88,7 @@ export const FILE_TYPE_CONFIG: Record<string, Record<string, string[]>> = {
 		"application/vnd.ms-excel": [".xls"],
 		"application/xml": [".xml"],
 		...audioFileTypes,
+		...videoFileTypes,
 	},
 };
 

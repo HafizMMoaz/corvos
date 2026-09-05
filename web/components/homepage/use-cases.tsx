@@ -58,9 +58,7 @@ export function UseCasesRow() {
 	return (
 		<MarketingSection>
 			<Reveal>
-				<h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-					What teams use Corvos for
-				</h2>
+				<h2 className="text-2xl font-bold tracking-tight sm:text-3xl">What teams use Corvos for</h2>
 			</Reveal>
 			<div className="mt-8 grid gap-6 sm:grid-cols-2">
 				{USE_CASES.map((useCase) => (

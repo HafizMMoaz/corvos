@@ -1,4 +1,5 @@
 ﻿import { loader } from "fumadocs-core/source";
+import type { MDXComponents } from "mdx/types";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -24,7 +25,7 @@ interface BlogData {
 	// Populated by Fumadocs when `lastModifiedTime: "git"` is set in source.config.ts.
 	lastModified?: Date;
 	body: React.ComponentType<{
-		components?: Record<string, React.ComponentType>;
+		components?: MDXComponents;
 	}>;
 }
 
@@ -139,9 +140,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
 								className="h-8 w-8 rounded-full object-cover"
 							/>
 						)}
-						<span className="font-medium text-foreground">
-							{page.data.author ?? "Corvos Team"}
-						</span>
+						<span className="font-medium text-foreground">{page.data.author ?? "Corvos Team"}</span>
 						<span>·</span>
 						<time dateTime={page.data.date}>{formatDate(date)}</time>
 					</div>

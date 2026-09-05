@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import type { FC } from "react";
+import type { ComponentType, FC } from "react";
 
 export interface ConnectFormProps {
 	onSubmit: (data: {
@@ -22,9 +22,9 @@ export interface ConnectFormProps {
 	onFormSubmit?: () => void;
 }
 
-export type ConnectFormComponent = FC<ConnectFormProps>;
+export type ConnectFormComponent = ComponentType<ConnectFormProps>;
 
-const formMap: Record<string, () => Promise<{ default: FC<ConnectFormProps> }>> = {
+const formMap: Record<string, () => Promise<{ default: ComponentType<ConnectFormProps> }>> = {
 	TAVILY_API: () =>
 		import("./components/tavily-api-connect-form").then((m) => ({
 			default: m.TavilyApiConnectForm,

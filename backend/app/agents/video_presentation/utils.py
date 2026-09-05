@@ -6,11 +6,11 @@ def get_voice_for_provider(provider: str, speaker_id: int = 0) -> dict | str:
     will be added in a future iteration.
 
     Args:
-        provider: The TTS provider (e.g., "openai/tts-1", "vertex_ai/test")
+        provider: The TTS provider (e.g., "openai/tts-1", "vertex_ai/test", "elevenlabs")
         speaker_id: The ID of the speaker (default 0, single speaker for now)
 
     Returns:
-        Voice configuration - string for OpenAI, dict for Vertex AI
+        Voice configuration - string for OpenAI/ElevenLabs, dict for Vertex AI
     """
     if provider == "local/kokoro":
         return "af_heart"
@@ -26,5 +26,6 @@ def get_voice_for_provider(provider: str, speaker_id: int = 0) -> dict | str:
             "name": "en-US-Studio-O",
         },
         "azure": "alloy",
+        "elevenlabs": "pNInz6obpgDQGcFmaJgB",  # Adam voice
     }
     return voices.get(provider_type, {})

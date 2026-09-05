@@ -347,8 +347,8 @@ export default function McpServerPage() {
 							>
 								External MCP connectors
 							</Link>{" "}
-							do the reverse: they pull outside tools like Notion, Slack, and Jira into your
-							Corvos agents. Use both and data flows in either direction.
+							do the reverse: they pull outside tools like Notion, Slack, and Jira into your Corvos
+							agents. Use both and data flows in either direction.
 						</p>
 					</Reveal>
 				</MarketingSection>

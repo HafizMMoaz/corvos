@@ -102,7 +102,8 @@ export function FooterNew() {
 					</div>
 
 					<p className="ml-2 text-neutral-500 dark:text-neutral-400">
-						The open-source AI research assistant that connects your tools, sources, and workflows in one place.
+						The open-source AI research assistant that connects your tools, sources, and workflows
+						in one place.
 					</p>
 
 					<div className="mt-4 ml-2">

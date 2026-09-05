@@ -4,6 +4,7 @@ import { type Descendant, KEYS } from "platejs";
 import { createPlatePlugin, type PlateElementProps } from "platejs/react";
 import type { FC } from "react";
 import { InlineCitation, UrlCitation } from "@/components/assistant-ui/inline-citation";
+import { RunCitation } from "@/components/citations/run-citation";
 import {
 	CITATION_REGEX,
 	type CitationUrlMap,
@@ -17,9 +18,10 @@ import {
  */
 export type CitationElementNode = {
 	type: "citation";
-	kind: "chunk" | "doc" | "url";
+	kind: "chunk" | "doc" | "url" | "run";
 	chunkId?: number;
 	url?: string;
+	runId?: string;
 	/** Original literal token that produced this citation node. */
 	rawText: string;
 	children: [{ text: "" }];
@@ -38,6 +40,8 @@ const CitationElement: FC<PlateElementProps<CitationElementNode>> = ({
 			<span contentEditable={false}>
 				{isUrl && element.url ? (
 					<UrlCitation url={element.url} />
+				) : element.kind === "run" && element.runId ? (
+					<RunCitation runId={element.runId} />
 				) : element.chunkId !== undefined ? (
 					<InlineCitation chunkId={element.chunkId} isDocsChunk={element.kind === "doc"} />
 				) : null}
@@ -99,13 +103,25 @@ function copyMarks(textNode: SlateText): Record<string, unknown> {
 
 function makeCitationElement(
 	rawText: string,
-	segment: { kind: "url"; url: string } | { kind: "chunk"; chunkId: number; isDocsChunk: boolean }
+	segment:
+		| { kind: "url"; url: string }
+		| { kind: "run"; runId: string }
+		| { kind: "chunk"; chunkId: number; isDocsChunk: boolean }
 ): CitationElementNode {
 	if (segment.kind === "url") {
 		return {
 			type: CITATION_TYPE,
 			kind: "url",
 			url: segment.url,
+			rawText,
+			children: [{ text: "" }],
+		};
+	}
+	if (segment.kind === "run") {
+		return {
+			type: CITATION_TYPE,
+			kind: "run",
+			runId: segment.runId,
 			rawText,
 			children: [{ text: "" }],
 		};

@@ -54,6 +54,13 @@ Endpoints:
 - GET /admin/users/{user_id}/feature-overrides - list a user's overrides,
   including expired-but-not-deleted ones (their `expires_at` stays visible).
   Requires billing:read.
+- GET /admin/subscriptions - list every Paddle subscription joined with its
+  user's email and plan's name, most recently updated first. Read-only:
+  subscription state always flows in from Paddle webhooks, so there is no
+  admin write action here. Requires billing:read.
+- GET /admin/users - paginated user list for the admin Users page, with an
+  optional `search` (email/display_name substring, case-insensitive) and
+  `plan_id` filter. Requires users:read.
 
 Every mutating route writes one `admin_audit_logs` row via
 `record_admin_action` before `commit()`, same ordering as every existing
@@ -73,13 +80,15 @@ import logging
 from typing import Any
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
+from sqlalchemy import func, or_
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 
 from app.auth.context import AuthContext
 from app.db import (
     FeatureFlag,
+    PaddleSubscription,
     Plan,
     PlanFeatureValue,
     PlanModelEntitlement,
@@ -89,6 +98,9 @@ from app.db import (
     get_async_session,
 )
 from app.schemas import (
+    AdminSubscriptionRead,
+    AdminUserListItemRead,
+    AdminUserListResponse,
     FeatureFlagCreate,
     FeatureFlagRead,
     FeatureFlagUpdate,
@@ -1239,4 +1251,131 @@ async def list_user_feature_overrides(
         logger.error(f"Failed to list user feature overrides: {e!s}", exc_info=True)
         raise HTTPException(
             status_code=500, detail=f"Failed to list user feature overrides: {e!s}"
+        ) from e
+
+
+# ---------------------------------------------------------------------------
+# Admin subscriptions / users listings
+# ---------------------------------------------------------------------------
+
+
+@router.get("/subscriptions", response_model=list[AdminSubscriptionRead])
+async def list_subscriptions(
+    session: AsyncSession = Depends(get_async_session),
+    auth: AuthContext = Depends(get_auth_context),
+):
+    """List every Paddle subscription joined with its user's email and plan's
+    name, most recently updated first. Read-only -- subscription state always
+    flows in from Paddle webhooks, so there is no admin write action here.
+    Requires billing:read."""
+    try:
+        await check_platform_permission(
+            session,
+            auth,
+            PlatformPermission.BILLING_READ.value,
+            "You don't have permission to view subscriptions",
+        )
+
+        result = await session.execute(
+            select(PaddleSubscription, User.email, Plan.name)
+            .join(User, PaddleSubscription.user_id == User.id)
+            .outerjoin(Plan, PaddleSubscription.plan_id == Plan.id)
+            .order_by(PaddleSubscription.updated_at.desc())
+        )
+        return [
+            AdminSubscriptionRead(
+                id=sub.id,
+                user_id=sub.user_id,
+                user_email=email,
+                plan_id=sub.plan_id,
+                plan_name=plan_name,
+                paddle_subscription_id=sub.paddle_subscription_id,
+                paddle_customer_id=sub.paddle_customer_id,
+                status=sub.status,
+                current_period_end=sub.current_period_end,
+                cancel_at_period_end=sub.cancel_at_period_end,
+                created_at=sub.created_at,
+                updated_at=sub.updated_at,
+            )
+            for sub, email, plan_name in result.all()
+        ]
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Failed to list subscriptions: {e!s}", exc_info=True)
+        raise HTTPException(
+            status_code=500, detail=f"Failed to list subscriptions: {e!s}"
+        ) from e
+
+
+@router.get("/users", response_model=AdminUserListResponse)
+async def list_users(
+    limit: int = Query(50, ge=1, le=200),
+    offset: int = Query(0, ge=0),
+    search: str | None = Query(None, max_length=200),
+    plan_id: int | None = Query(None),
+    session: AsyncSession = Depends(get_async_session),
+    auth: AuthContext = Depends(get_auth_context),
+):
+    """Paginated user list for the admin Users page. `search` matches a
+    case-insensitive substring of email or display_name; `plan_id` filters to
+    one plan. Ordered by email for stable pagination (user has no created_at
+    column). Requires users:read."""
+    try:
+        await check_platform_permission(
+            session,
+            auth,
+            PlatformPermission.USERS_READ.value,
+            "You don't have permission to view users",
+        )
+
+        filters = []
+        if search:
+            pattern = f"%{search.strip()}%"
+            filters.append(
+                or_(User.email.ilike(pattern), User.display_name.ilike(pattern))
+            )
+        if plan_id is not None:
+            filters.append(User.plan_id == plan_id)
+
+        count_stmt = select(func.count()).select_from(User)
+        list_stmt = (
+            select(User, Plan.name)
+            .outerjoin(Plan, User.plan_id == Plan.id)
+            .order_by(User.email)
+        )
+        if filters:
+            count_stmt = count_stmt.where(*filters)
+            list_stmt = list_stmt.where(*filters)
+
+        total = (await session.execute(count_stmt)).scalar_one()
+        rows = (
+            await session.execute(list_stmt.limit(limit).offset(offset))
+        ).all()
+
+        return AdminUserListResponse(
+            users=[
+                AdminUserListItemRead(
+                    id=user.id,
+                    email=user.email,
+                    display_name=user.display_name,
+                    is_active=user.is_active,
+                    is_superuser=user.is_superuser,
+                    plan_id=user.plan_id,
+                    plan_name=plan_name,
+                    credit_micros_balance=user.credit_micros_balance,
+                    last_login=user.last_login,
+                )
+                for user, plan_name in rows
+            ],
+            total=total,
+            limit=limit,
+            offset=offset,
+        )
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Failed to list users: {e!s}", exc_info=True)
+        raise HTTPException(
+            status_code=500, detail=f"Failed to list users: {e!s}"
         ) from e

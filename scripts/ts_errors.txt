@@ -1,0 +1,25 @@
+app/(home)/blog/[slug]/page.tsx(151,11): error TS2769: No overload matches this call.
+app/(home)/changelog/page.tsx(41,8): error TS2322: Type '{ version: string; date: string; content: Element; }[]' is not assignable to type 'ChangelogTimelineEntry[]'.
+components/assistant-ui/connector-popup/connect-forms/index.tsx(72,37): error TS2345: Argument of type 'ComponentType<ConnectFormProps>' is not assignable to parameter of type 'ConnectFormComponent'.
+components/assistant-ui/connector-popup/connector-configs/index.tsx(74,37): error TS2345: Argument of type 'ComponentType<ConnectorConfigProps>' is not assignable to parameter of type 'ConnectorConfigComponent'.
+components/editor/plugins/citation-kit.tsx(160,38): error TS2345: Argument of type 'CitationToken' is not assignable to parameter of type '{ kind: "url"; url: string; } | { kind: "chunk"; chunkId: number; isDocsChunk: boolean; }'.
+components/editor/utils/safe-deserialize.ts(46,14): error TS18047: 'editor' is possibly 'null'.
+components/tool-ui/plan/plan.tsx(143,20): error TS2339: Property 'confirm' does not exist on type 'ActionsConfig'.
+components/tool-ui/plan/plan.tsx(143,52): error TS2339: Property 'confirm' does not exist on type 'ActionsConfig'.
+components/tool-ui/plan/plan.tsx(144,20): error TS2339: Property 'cancel' does not exist on type 'ActionsConfig'.
+components/tool-ui/plan/plan.tsx(144,51): error TS2339: Property 'cancel' does not exist on type 'ActionsConfig'.
+components/ui/command.tsx(49,5): error TS2322: Type '{ children: Element; className: string; showCloseButton: boolean; }' is not assignable to type 'IntrinsicAttributes & Omit<DialogContentProps & RefAttributes<HTMLDivElement>, "ref"> & RefAttributes<...>'.
+contexts/LocaleContext.tsx(22,4): error TS2719: Type '{ common: { app_name: string; welcome: string; save: string; cancel: string; delete: string; edit: string; create: string; update: string; search: string; close: string; confirm: string; back: string; next: string; ... 17 more ...; settings: string; }; ... 22 more ...; public_chat: { ...; }; }' is not assignable to type '{ common: { app_name: string; welcome: string; save: string; cancel: string; delete: string; edit: string; create: string; update: string; search: string; close: string; confirm: string; back: string; next: string; ... 17 more ...; settings: string; }; ... 22 more ...; public_chat: { ...; }; }'. Two different types with this name exist, but they are unrelated.
+contexts/platform-context.tsx(8,15): error TS2304: Cannot find name 'ElectronAPI'.
+hooks/use-connectors-sync.ts(17,8): error TS2322: Type '{ id: number; name: string; connector_type: "SERPER_API" | "TAVILY_API" | "SEARXNG_API" | "LINKUP_API" | "BAIDU_SEARCH_API" | "SLACK_CONNECTOR" | "TEAMS_CONNECTOR" | "ONEDRIVE_CONNECTOR" | ... 22 more ... | "COMPOSIO_GOOGLE_CALENDAR_CONNECTOR"; ... 9 more ...; created_at: string; }[]' is not assignable to type '{ id: number; name: string; connector_type: "SERPER_API" | "TAVILY_API" | "SEARXNG_API" | "LINKUP_API" | "BAIDU_SEARCH_API" | "SLACK_CONNECTOR" | "TEAMS_CONNECTOR" | "ONEDRIVE_CONNECTOR" | ... 22 more ... | "COMPOSIO_GOOGLE_CALENDAR_CONNECTOR"; ... 10 more ...; created_at: string; }[]'.
+hooks/use-folder-sync.ts(62,45): error TS7006: Parameter 'fd' implicitly has an 'any' type.
+hooks/use-folder-sync.ts(170,51): error TS7006: Parameter 'pendingEvents' implicitly has an 'any' type.
+hooks/use-platform.ts(9,35): error TS2304: Cannot find name 'ElectronAPI'.
+lib/apis/base-api.service.ts(337,38): error TS18048: 'error.status' is possibly 'undefined'.
+lib/folder-sync-upload.ts(25,32): error TS2304: Cannot find name 'FolderFileEntry'.
+lib/folder-sync-upload.ts(25,52): error TS2304: Cannot find name 'FolderFileEntry'.
+lib/folder-sync-upload.ts(26,17): error TS2304: Cannot find name 'FolderFileEntry'.
+lib/folder-sync-upload.ts(27,20): error TS2304: Cannot find name 'FolderFileEntry'.
+lib/folder-sync-upload.ts(59,11): error TS2304: Cannot find name 'FolderFileEntry'.
+lib/folder-sync-upload.ts(87,31): error TS18048: 'api' is possibly 'undefined'.
+zero/schema/folders.ts(13,18): error TS2344: Type 'Record<string, unknown>' does not satisfy the constraint 'ReadonlyJSONValue'.

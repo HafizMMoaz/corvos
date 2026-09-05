@@ -52,8 +52,8 @@ function EmptyState() {
 			</div>
 			<h3 className="mt-4 text-base font-semibold text-foreground">No artifacts yet</h3>
 			<p className="mt-1 text-sm text-muted-foreground max-w-md mx-auto">
-				Artifacts collect the reports, resumes, podcasts, presentations, and images Corvos
-				creates for this workspace. Generated deliverables from your chats will appear here.
+				Artifacts collect the reports, resumes, podcasts, presentations, and images Corvos creates
+				for this workspace. Generated deliverables from your chats will appear here.
 			</p>
 		</div>
 	);

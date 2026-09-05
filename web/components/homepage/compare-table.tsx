@@ -65,9 +65,9 @@ export function CompareTable() {
 			<Reveal>
 				<h2 className="text-2xl font-bold tracking-tight sm:text-3xl">How Corvos stacks up</h2>
 				<p className="mt-3 max-w-2xl text-muted-foreground leading-relaxed">
-					Most tools solve one piece: browser automation, page scraping, or search. Corvos
-					combines a research workspace with live platform data your agents can call as typed
-					APIs. Here's how it compares.
+					Most tools solve one piece: browser automation, page scraping, or search. Corvos combines
+					a research workspace with live platform data your agents can call as typed APIs. Here's
+					how it compares.
 				</p>
 			</Reveal>
 			<Reveal>

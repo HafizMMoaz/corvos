@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import type { FC } from "react";
+import type { ComponentType } from "react";
 import type { SearchSourceConnector } from "@/contracts/types/connector.types";
 
 export interface ConnectorConfigProps {
@@ -11,9 +11,9 @@ export interface ConnectorConfigProps {
 	workspaceId?: string;
 }
 
-export type ConnectorConfigComponent = FC<ConnectorConfigProps>;
+export type ConnectorConfigComponent = ComponentType<ConnectorConfigProps>;
 
-const configMap: Record<string, () => Promise<{ default: FC<ConnectorConfigProps> }>> = {
+const configMap: Record<string, () => Promise<{ default: ComponentType<ConnectorConfigProps> }>> = {
 	GOOGLE_DRIVE_CONNECTOR: () =>
 		import("./components/google-drive-config").then((m) => ({ default: m.GoogleDriveConfig })),
 	TAVILY_API: () =>

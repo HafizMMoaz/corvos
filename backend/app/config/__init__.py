@@ -1229,6 +1229,13 @@ class Config:
     STT_SERVICE_API_BASE = os.getenv("STT_SERVICE_API_BASE")
     STT_SERVICE_API_KEY = os.getenv("STT_SERVICE_API_KEY")
 
+    # ElevenLabs Configuration (voice agents + TTS)
+    ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
+    ELEVENLABS_MODEL = os.getenv("ELEVENLABS_MODEL", "eleven_multilingual_v2")
+    ELEVENLABS_VOICE_ID = os.getenv("ELEVENLABS_VOICE_ID", "pNInz6obpgDQGcFmaJgB")  # Adam
+    ELEVENLABS_VOICE_AGENT_ID = os.getenv("ELEVENLABS_VOICE_AGENT_ID")  # Conversational AI agent ID
+    ELEVENLABS_STT_MODEL = os.getenv("ELEVENLABS_STT_MODEL", "scribe_v1")
+
     # Video presentation defaults
     VIDEO_PRESENTATION_MAX_SLIDES = int(
         os.getenv("VIDEO_PRESENTATION_MAX_SLIDES", "30")

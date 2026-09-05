@@ -26,19 +26,19 @@ export default function TermsOfService() {
 				<section className="mb-8">
 					<h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
 					<p>
-						Welcome to Corvos. These Terms of Service ("Terms") govern your access to and use of
-						the Corvos website and hosted application (the "Services"). By accessing or using our
+						Welcome to Corvos. These Terms of Service ("Terms") govern your access to and use of the
+						Corvos website and hosted application (the "Services"). By accessing or using our
 						Services, you agree to be bound by these Terms.
 					</p>
 					<p className="mt-4">
 						Corvos is also distributed as open-source software under the{" "}
-						<a href="https://github.com/HafizMMoaz/Corvos/blob/main/LICENSE">MIT License</a>. If
-						you self-host Corvos instead of using our hosted Services, these Terms do not apply to
-						your deployment - the MIT License governs your use of the software instead.
+						<a href="https://github.com/HafizMMoaz/Corvos/blob/main/LICENSE">MIT License</a>. If you
+						self-host Corvos instead of using our hosted Services, these Terms do not apply to your
+						deployment - the MIT License governs your use of the software instead.
 					</p>
 					<p className="mt-4">
-						Please read these Terms carefully before using our Services. If you do not agree to these
-						Terms, please refrain from using our Services.
+						Please read these Terms carefully before using our Services. If you do not agree to
+						these Terms, please refrain from using our Services.
 					</p>
 				</section>
 
@@ -84,10 +84,10 @@ export default function TermsOfService() {
 				<section className="mb-8">
 					<h2 className="text-2xl font-semibold mb-4">4. Privacy</h2>
 					<p>
-						Our <a href="/privacy">Privacy Policy</a> and{" "}
-						<a href="/cookies">Cookie Policy</a> explain how we treat your personal data and protect
-						your privacy when you use our Services. By using our Services, you agree that Corvos
-						can use such data in accordance with those policies.
+						Our <a href="/privacy">Privacy Policy</a> and <a href="/cookies">Cookie Policy</a>{" "}
+						explain how we treat your personal data and protect your privacy when you use our
+						Services. By using our Services, you agree that Corvos can use such data in accordance
+						with those policies.
 					</p>
 					<p className="mt-4">
 						We respond to notices of alleged copyright infringement and terminate accounts of repeat
@@ -98,10 +98,10 @@ export default function TermsOfService() {
 				<section className="mb-8">
 					<h2 className="text-2xl font-semibold mb-4">5. License and Intellectual Property</h2>
 					<p>
-						Corvos gives you a personal, worldwide, royalty-free, non-assignable and
-						non-exclusive license to use the Services provided to you. This license is for the sole
-						purpose of enabling you to use and enjoy the benefit of the Services as provided by
-						Corvos, in the manner permitted by these Terms.
+						Corvos gives you a personal, worldwide, royalty-free, non-assignable and non-exclusive
+						license to use the Services provided to you. This license is for the sole purpose of
+						enabling you to use and enjoy the benefit of the Services as provided by Corvos, in the
+						manner permitted by these Terms.
 					</p>
 					<p className="mt-4">
 						All content included in or made available through our Services - such as text, graphics,
@@ -123,8 +123,8 @@ export default function TermsOfService() {
 					<p>
 						We are constantly changing and improving our Services. We may add or remove
 						functionalities or features, and we may suspend or stop a Service altogether. You can
-						stop using our Services at any time. Corvos may also stop providing Services to you,
-						or add or create new limits on our Services at any time.
+						stop using our Services at any time. Corvos may also stop providing Services to you, or
+						add or create new limits on our Services at any time.
 					</p>
 					<p className="mt-4">
 						We believe that you own your data and preserving your access to such data is important.
@@ -147,8 +147,8 @@ export default function TermsOfService() {
 						about our Services.
 					</p>
 					<p className="mt-4 uppercase font-bold">
-						OTHER THAN AS EXPRESSLY SET OUT IN THESE TERMS OR ADDITIONAL TERMS, NEITHER CORVOS
-						NOR ITS SUPPLIERS OR DISTRIBUTORS MAKE ANY SPECIFIC PROMISES ABOUT THE SERVICES. FOR
+						OTHER THAN AS EXPRESSLY SET OUT IN THESE TERMS OR ADDITIONAL TERMS, NEITHER CORVOS NOR
+						ITS SUPPLIERS OR DISTRIBUTORS MAKE ANY SPECIFIC PROMISES ABOUT THE SERVICES. FOR
 						EXAMPLE, WE DON'T MAKE ANY COMMITMENTS ABOUT THE CONTENT WITHIN THE SERVICES, THE
 						SPECIFIC FUNCTIONS OF THE SERVICES, OR THEIR RELIABILITY, AVAILABILITY, OR ABILITY TO
 						MEET YOUR NEEDS. WE PROVIDE THE SERVICES "AS IS".
@@ -163,9 +163,9 @@ export default function TermsOfService() {
 				<section className="mb-8">
 					<h2 className="text-2xl font-semibold mb-4">8. Liability for our Services</h2>
 					<p className="uppercase font-bold">
-						WHEN PERMITTED BY LAW, CORVOS, AND CORVOS'S SUPPLIERS AND DISTRIBUTORS, WILL NOT
-						BE RESPONSIBLE FOR LOST PROFITS, REVENUES, OR DATA, FINANCIAL LOSSES OR INDIRECT,
-						SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES.
+						WHEN PERMITTED BY LAW, CORVOS, AND CORVOS'S SUPPLIERS AND DISTRIBUTORS, WILL NOT BE
+						RESPONSIBLE FOR LOST PROFITS, REVENUES, OR DATA, FINANCIAL LOSSES OR INDIRECT, SPECIAL,
+						CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES.
 					</p>
 					<p className="mt-4 uppercase font-bold">
 						TO THE EXTENT PERMITTED BY LAW, THE TOTAL LIABILITY OF CORVOS, AND ITS SUPPLIERS AND
@@ -196,9 +196,9 @@ export default function TermsOfService() {
 					<p>
 						Any dispute arising out of or relating to these Terms, including the validity,
 						interpretation, breach, or termination thereof, shall be resolved by arbitration in
-						accordance with the rules of the arbitration authority in the jurisdiction where
-						Corvos operates. The arbitration shall be conducted by one arbitrator, in the English
-						language, and the decision of the arbitrator shall be final and binding on the parties.
+						accordance with the rules of the arbitration authority in the jurisdiction where Corvos
+						operates. The arbitration shall be conducted by one arbitrator, in the English language,
+						and the decision of the arbitrator shall be final and binding on the parties.
 					</p>
 					<p className="mt-4">
 						You agree that any dispute resolution proceedings will be conducted only on an
@@ -233,7 +233,8 @@ export default function TermsOfService() {
 					<h2 className="text-2xl font-semibold mb-4">12. Contact Us</h2>
 					<p>If you have any questions about these Terms, please contact us at:</p>
 					<p className="mt-2">
-						<strong>Email:</strong> <a href="mailto:hafizmoazkhalid@gmail.com">hafizmoazkhalid@gmail.com</a>
+						<strong>Email:</strong>{" "}
+						<a href="mailto:hafizmoazkhalid@gmail.com">hafizmoazkhalid@gmail.com</a>
 					</p>
 				</section>
 			</div>

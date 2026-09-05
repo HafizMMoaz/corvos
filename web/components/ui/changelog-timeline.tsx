@@ -10,8 +10,8 @@ import { cn } from "@/lib/utils";
 export type ChangelogTimelineEntry = {
 	version: string;
 	date: string;
-	title: string;
-	description: string;
+	title?: string;
+	description?: string;
 	items?: string[];
 	image?: string;
 	content?: ReactNode;
@@ -58,10 +58,16 @@ export const ChangelogTimeline = ({
 									</Badge>
 								</div>
 								<div className="flex max-w-2xl flex-1 flex-col">
-									<h2 className="mb-3 text-lg leading-tight font-bold text-foreground/90 md:text-2xl">
-										{entry.title}
-									</h2>
-									<p className="text-sm text-muted-foreground md:text-base">{entry.description}</p>
+									{entry.title ? (
+										<h2 className="mb-3 text-lg leading-tight font-bold text-foreground/90 md:text-2xl">
+											{entry.title}
+										</h2>
+									) : null}
+									{entry.description ? (
+										<p className="text-sm text-muted-foreground md:text-base">
+											{entry.description}
+										</p>
+									) : null}
 									{entry.items && entry.items.length > 0 ? (
 										<ul className="mt-4 ml-4 flex list-disc flex-col gap-1.5 text-sm text-muted-foreground md:text-base">
 											{entry.items.map((item) => (

@@ -11,6 +11,7 @@ from app.etl_pipeline.exceptions import (
 )
 from app.etl_pipeline.file_classifier import FileCategory, classify_file
 from app.etl_pipeline.parsers.audio import transcribe_audio
+from app.etl_pipeline.parsers.video import extract_and_transcribe_video
 from app.etl_pipeline.parsers.direct_convert import convert_file_directly
 from app.etl_pipeline.parsers.plaintext import read_plaintext
 from app.observability import metrics as ot_metrics, otel as ot
@@ -69,6 +70,17 @@ class EtlPipelineService:
                         markdown_content=content,
                         etl_service="AUDIO",
                         content_type="audio",
+                    )
+                    return result
+
+                if category == FileCategory.VIDEO:
+                    content = await extract_and_transcribe_video(
+                        request.file_path, request.filename
+                    )
+                    result = EtlResult(
+                        markdown_content=content,
+                        etl_service="VIDEO",
+                        content_type="video",
                     )
                     return result
 

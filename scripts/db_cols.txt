@@ -1,0 +1,1 @@
+connections: provider, base_url, api_key, extra, scope, enabled, workspace_id, user_id, id, created_at

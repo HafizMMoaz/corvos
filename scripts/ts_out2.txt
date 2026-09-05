@@ -1,0 +1,3 @@
+lib/folder-sync-upload.ts(87,31): error TS18048: 'api' is possibly 'undefined'.
+zero/schema/folders.ts(13,18): error TS2344: Type 'Record<string, unknown>' does not satisfy the constraint 'ReadonlyJSONValue'.
+  Type 'Record<string, unknown>' is missing the following properties from type 'readonly ReadonlyJSONValue[]': length, concat, join, slice, and 26 more.

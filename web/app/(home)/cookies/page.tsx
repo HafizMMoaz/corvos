@@ -24,12 +24,14 @@ export default function CookiePolicy() {
 					<p>
 						Cookies are small text files placed on your device when you visit a website. We also use
 						similar technologies such as local storage and session storage. This Cookie Policy
-						explains what we use on{" "}
-						<a href="https://www.Corvos.com">www.Corvos.com</a> and the Corvos
-						application (the "Service") and how you can control them. It should be read alongside our{" "}
-						<Link href="/privacy">Privacy Policy</Link>.
+						explains what we use on <a href="https://www.Corvos.com">www.Corvos.com</a> and the
+						Corvos application (the "Service") and how you can control them. It should be read
+						alongside our <Link href="/privacy">Privacy Policy</Link>.
 					</p>
-					<p className="mt-4">We do not run advertising on the Service and do not use advertising or tracking cookies from ad networks.</p>
+					<p className="mt-4">
+						We do not run advertising on the Service and do not use advertising or tracking cookies
+						from ad networks.
+					</p>
 				</section>
 
 				<section className="mb-8">
@@ -47,9 +49,8 @@ export default function CookiePolicy() {
 								<tr className="border-b align-top">
 									<td className="py-2 pr-4 font-medium">Strictly necessary</td>
 									<td className="py-2 pr-4">
-										Authentication, session management, and security (including
-										CAPTCHA/anti-abuse via Cloudflare Turnstile). Required for the Service to
-										function.
+										Authentication, session management, and security (including CAPTCHA/anti-abuse
+										via Cloudflare Turnstile). Required for the Service to function.
 									</td>
 									<td className="py-2">No - blocking these breaks sign-in and core features.</td>
 								</tr>
@@ -66,7 +67,9 @@ export default function CookiePolicy() {
 										Helps us understand how the Service is used so we can improve it. We use{" "}
 										<a href="https://posthog.com/privacy">PostHog</a> for product analytics.
 									</td>
-									<td className="py-2">Yes, via your browser settings or a tracking-blocker extension.</td>
+									<td className="py-2">
+										Yes, via your browser settings or a tracking-blocker extension.
+									</td>
 								</tr>
 							</tbody>
 						</table>
@@ -76,9 +79,9 @@ export default function CookiePolicy() {
 				<section className="mb-8">
 					<h2 className="text-2xl font-semibold mb-4">3. Third-Party Cookies</h2>
 					<p>
-						Some cookies are set by services we embed, not by Corvos directly: Cloudflare
-						Turnstile (security) and PostHog (analytics). Each provider's own privacy policy governs
-						how it processes data collected through its cookies.
+						Some cookies are set by services we embed, not by Corvos directly: Cloudflare Turnstile
+						(security) and PostHog (analytics). Each provider's own privacy policy governs how it
+						processes data collected through its cookies.
 					</p>
 				</section>
 
@@ -105,7 +108,8 @@ export default function CookiePolicy() {
 					<h2 className="text-2xl font-semibold mb-4">6. Contact Us</h2>
 					<p>If you have questions about this Cookie Policy, please contact us at:</p>
 					<p className="mt-2">
-						<strong>Email:</strong> <a href="mailto:hafizmoazkhalid@gmail.com">hafizmoazkhalid@gmail.com</a>
+						<strong>Email:</strong>{" "}
+						<a href="mailto:hafizmoazkhalid@gmail.com">hafizmoazkhalid@gmail.com</a>
 					</p>
 				</section>
 			</div>

@@ -45,8 +45,8 @@ export function ConnectAgentDialog({ className }: { className?: string }) {
 				<DialogHeader>
 					<DialogTitle>Connect your coding agent to Corvos</DialogTitle>
 					<DialogDescription>
-						Give your coding agent access to Corvos scrapers and your knowledge base. Create an
-						API key under API Keys, choose your agent, then paste the config.
+						Give your coding agent access to Corvos scrapers and your knowledge base. Create an API
+						key under API Keys, choose your agent, then paste the config.
 					</DialogDescription>
 				</DialogHeader>
 				<AgentSetupTabs options={{ baseUrl: BACKEND_URL || undefined }} />

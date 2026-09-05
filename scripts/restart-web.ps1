@@ -3,7 +3,7 @@
 # ponytail: matches the dev-server process by its command line rather than
 # killing every node.exe, so zero-cache's worker pool survives.
 $ErrorActionPreference = 'Continue'
-$report = 'd:\Corvos\scripts\web_restart.txt'
+$report = 'e:\corvos\scripts\web_restart.txt'
 $lines = @()
 
 $procs = Get-CimInstance Win32_Process -Filter "Name='node.exe' or Name='cmd.exe'" -ErrorAction SilentlyContinue |
@@ -22,4 +22,4 @@ if (-not $procs) { $lines += 'no running next dev process found' }
 
 Start-Sleep -Seconds 3
 Set-Content -Path $report -Value $lines -Encoding UTF8
-& 'd:\Corvos\scripts\start-native.ps1' -Service web
+& 'e:\corvos\scripts\start-native.ps1' -Service web

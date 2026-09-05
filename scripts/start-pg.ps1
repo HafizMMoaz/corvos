@@ -3,7 +3,7 @@
 # -Command loses `$` sigils in this shell.
 $ErrorActionPreference = 'Stop'
 $p = Start-Process -FilePath 'cmd.exe' `
-    -ArgumentList '/c', 'd:\Corvos\scripts\start-pg.cmd' `
+    -ArgumentList '/c', 'e:\corvos\scripts\start-pg.cmd' `
     -Verb RunAs -Wait -PassThru
-Add-Content -Path 'd:\Corvos\scripts\pg_start.txt' `
+Add-Content -Path 'e:\corvos\scripts\pg_start.txt' `
     -Value "elevated exit=$($p.ExitCode)" -Encoding UTF8

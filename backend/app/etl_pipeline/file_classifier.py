@@ -99,12 +99,17 @@ AUDIO_EXTENSIONS = frozenset(
     {".mp3", ".mp4", ".mpeg", ".mpga", ".m4a", ".wav", ".webm"}
 )
 
+VIDEO_EXTENSIONS = frozenset(
+    {".avi", ".mov", ".mkv", ".flv", ".wmv", ".3gp", ".ogv", ".m4v", ".mpg", ".vob"}
+)
+
 DIRECT_CONVERT_EXTENSIONS = frozenset({".csv", ".tsv", ".html", ".htm", ".xhtml"})
 
 
 class FileCategory(Enum):
     PLAINTEXT = "plaintext"
     AUDIO = "audio"
+    VIDEO = "video"
     DIRECT_CONVERT = "direct_convert"
     IMAGE = "image"
     UNSUPPORTED = "unsupported"
@@ -117,6 +122,8 @@ def classify_file(filename: str) -> FileCategory:
         return FileCategory.PLAINTEXT
     if suffix in AUDIO_EXTENSIONS:
         return FileCategory.AUDIO
+    if suffix in VIDEO_EXTENSIONS:
+        return FileCategory.VIDEO
     if suffix in DIRECT_CONVERT_EXTENSIONS:
         return FileCategory.DIRECT_CONVERT
     if suffix in IMAGE_EXTENSIONS:
@@ -129,7 +136,7 @@ def classify_file(filename: str) -> FileCategory:
 def should_skip_for_service(filename: str, etl_service: str | None) -> bool:
     """Return True if *filename* cannot be processed by *etl_service*.
 
-    Plaintext, audio, and direct-convert files are parser-agnostic and never
+    Plaintext, audio, video, and direct-convert files are parser-agnostic and never
     skipped.  Image and document files are checked against the per-parser
     extension set (images fall back to the document parser when no vision LLM
     is available, so the same service constraint applies).

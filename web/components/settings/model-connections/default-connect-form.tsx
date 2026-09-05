@@ -28,7 +28,7 @@ function baseUrlHint(provider: string) {
 	return undefined;
 }
 
-/** Ghost placeholder only — never used to prefill the actual submitted value. */
+/** Ghost placeholder only - never used to prefill the actual submitted value. */
 function baseUrlPlaceholder(provider: string, defaultBaseUrl: string) {
 	if (provider === "gemini") {
 		return "https://generativelanguage.googleapis.com";

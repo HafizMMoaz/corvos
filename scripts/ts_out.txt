@@ -1,0 +1,34 @@
+app/(home)/blog/[slug]/page.tsx(151,11): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { components?: Record<string, ComponentType<{}>> | undefined; }, context?: any): string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | ... 4 more ... | undefined', gave the following error.
+    Type 'MDXComponents' is not assignable to type 'Record<string, ComponentType<{}>> | undefined'.
+  Overload 2 of 2, '(props: { components?: Record<string, ComponentType<{}>> | undefined; }): string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | ... 4 more ... | undefined', gave the following error.
+    Type 'MDXComponents' is not assignable to type 'Record<string, ComponentType<{}>> | undefined'.
+app/(home)/changelog/page.tsx(41,8): error TS2322: Type '{ version: string; date: string; content: Element; }[]' is not assignable to type 'ChangelogTimelineEntry[]'.
+  Type '{ version: string; date: string; content: Element; }' is missing the following properties from type 'ChangelogTimelineEntry': title, description
+components/assistant-ui/connector-popup/connect-forms/index.tsx(72,37): error TS2345: Argument of type 'ComponentType<ConnectFormProps>' is not assignable to parameter of type 'ConnectFormComponent'.
+  Type 'ComponentClass<ConnectFormProps, any>' is not assignable to type 'FunctionComponent<ConnectFormProps>'.
+    Type 'ComponentClass<ConnectFormProps, any>' provides no match for the signature '(props: ConnectFormProps): ReactNode | Promise<ReactNode>'.
+components/assistant-ui/connector-popup/connector-configs/index.tsx(74,37): error TS2345: Argument of type 'ComponentType<ConnectorConfigProps>' is not assignable to parameter of type 'ConnectorConfigComponent'.
+  Type 'ComponentClass<ConnectorConfigProps, any>' is not assignable to type 'FunctionComponent<ConnectorConfigProps>'.
+    Type 'ComponentClass<ConnectorConfigProps, any>' provides no match for the signature '(props: ConnectorConfigProps): ReactNode | Promise<ReactNode>'.
+components/editor-panel/editor-panel.tsx(237,7): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+components/editor/plugins/citation-kit.tsx(160,38): error TS2345: Argument of type 'CitationToken' is not assignable to parameter of type '{ kind: "url"; url: string; } | { kind: "chunk"; chunkId: number; isDocsChunk: boolean; }'.
+  Type '{ kind: "run"; runId: string; }' is not assignable to type '{ kind: "url"; url: string; } | { kind: "chunk"; chunkId: number; isDocsChunk: boolean; }'.
+    Type '{ kind: "run"; runId: string; }' is missing the following properties from type '{ kind: "chunk"; chunkId: number; isDocsChunk: boolean; }': chunkId, isDocsChunk
+components/editor/utils/safe-deserialize.ts(46,14): error TS18047: 'editor' is possibly 'null'.
+components/tool-ui/plan/plan.tsx(143,20): error TS2339: Property 'confirm' does not exist on type 'ActionsConfig'.
+components/tool-ui/plan/plan.tsx(143,52): error TS2339: Property 'confirm' does not exist on type 'ActionsConfig'.
+components/tool-ui/plan/plan.tsx(144,20): error TS2339: Property 'cancel' does not exist on type 'ActionsConfig'.
+components/tool-ui/plan/plan.tsx(144,51): error TS2339: Property 'cancel' does not exist on type 'ActionsConfig'.
+components/ui/command.tsx(49,5): error TS2322: Type '{ children: Element; className: string; showCloseButton: boolean; }' is not assignable to type 'IntrinsicAttributes & Omit<DialogContentProps & RefAttributes<HTMLDivElement>, "ref"> & RefAttributes<...>'.
+  Property 'showCloseButton' does not exist on type 'IntrinsicAttributes & Omit<DialogContentProps & RefAttributes<HTMLDivElement>, "ref"> & RefAttributes<...>'.
+contexts/LocaleContext.tsx(22,4): error TS2719: Type '{ common: { app_name: string; welcome: string; save: string; cancel: string; delete: string; edit: string; create: string; update: string; search: string; close: string; confirm: string; back: string; next: string; ... 17 more ...; settings: string; }; ... 22 more ...; public_chat: { ...; }; }' is not assignable to type '{ common: { app_name: string; welcome: string; save: string; cancel: string; delete: string; edit: string; create: string; update: string; search: string; close: string; confirm: string; back: string; next: string; ... 17 more ...; settings: string; }; ... 22 more ...; public_chat: { ...; }; }'. Two different types with this name exist, but they are unrelated.
+  Types of property '"documents"' are incompatible.
+    Property '"delete_success"' is missing in type '{ title: string; subtitle: string; no_rows_selected: string; delete_success_count: string; delete_partial_failed: string; delete_error: string; filter_by_title: string; bulk_delete: string; ... 21 more ...; delete_conflict_error: string; }' but required in type '{ title: string; subtitle: string; no_rows_selected: string; delete_success_count: string; delete_partial_failed: string; delete_success: string; delete_error: string; filter_by_title: string; ... 22 more ...; delete_conflict_error: string; }'.
+hooks/use-connectors-sync.ts(17,8): error TS2322: Type '{ id: number; name: string; connector_type: "SERPER_API" | "TAVILY_API" | "SEARXNG_API" | "LINKUP_API" | "BAIDU_SEARCH_API" | "SLACK_CONNECTOR" | "TEAMS_CONNECTOR" | "ONEDRIVE_CONNECTOR" | ... 22 more ... | "COMPOSIO_GOOGLE_CALENDAR_CONNECTOR"; ... 9 more ...; created_at: string; }[]' is not assignable to type '{ id: number; name: string; connector_type: "SERPER_API" | "TAVILY_API" | "SEARXNG_API" | "LINKUP_API" | "BAIDU_SEARCH_API" | "SLACK_CONNECTOR" | "TEAMS_CONNECTOR" | "ONEDRIVE_CONNECTOR" | ... 22 more ... | "COMPOSIO_GOOGLE_CALENDAR_CONNECTOR"; ... 10 more ...; created_at: string; }[]'.
+  Property 'enable_vision_llm' is missing in type '{ id: number; name: string; connector_type: SearchSourceConnector["connector_type"]; is_indexable: boolean; is_active: true; last_indexed_at: string | null; config: Record<string, unknown>; ... 5 more ...; created_at: string; }' but required in type '{ id: number; name: string; connector_type: "SERPER_API" | "TAVILY_API" | "SEARXNG_API" | "LINKUP_API" | "BAIDU_SEARCH_API" | "SLACK_CONNECTOR" | "TEAMS_CONNECTOR" | "ONEDRIVE_CONNECTOR" | ... 22 more ... | "COMPOSIO_GOOGLE_CALENDAR_CONNECTOR"; ... 10 more ...; created_at: string; }'.
+lib/apis/base-api.service.ts(337,38): error TS18048: 'error.status' is possibly 'undefined'.
+lib/folder-sync-upload.ts(87,31): error TS18048: 'api' is possibly 'undefined'.
+zero/schema/folders.ts(13,18): error TS2344: Type 'Record<string, unknown>' does not satisfy the constraint 'ReadonlyJSONValue'.
+  Type 'Record<string, unknown>' is missing the following properties from type 'readonly ReadonlyJSONValue[]': length, concat, join, slice, and 26 more.

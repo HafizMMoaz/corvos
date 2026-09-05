@@ -80,8 +80,8 @@ export const SlackConfig: FC<SlackConfigProps> = ({ connector }) => {
 				<AlertTitle>Add Bot to Channels</AlertTitle>
 				<AlertDescription>
 					<p>
-						Before indexing, add the Corvos bot to each channel you want to index. The bot can
-						only access messages from channels it's been added to. Type{" "}
+						Before indexing, add the Corvos bot to each channel you want to index. The bot can only
+						access messages from channels it's been added to. Type{" "}
 						<code className="rounded bg-popover px-1 py-0.5 text-[9px] text-popover-foreground">
 							/invite @Corvos
 						</code>{" "}

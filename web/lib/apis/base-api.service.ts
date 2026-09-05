@@ -115,8 +115,7 @@ class BaseApiService {
 			const defaultOptions: RequestOptions = {
 				headers: {
 					...(desktopAccessToken ? { Authorization: `Bearer ${desktopAccessToken}` } : {}),
-					"X-Corvos-Client-Platform":
-						typeof window === "undefined" ? "web" : getClientPlatform(),
+					"X-Corvos-Client-Platform": typeof window === "undefined" ? "web" : getClientPlatform(),
 				},
 				method: "GET",
 				responseType: ResponseType.JSON,
@@ -334,7 +333,7 @@ class BaseApiService {
 				console.error("Request failed:", JSON.stringify(error));
 				// Only 5xx server faults are unexpected; 4xx are handled above and
 				// network outages were already captured before this point.
-				if (error instanceof AppError && error.status >= 500) {
+				if (error instanceof AppError && typeof error.status === "number" && error.status >= 500) {
 					captureApiException(error, url, options?.method);
 				}
 			}

@@ -371,8 +371,8 @@ export function MessagingChannelsContent() {
 					Open {platform === "whatsapp" ? "WhatsApp" : "Telegram"} pairing link
 				</a>
 				<p className="mt-2 text-xs text-muted-foreground">
-					Expires at {new Date(pairing.expires_at).toLocaleString()}. Corvos stores this
-					channel's messages for agent memory and operational debugging.
+					Expires at {new Date(pairing.expires_at).toLocaleString()}. Corvos stores this channel's
+					messages for agent memory and operational debugging.
 				</p>
 			</div>
 		);
@@ -405,9 +405,9 @@ export function MessagingChannelsContent() {
 					<AlertTitle>Messaging Channels coming soon</AlertTitle>
 					<AlertDescription>
 						<p>
-							Soon you'll be able to connect WhatsApp, Telegram, Slack, and Discord to your
-							Corvos agent so you can ask questions, route messages to workspaces, and get
-							answers from your knowledge base without leaving your chat app.
+							Soon you'll be able to connect WhatsApp, Telegram, Slack, and Discord to your Corvos
+							agent so you can ask questions, route messages to workspaces, and get answers from
+							your knowledge base without leaving your chat app.
 						</p>
 					</AlertDescription>
 				</Alert>
@@ -427,9 +427,7 @@ export function MessagingChannelsContent() {
 						<div className="flex items-center justify-between gap-3">
 							<CardTitle className="flex items-center gap-2 text-sm">Telegram</CardTitle>
 						</div>
-						<p className="text-xs text-muted-foreground">
-							Connect Telegram to chat with Corvos.
-						</p>
+						<p className="text-xs text-muted-foreground">Connect Telegram to chat with Corvos.</p>
 					</CardHeader>
 					<CardContent className="space-y-3 p-4 pt-0">
 						<div className="flex flex-wrap gap-2">

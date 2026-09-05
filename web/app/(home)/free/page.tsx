@@ -208,7 +208,7 @@ export default async function FreeHubPage() {
 
 				<Separator className="my-12 max-w-4xl mx-auto" />
 
-			{/* Model Table */}
+				{/* Model Table */}
 				{seoModels.length > 0 ? (
 					<section
 						className="max-w-4xl mx-auto"
@@ -327,7 +327,7 @@ export default async function FreeHubPage() {
 
 				<Separator className="my-12 max-w-4xl mx-auto" />
 
-			{/* FAQ */}
+				{/* FAQ */}
 				<section className="max-w-3xl mx-auto">
 					<h2 className="text-2xl font-bold text-center mb-8">Frequently Asked Questions</h2>
 					<dl className="flex flex-col gap-4">

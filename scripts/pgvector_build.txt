@@ -1,0 +1,72 @@
+=== pgvector build ===
+vcvars loaded
+Cloning into 'C:\Users\hafiz\AppData\Local\Temp\pgvector'...
+Note: switching to '778dacf20c07caf904557a88705142631818d8cb'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+--- version ---
+v0.8.1
+--- nmake ---
+
+Microsoft (R) Program Maintenance Utility Version 14.44.35228.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\bitutils.c /Fosrc\bitutils.obj
+bitutils.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\bitvec.c /Fosrc\bitvec.obj
+bitvec.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\halfutils.c /Fosrc\halfutils.obj
+halfutils.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\halfvec.c /Fosrc\halfvec.obj
+halfvec.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\hnsw.c /Fosrc\hnsw.obj
+hnsw.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\hnswbuild.c /Fosrc\hnswbuild.obj
+hnswbuild.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\hnswinsert.c /Fosrc\hnswinsert.obj
+hnswinsert.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\hnswscan.c /Fosrc\hnswscan.obj
+hnswscan.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\hnswutils.c /Fosrc\hnswutils.obj
+hnswutils.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\hnswvacuum.c /Fosrc\hnswvacuum.obj
+hnswvacuum.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\ivfbuild.c /Fosrc\ivfbuild.obj
+ivfbuild.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\ivfflat.c /Fosrc\ivfflat.obj
+ivfflat.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\ivfinsert.c /Fosrc\ivfinsert.obj
+ivfinsert.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\ivfkmeans.c /Fosrc\ivfkmeans.obj
+ivfkmeans.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\ivfscan.c /Fosrc\ivfscan.obj
+ivfscan.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\ivfutils.c /Fosrc\ivfutils.obj
+ivfutils.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\ivfvacuum.c /Fosrc\ivfvacuum.obj
+ivfvacuum.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\sparsevec.c /Fosrc\sparsevec.obj
+sparsevec.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast /c src\vector.c /Fosrc\vector.obj
+vector.c
+	cl /nologo /I"C:\Program Files\PostgreSQL\18\include\server\port\win32_msvc" /I"C:\Program Files\PostgreSQL\18\include\server\port\win32" /I"C:\Program Files\PostgreSQL\18\include\server" /I"C:\Program Files\PostgreSQL\18\include"   /O2 /fp:fast src\bitutils.obj src\bitvec.obj src\halfutils.obj src\halfvec.obj src\hnsw.obj src\hnswbuild.obj src\hnswinsert.obj src\hnswscan.obj src\hnswutils.obj src\hnswvacuum.obj src\ivfbuild.obj src\ivfflat.obj src\ivfinsert.obj src\ivfkmeans.obj src\ivfscan.obj src\ivfutils.obj src\ivfvacuum.obj src\sparsevec.obj src\vector.obj "C:\Program Files\PostgreSQL\18\lib\postgres.lib" /link /DLL /OUT:vector.dll
+   Creating library vector.lib and object vector.exp
+	copy sql\vector.sql sql\vector--0.8.1.sql
+        1 file(s) copied.
+nmake exit=0
+--- artifacts ---
+built: vector.dll

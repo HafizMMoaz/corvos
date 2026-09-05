@@ -3,10 +3,10 @@
 # publication to already exist, else it crash-loops with
 # "Unknown or invalid publications". See docker-compose.deps-only.yml.
 $ErrorActionPreference = 'Continue'
-$log = 'd:\Corvos\scripts\migrate_tail.txt'
+$log = 'e:\corvos\scripts\migrate_tail.txt'
 $raw = Join-Path $env:TEMP 'ros_alembic_raw.txt'
 
-Push-Location 'd:\Corvos\backend'
+Push-Location 'e:\corvos\backend'
 & uv run alembic upgrade head *> $raw
 $code = $LASTEXITCODE
 Pop-Location

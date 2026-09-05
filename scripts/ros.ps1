@@ -25,7 +25,7 @@ param(
 )
 
 $ErrorActionPreference = 'Continue'
-$root = 'd:\Corvos'
+$root = 'e:\corvos'
 $logs = Join-Path $root 'scripts\logs'
 $PG_SERVICE = 'postgresql-x64-18'
 $WEB_PORT = 3000

@@ -66,8 +66,11 @@ async function uploadBatchesWithConcurrency(
 		onBatchComplete?: (filesInBatch: number) => void;
 	}
 ): Promise<number | null> {
-	const api = window.electronAPI;
-	if (!api) throw new Error("Electron API not available");
+	const maybeApi = window.electronAPI;
+	if (!maybeApi) throw new Error("Electron API not available");
+	// Capture the narrowed value so the nested processNext() closure sees a
+	// non-optional type (narrowing does not propagate into hoisted functions).
+	const api: ElectronAPI = maybeApi;
 
 	let batchIdx = 0;
 	let resolvedRootFolderId = params.rootFolderId;
@@ -135,8 +138,9 @@ async function uploadBatchesWithConcurrency(
  * Returns the root_folder_id to pass to addWatchedFolder.
  */
 export async function uploadFolderScan(params: FolderSyncParams): Promise<number | null> {
-	const api = window.electronAPI;
-	if (!api) throw new Error("Electron API not available");
+	const maybeApi = window.electronAPI;
+	if (!maybeApi) throw new Error("Electron API not available");
+	const api: ElectronAPI = maybeApi;
 
 	const {
 		folderPath,
