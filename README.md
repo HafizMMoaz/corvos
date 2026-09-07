@@ -53,6 +53,76 @@ can research alongside you.
 | [`docker/`](./docker) | Docker Compose configs for production and development |
 | [`scripts/`](./scripts) | Native run scripts and utilities |
 
+## Architecture
+
+```mermaid
+graph TB
+    subgraph Clients["Clients"]
+        Web["Web App<br/>Next.js + Zero-cache"]
+        Desktop["Desktop<br/>Electron"]
+        Extension["Browser Extension<br/>Plasmo"]
+        MCP["MCP Clients<br/>Claude / Cursor"]
+        Messaging["Messaging<br/>Telegram · WhatsApp<br/>Slack · Discord"]
+    end
+
+    subgraph API["API Layer"]
+        Caddy["Caddy<br/>Reverse Proxy"]
+        FastAPI["FastAPI<br/>REST + SSE Streaming"]
+    end
+
+    subgraph Core["Application Core"]
+        Agents["Agent System<br/>LangChain · LangGraph<br/>Multi-Agent Orchestration"]
+        Services["Services<br/>LLM Router · Streaming<br/>Memory · Billing"]
+        Connectors["Connectors<br/>OAuth Sync · 15+ Platforms"]
+        Platforms["Platform Scrapers<br/>YouTube · Reddit · Google<br/>Instagram · TikTok"]
+    end
+
+    subgraph Workers["Background Processing"]
+        Celery["Celery Workers<br/>Document Processing<br/>Connector Indexing"]
+        Beat["Celery Beat<br/>Scheduled Tasks<br/>Automations"]
+        Gateway["Messaging Gateway<br/>Long-poll · Webhooks"]
+    end
+
+    subgraph Data["Data Layer"]
+        PG["PostgreSQL 17<br/>+ PGVector"]
+        Redis["Redis<br/>Broker · Cache"]
+        Files["File Storage<br/>Local · Azure"]
+        Zero["Zero-cache<br/>Real-time Sync"]
+    end
+
+    subgraph External["External"]
+        LLM["100+ LLMs<br/>OpenAI · Anthropic<br/>Ollama · OpenRouter"]
+        WebData["Live Web Data<br/>Reddit · YouTube<br/>Google · Amazon"]
+        OAuth["OAuth Providers<br/>Google · Notion · Slack<br/>GitHub · Microsoft"]
+    end
+
+    Web & Desktop & Extension -->|HTTP / WS| Caddy
+    MCP -->|MCP Protocol| Caddy
+    Messaging -->|Webhook / Poll| Gateway
+
+    Caddy --> FastAPI
+    FastAPI --> Agents & Services & Connectors & Platforms
+
+    Agents --> LLM
+    Services --> PG & Redis
+    Connectors --> OAuth
+    Platforms --> WebData
+
+    Agents & Services -->|enqueue| Redis
+    Redis --> Celery & Beat
+    Celery --> PG & Files
+    Beat -->|schedule| Celery
+
+    Zero -->|sync| PG
+    Web -->|real-time| Zero
+
+    Gateway --> FastAPI
+```
+
+For the full 2,400-line architectural blueprint covering every subsystem, data flow,
+database schema, agent orchestration pattern, and deployment topology, see
+[**docs/ARCHITECTURE_BLUEPRINT.md**](./docs/ARCHITECTURE_BLUEPRINT.md).
+
 ---
 
 ## Prerequisites
@@ -481,3 +551,26 @@ also read our [Code of Conduct](./CODE_OF_CONDUCT.md) and
 ## License
 
 [MIT](./LICENSE) © Corvos Contributors
+
+---
+
+<div align="center">
+
+### Philosophy
+
+> *"If I had 60 minutes to solve a problem, I would spend 59 minutes
+> understanding it and 1 minute resolving it."*
+> — attributed to Albert Einstein
+
+Corvos was built on this principle. **90% of the effort went into understanding
+and planning** — mapping every data flow, every edge case, every integration
+boundary — and **10% went into building it.** The construction was delegated to
+AI subagents, each scoped to a well-defined task with clear inputs, outputs,
+and constraints. The same multi-agent orchestration that powers Corvos for
+end-users powered its own development: an orchestrator decomposed the problem,
+specialist subagents executed, and the result was reviewed and integrated by a
+human in the loop.
+
+Understanding first. Building second. That's the Corvos way.
+
+</div>
