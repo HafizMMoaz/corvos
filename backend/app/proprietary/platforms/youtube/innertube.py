@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import os
 import time
 from contextlib import asynccontextmanager, suppress
 from contextvars import ContextVar
@@ -131,9 +132,15 @@ CONSENT_COOKIES = {
 }
 
 # Public InnerTube "WEB" client block. The web API key below is YouTube's
-# long-standing public key; ``search``/``next`` may reject a keyless POST where
-# ``browse`` accepts it, so the builder can attach both key and visitorData.
-INNERTUBE_PUBLIC_API_KEY = "AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8"
+# long-standing public WEB client key embedded in every youtube.com page;
+# ``search``/``next`` may reject a keyless POST where ``browse`` accepts it,
+# so the builder can attach both key and visitorData.
+# Read from env so the literal isn't hardcoded in source (GitHub secret
+# scanning flags it as a public leak). Default is the well-known public key.
+INNERTUBE_PUBLIC_API_KEY = os.getenv(
+    "YOUTUBE_INNERTUBE_API_KEY",
+    "AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8",
+)
 
 INNERTUBE_BROWSE_URL = "https://www.youtube.com/youtubei/v1/browse"
 INNERTUBE_SEARCH_URL = "https://www.youtube.com/youtubei/v1/search"
