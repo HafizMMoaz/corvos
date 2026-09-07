@@ -9,6 +9,8 @@ Turn your documents and the live web into a searchable knowledge base - then cha
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2)](https://discord.gg/Ggf9PxDNQ2)
 
+![]("./home.png")
+
 </div>
 
 ---
@@ -139,7 +141,7 @@ graph TB
 
 For the full architectural blueprint covering every subsystem, data flow,
 database schema, agent orchestration pattern, and deployment topology, see
-[**docs/ARCHITECTURE_BLUEPRINT.md**](./docs/ARCHITECTURE_BLUEPRINT.md).
+[**ARCHITECTURE_BLUEPRINT.md**](./ARCHITECTURE_BLUEPRINT.md).
 
 ---
 
