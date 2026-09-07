@@ -13,6 +13,24 @@ Turn your documents and the live web into a searchable knowledge base - then cha
 
 ---
 
+## The Name
+
+**Corvos** — from the Latin genus for ravens and crows (*Corvus*). Two syllables,
+KOR-vos. The hard velar onset signals decisiveness; the rhotic carries depth;
+the terminal *-vos* owns its phonemic space — nothing else on a developer's
+screen sounds like this.
+
+In Norse mythology, Odin kept two ravens — **Huginn** (thought) and **Muninn**
+(memory) — that flew across the entire world each day, gathering intelligence
+from every source and returning it to a single sovereign owner. That is
+literally what this product does. Documents, Reddit, YouTube, Google, TikTok —
+it sends agents out across everything and brings structured intelligence back
+to you. Ravens are the most intelligent birds on earth: they use tools, cache
+resources in hidden locations, and remember faces. Every one of those maps to a
+feature. Someone asks *"why Corvos?"* — the answer is a 30-second pitch.
+
+---
+
 Corvos pairs a NotebookLM-style research workspace with live web-data
 connectors - Reddit, YouTube, Google Search, Google Maps, and any page on the
 open web - exposed through a REST API and an MCP server so your own agents
