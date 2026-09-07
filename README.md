@@ -27,7 +27,7 @@ literally what this product does. Documents, Reddit, YouTube, Google, TikTok:
 it sends agents out across everything and brings structured intelligence back
 to you. Ravens are the most intelligent birds on earth: they use tools, cache
 resources in hidden locations, and remember faces. Every one of those maps to a
-feature. Someone asks *"why Corvos?"* and the answer is a 30-second pitch.
+feature.
 
 ---
 
