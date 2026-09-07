@@ -15,19 +15,19 @@ Turn your documents and the live web into a searchable knowledge base - then cha
 
 ## The Name
 
-**Corvos** — from the Latin genus for ravens and crows (*Corvus*). Two syllables,
+**Corvos** - from the Latin genus for ravens and crows (*Corvus*). Two syllables,
 KOR-vos. The hard velar onset signals decisiveness; the rhotic carries depth;
-the terminal *-vos* owns its phonemic space — nothing else on a developer's
+the terminal *-vos* owns its phonemic space. Nothing else on a developer's
 screen sounds like this.
 
-In Norse mythology, Odin kept two ravens — **Huginn** (thought) and **Muninn**
-(memory) — that flew across the entire world each day, gathering intelligence
+In Norse mythology, Odin kept two ravens, **Huginn** (thought) and **Muninn**
+(memory), that flew across the entire world each day, gathering intelligence
 from every source and returning it to a single sovereign owner. That is
-literally what this product does. Documents, Reddit, YouTube, Google, TikTok —
+literally what this product does. Documents, Reddit, YouTube, Google, TikTok:
 it sends agents out across everything and brings structured intelligence back
 to you. Ravens are the most intelligent birds on earth: they use tools, cache
 resources in hidden locations, and remember faces. Every one of those maps to a
-feature. Someone asks *"why Corvos?"* — the answer is a 30-second pitch.
+feature. Someone asks *"why Corvos?"* and the answer is a 30-second pitch.
 
 ---
 
@@ -578,11 +578,11 @@ also read our [Code of Conduct](./CODE_OF_CONDUCT.md) and
 
 > *"If I had 60 minutes to solve a problem, I would spend 59 minutes
 > understanding it and 1 minute resolving it."*
-> — attributed to Albert Einstein
+> - attributed to Albert Einstein
 
 Corvos was built on this principle. **90% of the effort went into understanding
-and planning** — mapping every data flow, every edge case, every integration
-boundary — and **10% went into building it.** The construction was delegated to
+and planning**, mapping every data flow, every edge case, every integration
+boundary, and **10% went into building it.** The construction was delegated to
 AI subagents, each scoped to a well-defined task with clear inputs, outputs,
 and constraints. The same multi-agent orchestration that powers Corvos for
 end-users powered its own development: an orchestrator decomposed the problem,
