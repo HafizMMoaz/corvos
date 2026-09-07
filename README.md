@@ -119,7 +119,7 @@ graph TB
     Gateway --> FastAPI
 ```
 
-For the full 2,400-line architectural blueprint covering every subsystem, data flow,
+For the full architectural blueprint covering every subsystem, data flow,
 database schema, agent orchestration pattern, and deployment topology, see
 [**docs/ARCHITECTURE_BLUEPRINT.md**](./docs/ARCHITECTURE_BLUEPRINT.md).
 
