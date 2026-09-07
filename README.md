@@ -9,7 +9,7 @@ Turn your documents and the live web into a searchable knowledge base - then cha
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2)](https://discord.gg/Ggf9PxDNQ2)
 
-![]("./home.png")
+![](./home.png)
 
 </div>
 
