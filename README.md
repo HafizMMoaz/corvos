@@ -578,7 +578,7 @@ also read our [Code of Conduct](./CODE_OF_CONDUCT.md) and
 
 > *"If I had 60 minutes to solve a problem, I would spend 59 minutes
 > understanding it and 1 minute resolving it."*
-> - attributed to Albert Einstein
+> attributed to Albert Einstein
 
 Corvos was built on this principle. **90% of the effort went into understanding
 and planning**, mapping every data flow, every edge case, every integration
